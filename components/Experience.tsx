@@ -31,15 +31,15 @@ export function Experience() {
     <section
       id="experience"
       className="py-32 px-20"
-      style={{ background: "#0d1117", borderTop: "1px solid #30363d" }}
+      style={{ background: "var(--bg)", borderTop: "1px solid var(--border)" }}
     >
       <div className="max-w-4xl">
-        <p className="font-mono text-[11px] mb-2" style={{ color: "#00c853" }}>
+        <p className="font-mono text-[11px] mb-2" style={{ color: "var(--green)" }}>
           [ WORK EXPERIENCE ]
         </p>
         <h2
           className="font-bold mb-12"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 48, color: "#e6edf3" }}
+          style={{ fontFamily: "Inter, sans-serif", fontSize: 48, color: "var(--text-primary)" }}
         >
           The Ledger
         </h2>
@@ -48,7 +48,7 @@ export function Experience() {
         <div className="relative">
           <div
             className="absolute left-[120px] top-0 bottom-0 w-px"
-            style={{ background: "linear-gradient(to bottom, #00c853, rgba(0,200,83,0.1))" }}
+            style={{ background: "linear-gradient(to bottom, var(--green), var(--green-a8))" }}
           />
 
           <div className="space-y-12">
@@ -56,7 +56,7 @@ export function Experience() {
               <div key={i} className="flex gap-8">
                 {/* Date */}
                 <div className="w-[120px] shrink-0 pt-1 text-right">
-                  <p className="font-mono text-[10px] leading-relaxed" style={{ color: "#8b949e" }}>
+                  <p className="font-mono text-[10px] leading-relaxed" style={{ color: "var(--text-dim)" }}>
                     {exp.period.split("–").map((part, j) => (
                       <span key={j} className="block">{part.trim()}</span>
                     ))}
@@ -68,9 +68,9 @@ export function Experience() {
                   <div
                     className="w-3 h-3 rounded-full border-2"
                     style={{
-                      background: "#0d1117",
-                      borderColor: "#00c853",
-                      boxShadow: "0 0 8px rgba(0,200,83,0.4)",
+                      background: "var(--bg)",
+                      borderColor: "var(--green)",
+                      boxShadow: "0 0 8px var(--green-a50)",
                       marginLeft: -6,
                     }}
                   />
@@ -81,22 +81,22 @@ export function Experience() {
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div>
                       <h3 className="font-semibold text-base mb-0.5"
-                        style={{ color: "#e6edf3", fontFamily: "Inter, sans-serif" }}>
+                        style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}>
                         {exp.role}
                       </h3>
-                      <p className="font-mono text-sm" style={{ color: "#00c853" }}>
+                      <p className="font-mono text-sm" style={{ color: "var(--green)" }}>
                         {exp.company}
                       </p>
-                      <p className="font-mono text-[11px] mt-0.5" style={{ color: "#484f58" }}>
+                      <p className="font-mono text-[11px] mt-0.5" style={{ color: "var(--text-muted)" }}>
                         {exp.location}
                       </p>
                     </div>
                     <span
                       className="font-mono text-[10px] px-2 py-1 rounded shrink-0"
                       style={{
-                        color: "#00c853",
-                        background: "rgba(0,200,83,0.08)",
-                        border: "1px solid rgba(0,200,83,0.2)",
+                        color: "var(--green)",
+                        background: "var(--green-a8)",
+                        border: "1px solid var(--green-a20)",
                       }}
                     >
                       {exp.badge}
@@ -106,8 +106,8 @@ export function Experience() {
                   <ul className="space-y-2 mb-4">
                     {exp.bullets.map((b, j) => (
                       <li key={j} className="flex gap-3 text-sm leading-relaxed"
-                        style={{ color: "#8b949e", fontFamily: "Inter, sans-serif" }}>
-                        <span style={{ color: "#00c853" }} className="shrink-0 mt-0.5">▸</span>
+                        style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
+                        <span style={{ color: "var(--green)" }} className="shrink-0 mt-0.5">▸</span>
                         {b}
                       </li>
                     ))}
@@ -116,7 +116,7 @@ export function Experience() {
                   <div className="flex flex-wrap gap-1.5">
                     {exp.stack.map((s) => (
                       <span key={s} className="font-mono text-[10px] px-2 py-0.5 rounded"
-                        style={{ color: "#ffd700", background: "rgba(255,215,0,0.08)", border: "1px solid rgba(255,215,0,0.2)" }}>
+                        style={{ color: "var(--yellow)", background: "rgba(255,215,0,0.08)", border: "1px solid rgba(255,215,0,0.2)" }}>
                         {s}
                       </span>
                     ))}

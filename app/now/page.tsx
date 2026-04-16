@@ -30,16 +30,16 @@ export const metadata = {
 
 export default function NowPage() {
   return (
-    <div className="min-h-screen" style={{ background: "#0d1117" }}>
+    <div className="min-h-screen" style={{ background: "var(--bg)" }}>
       {/* Minimal header */}
       <header
         className="flex items-center justify-between px-8 md:px-20 h-16"
-        style={{ borderBottom: "1px solid #30363d" }}
+        style={{ borderBottom: "1px solid var(--border)" }}
       >
         <Link
           href="/"
-          className="flex items-center gap-2 font-mono text-sm transition-colors"
-          style={{ color: "#8b949e" }}
+          className="flex items-center gap-2 font-mono text-sm transition-colors hover:text-[var(--text-primary)]"
+          style={{ color: "var(--text-dim)" }}
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M19 12H5M5 12l7-7M5 12l7 7" />
@@ -50,15 +50,15 @@ export default function NowPage() {
         <Link
           href="/"
           className="font-mono font-bold text-lg"
-          style={{ color: "#00c853" }}
+          style={{ color: "var(--green)" }}
         >
-          KA /
+          $KA
         </Link>
       </header>
 
       {/* Content */}
       <main className="px-8 md:px-20 py-20 max-w-5xl">
-        <p className="font-mono text-[11px] mb-4" style={{ color: "#8b949e" }}>
+        <p className="font-mono text-[11px] mb-4" style={{ color: "var(--text-dim)" }}>
           // now.md
         </p>
 
@@ -67,37 +67,37 @@ export default function NowPage() {
           style={{
             fontFamily: "Inter, sans-serif",
             fontSize: 80,
-            color: "#e6edf3",
+            color: "var(--text-primary)",
             lineHeight: 1,
           }}
         >
           Now
         </h1>
 
-        <p className="text-base mb-2" style={{ color: "#8b949e", fontFamily: "Inter, sans-serif" }}>
+        <p className="text-base mb-2" style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
           What I&apos;m up to right now.
         </p>
-        <p className="font-mono text-[11px] mb-10" style={{ color: "#484f58" }}>
+        <p className="font-mono text-[11px] mb-10" style={{ color: "var(--text-muted)" }}>
           Last updated · April 2025
         </p>
 
-        <div className="mb-12" style={{ height: 1, background: "#21262d" }} />
+        <div className="mb-12" style={{ height: 1, background: "var(--border-subtle)" }} />
 
         <div className="grid gap-10 sm:grid-cols-2">
           {sections.map(({ label, title, body }) => (
             <div key={label}>
-              <p className="font-mono text-[10px] mb-3" style={{ color: "#00c853" }}>
+              <p className="font-mono text-[10px] mb-3" style={{ color: "var(--green)" }}>
                 {label}
               </p>
               <h2
                 className="font-bold text-xl mb-3"
-                style={{ color: "#e6edf3", fontFamily: "Inter, sans-serif" }}
+                style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}
               >
                 {title}
               </h2>
               <p
                 className="text-sm leading-relaxed"
-                style={{ color: "#8b949e", fontFamily: "Inter, sans-serif" }}
+                style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}
               >
                 {body}
               </p>
@@ -105,8 +105,8 @@ export default function NowPage() {
           ))}
         </div>
 
-        <div className="mt-16 pt-8" style={{ borderTop: "1px solid #21262d" }}>
-          <p className="font-mono text-[11px]" style={{ color: "#484f58" }}>
+        <div className="mt-16 pt-8" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+          <p className="font-mono text-[11px]" style={{ color: "var(--text-muted)" }}>
             {"// inspired by nownownow.com — a page about what you're doing right now"}
           </p>
         </div>

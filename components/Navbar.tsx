@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { CommandPalette } from "./CommandPalette";
 import { MarketStatus } from "./MarketStatus";
+import { NavClock } from "./NavClock";
 
 const navLinks = [
   {
@@ -56,6 +57,15 @@ const navLinks = [
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+      </svg>
+    ),
+  },
+  {
+    label: "Uses",
+    href: "/uses",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
       </svg>
     ),
   },
@@ -123,8 +133,8 @@ export function Navbar() {
     <>
       <nav
         style={{
-          background: scrolled ? "rgba(13,17,23,0.92)" : "#0d1117",
-          borderBottom: "1px solid #30363d",
+          background: scrolled ? "var(--bg-scrolled)" : "var(--bg)",
+          borderBottom: "1px solid var(--border)",
           backdropFilter: scrolled ? "blur(12px)" : "none",
         }}
         className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center px-8 md:px-20 transition-all"
@@ -134,20 +144,21 @@ export function Navbar() {
           <a
             href="#hero"
             className="font-mono font-bold text-lg"
-            style={{ color: "#00c853" }}
+            style={{ color: "var(--green)" }}
           >
-            KA /
+            $KA
           </a>
           <MarketStatus />
+          <NavClock />
         </div>
 
-        {/* Section indicator */}
-        <div className="flex-1 flex justify-center">
+        {/* Section indicator — absolutely centered so it's always at page midpoint */}
+        <div className="absolute left-1/2 -translate-x-1/2 pointer-events-none">
           {displayed && displayed !== "hero" && (
             <span
               className="font-mono text-xs transition-opacity duration-150"
               style={{
-                color: "#8b949e",
+                color: "var(--text-dim)",
                 opacity: fading ? 0 : 1,
               }}
             >
@@ -156,14 +167,17 @@ export function Navbar() {
           )}
         </div>
 
+        {/* Spacer to push right-side controls to the right */}
+        <div className="flex-1" />
+
         {/* ⌘K pill */}
         <button
           onClick={() => setCmdOpen(true)}
           className="font-mono text-[11px] px-4 py-1.5 rounded-md mr-4 cursor-pointer transition-colors"
           style={{
-            color: "#00c853",
-            background: "rgba(0,200,83,0.1)",
-            border: "1px solid rgba(0,200,83,0.5)",
+            color: "var(--green)",
+            background: "var(--green-a8)",
+            border: "1px solid var(--green-a50)",
           }}
           aria-label="Open command palette"
         >
@@ -180,25 +194,41 @@ export function Navbar() {
           <span
             className="block h-[2px] w-5 transition-all duration-300 origin-center"
             style={{
-              background: "#e6edf3",
+              background: "var(--text-primary)",
               transform: menuOpen ? "translateY(7px) rotate(45deg)" : "none",
             }}
           />
           <span
             className="block h-[2px] w-5 transition-all duration-300"
             style={{
-              background: "#e6edf3",
+              background: "var(--text-primary)",
               opacity: menuOpen ? 0 : 1,
             }}
           />
           <span
             className="block h-[2px] w-5 transition-all duration-300 origin-center"
             style={{
-              background: "#e6edf3",
+              background: "var(--text-primary)",
               transform: menuOpen ? "translateY(-7px) rotate(-45deg)" : "none",
             }}
           />
         </button>
+
+        {/* GitHub link */}
+        <a
+          href="https://github.com/Kavya-Agar"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center w-8 h-8 ml-1 transition-colors"
+          style={{ color: "var(--text-dim)" }}
+          aria-label="GitHub profile"
+          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-dim)")}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+          </svg>
+        </a>
       </nav>
 
       {/* Slide-in panel */}
@@ -207,8 +237,8 @@ export function Navbar() {
         style={{
           right: 12,
           width: "min(260px, 85vw)",
-          background: "#161b22",
-          border: "1px solid #30363d",
+          background: "var(--bg-secondary)",
+          border: "1px solid var(--border)",
           borderTopWidth: 0,
           borderTopLeftRadius: 0,
           borderTopRightRadius: 0,
@@ -218,7 +248,7 @@ export function Navbar() {
           transform: menuOpen ? "translateY(0)" : "translateY(-110%)",
         }}
       >
-        <p className="font-mono text-[10px] mt-4 mb-3" style={{ color: "#484f58" }}>
+        <p className="font-mono text-[10px] mt-4 mb-3" style={{ color: "var(--text-muted)" }}>
           // navigate
         </p>
 
@@ -229,32 +259,32 @@ export function Navbar() {
               href={link.href}
               onClick={() => setMenuOpen(false)}
               className="flex items-center gap-3 px-4 py-2 rounded-md transition-colors group"
-              style={{ color: "#8b949e", fontFamily: "Inter, sans-serif" }}
+              style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#e6edf3";
+                e.currentTarget.style.color = "var(--text-primary)";
                 e.currentTarget.style.background = "rgba(255,255,255,0.04)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = "#8b949e";
+                e.currentTarget.style.color = "var(--text-dim)";
                 e.currentTarget.style.background = "transparent";
               }}
             >
-              <span style={{ color: "#00c853" }}>{link.icon}</span>
+              <span style={{ color: "var(--green)" }}>{link.icon}</span>
               <span className="text-sm font-medium">{link.label}</span>
             </a>
           ))}
         </nav>
 
-        <div style={{ borderTop: "1px solid #21262d" }} className="pt-4 mt-4">
+        <div style={{ borderTop: "1px solid var(--border-subtle)" }} className="pt-4 mt-4">
           <a
-            href="/resume.pdf"
+            href="/Kavya%20Agar%20Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-3 rounded-md text-sm font-semibold transition-opacity hover:opacity-80"
             style={{
-              color: "#00c853",
-              background: "rgba(0,200,83,0.1)",
-              border: "1px solid rgba(0,200,83,0.4)",
+              color: "var(--green)",
+              background: "var(--green-a8)",
+              border: "1px solid var(--green-a35)",
               fontFamily: "Inter, sans-serif",
             }}
           >

@@ -21,7 +21,6 @@ const NYSE_HOLIDAYS = new Set([
 function isNYSEOpen(): boolean {
   const now = new Date();
 
-  // Get current date/time components in ET
   const etParts = new Intl.DateTimeFormat("en-US", {
     timeZone: "America/New_York",
     year: "numeric", month: "2-digit", day: "2-digit",
@@ -36,13 +35,13 @@ function isNYSEOpen(): boolean {
   const minute = parseInt(get("minute"), 10);
 
   const dateStr = `${year}-${month}-${day}`;
-  const dayOfWeek = new Date(`${year}-${month}-${day}T12:00:00`).getDay(); // 0=Sun, 6=Sat
+  const dayOfWeek = new Date(`${year}-${month}-${day}T12:00:00`).getDay();
 
   if (dayOfWeek === 0 || dayOfWeek === 6) return false;
   if (NYSE_HOLIDAYS.has(dateStr)) return false;
 
   const minutesIntoDay = hour * 60 + minute;
-  return minutesIntoDay >= 570 && minutesIntoDay < 960; // 9:30–16:00
+  return minutesIntoDay >= 570 && minutesIntoDay < 960;
 }
 
 export function MarketStatus() {
@@ -61,11 +60,11 @@ export function MarketStatus() {
         style={{
           width: 6,
           height: 6,
-          background: open ? "#00c853" : "#ff3d57",
-          boxShadow: open ? "0 0 6px #00c853" : "0 0 6px #ff3d57",
+          background: open ? "var(--green)" : "var(--red)",
+          boxShadow: open ? "0 0 6px var(--green)" : "0 0 6px var(--red)",
         }}
       />
-      <span className="font-mono text-[10px]" style={{ color: "#484f58" }}>
+      <span className="font-mono text-[10px]" style={{ color: "var(--text-muted)" }}>
         NYSE {open ? "OPEN" : "CLOSED"}
       </span>
     </div>

@@ -13,11 +13,12 @@ import { IconType } from "react-icons";
 
 type Skill = { name: string; level: number; Icon: IconType };
 
+// Category accent colors are intentionally fixed (semantic, not theme chrome)
 const skillColumns: { title: string; borderColor: string; barColor: string; skills: Skill[] }[] = [
   {
     title: "LANGUAGES",
-    borderColor: "#00c853",
-    barColor: "#00c853",
+    borderColor: "var(--green)",
+    barColor: "var(--green)",
     skills: [
       { name: "Python",          level: 92, Icon: SiPython },
       { name: "Java",            level: 88, Icon: SiOpenjdk },
@@ -40,8 +41,8 @@ const skillColumns: { title: string; borderColor: string; barColor: string; skil
   },
   {
     title: "CLOUD & DEVOPS",
-    borderColor: "#ffd700",
-    barColor: "#ffd700",
+    borderColor: "var(--yellow)",
+    barColor: "var(--yellow)",
     skills: [
       { name: "AWS",             level: 85, Icon: FaAws },
       { name: "Docker",          level: 80, Icon: SiDocker },
@@ -74,19 +75,19 @@ export function Skills() {
     <section
       id="skills"
       className="py-32 px-20"
-      style={{ background: "#161b22", borderTop: "1px solid #30363d" }}
+      style={{ background: "var(--bg-secondary)", borderTop: "1px solid var(--border)" }}
     >
       <div className="max-w-5xl">
-        <p className="font-mono text-[11px] mb-2" style={{ color: "#00c853" }}>
+        <p className="font-mono text-[11px] mb-2" style={{ color: "var(--green)" }}>
           [ SKILLS &amp; TECHNOLOGIES ]
         </p>
         <h2
           className="font-bold mb-2"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 48, color: "#e6edf3" }}
+          style={{ fontFamily: "Inter, sans-serif", fontSize: 48, color: "var(--text-primary)" }}
         >
           Tech Stack
         </h2>
-        <p className="font-mono text-sm mb-12" style={{ color: "#8b949e" }}>
+        <p className="font-mono text-sm mb-12" style={{ color: "var(--text-dim)" }}>
           Proficiency measured in market confidence
         </p>
 
@@ -98,13 +99,13 @@ export function Skills() {
                 {skills.map(({ name, level, Icon }) => (
                   <div key={name}>
                     <div className="flex justify-between items-center mb-1.5">
-                      <span className="font-mono text-[11px] flex items-center gap-1.5" style={{ color: "#e6edf3" }}>
+                      <span className="font-mono text-[11px] flex items-center gap-1.5" style={{ color: "var(--text-primary)" }}>
                         <Icon style={{ color: borderColor, opacity: 0.8, flexShrink: 0 }} size={12} />
                         {name}
                       </span>
-                      <span className="font-mono text-[10px]" style={{ color: "#8b949e" }}>{level}%</span>
+                      <span className="font-mono text-[10px]" style={{ color: "var(--text-dim)" }}>{level}%</span>
                     </div>
-                    <div className="h-1 rounded-full overflow-hidden" style={{ background: "rgba(48,54,61,0.8)" }}>
+                    <div className="h-1 rounded-full overflow-hidden" style={{ background: "var(--bg-subtle)" }}>
                       <div className="h-full rounded-full" style={{ width: `${level}%`, background: barColor, opacity: 0.8 }} />
                     </div>
                   </div>
@@ -116,11 +117,11 @@ export function Skills() {
 
         {/* Additional */}
         <div>
-          <p className="font-mono text-[11px] mb-3" style={{ color: "#8b949e" }}>Also familiar with:</p>
+          <p className="font-mono text-[11px] mb-3" style={{ color: "var(--text-dim)" }}>Also familiar with:</p>
           <div className="flex flex-wrap gap-2">
             {additional.map(({ name, Icon }) => (
               <span key={name} className="font-mono text-[11px] px-2.5 py-1 rounded inline-flex items-center gap-1.5"
-                style={{ color: "#8b949e", background: "rgba(48,54,61,0.6)", border: "1px solid #30363d" }}>
+                style={{ color: "var(--text-dim)", background: "var(--bg-subtle)", border: "1px solid var(--border)" }}>
                 <Icon size={11} />
                 {name}
               </span>

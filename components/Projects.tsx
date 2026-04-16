@@ -21,11 +21,11 @@ const projects = [
     href: "https://github.com/Kavya-Agar/fin-ance",
   },
   {
-    name: "aggiering",
-    desc: "An unofficial webring connecting Texas A&M students and alumni to strengthen the Aggie network. Discover and link Aggie-built sites.",
-    stack: ["Web", "JavaScript"],
+    name: "NLP Projects",
+    desc: "Natural language processing research and experiments — text classification, named entity recognition, and transformer fine-tuning.",
+    stack: ["Python", "PyTorch", "HuggingFace", "NLP"],
     status: "OPEN SOURCE",
-    href: "https://github.com/Kavya-Agar/aggiering",
+    href: "https://github.com/Kavya-Agar/NLP",
   },
   {
     name: "Portfolio V3",
@@ -43,6 +43,7 @@ const projects = [
   },
 ];
 
+// Status badge colors are semantic data — intentionally fixed across themes
 const statusStyles: Record<string, { color: string; bg: string; border: string }> = {
   LIVE:          { color: "#00c853", bg: "rgba(0,200,83,0.08)",    border: "rgba(0,200,83,0.25)" },
   "OPEN SOURCE": { color: "#58a6ff", bg: "rgba(88,166,255,0.08)",  border: "rgba(88,166,255,0.25)" },
@@ -55,19 +56,19 @@ export function Projects() {
     <section
       id="projects"
       className="py-32 px-20"
-      style={{ background: "#161b22", borderTop: "1px solid #30363d" }}
+      style={{ background: "var(--bg-secondary)", borderTop: "1px solid var(--border)" }}
     >
       <div className="max-w-6xl">
-        <p className="font-mono text-[11px] mb-2" style={{ color: "#00c853" }}>
+        <p className="font-mono text-[11px] mb-2" style={{ color: "var(--green)" }}>
           [ PROJECTS ]
         </p>
         <h2
           className="font-bold mb-2"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 48, color: "#e6edf3" }}
+          style={{ fontFamily: "Inter, sans-serif", fontSize: 48, color: "var(--text-primary)" }}
         >
           The Portfolio
         </h2>
-        <p className="font-mono text-sm mb-12" style={{ color: "#8b949e" }}>
+        <p className="font-mono text-sm mb-12" style={{ color: "var(--text-dim)" }}>
           {projects.length} projects shipped · 3 in production · ∞ ideas in the pipeline
         </p>
 
@@ -85,7 +86,7 @@ export function Projects() {
                 <div className="flex items-start justify-between">
                   <h3
                     className="font-semibold text-base leading-tight"
-                    style={{ color: "#e6edf3", fontFamily: "Inter, sans-serif" }}
+                    style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}
                   >
                     {proj.name}
                   </h3>
@@ -98,7 +99,7 @@ export function Projects() {
                 </div>
 
                 <p className="text-xs leading-relaxed flex-1"
-                  style={{ color: "#8b949e", fontFamily: "Inter, sans-serif" }}>
+                  style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
                   {proj.desc}
                 </p>
 
@@ -106,12 +107,12 @@ export function Projects() {
                   <div className="flex flex-wrap gap-1.5">
                     {proj.stack.map((s) => (
                       <span key={s} className="font-mono text-[9px] px-1.5 py-0.5 rounded"
-                        style={{ color: "#8b949e", background: "rgba(48,54,61,0.8)", border: "1px solid #30363d" }}>
+                        style={{ color: "var(--text-dim)", background: "var(--bg-subtle)", border: "1px solid var(--border)" }}>
                         {s}
                       </span>
                     ))}
                   </div>
-                  <span className="font-mono text-[10px] shrink-0 ml-3" style={{ color: "#484f58" }}>↗</span>
+                  <span className="font-mono text-[10px] shrink-0 ml-3" style={{ color: "var(--text-muted)" }}>↗</span>
                 </div>
               </a>
             );

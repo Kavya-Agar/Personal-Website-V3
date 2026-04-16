@@ -3,17 +3,37 @@
 @import "tailwindcss";
 
 :root {
+  /* Backgrounds */
   --bg: #0d1117;
   --bg-secondary: #161b22;
+  --bg-subtle: #21262d;
+  --bg-scrolled: rgba(13,17,23,0.92);
+
+  /* Borders */
   --border: #30363d;
-  --green: #00c853;
-  --green-dim: rgba(0, 200, 83, 0.12);
-  --green-border: rgba(0, 200, 83, 0.35);
+  --border-subtle: #21262d;
+
+  /* Text */
   --text-primary: #e6edf3;
   --text-dim: #8b949e;
+  --text-muted: #484f58;
+
+  /* Accent */
+  --green: #00c853;
+  --green-a8:  rgba(0, 200, 83, 0.08);
+  --green-a20: rgba(0, 200, 83, 0.20);
+  --green-a35: rgba(0, 200, 83, 0.35);
+  --green-a50: rgba(0, 200, 83, 0.50);
+  --green-glow: rgba(0, 200, 83, 0.60);
+  /* legacy aliases */
+  --green-dim: rgba(0, 200, 83, 0.12);
+  --green-border: rgba(0, 200, 83, 0.35);
+
+  /* Other */
   --yellow: #ffd700;
   --red: #ff3d57;
   --coffee: #b87333;
+  --blue: #58a6ff;
 }
 
 * { box-sizing: border-box; }
@@ -57,6 +77,8 @@ body {
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 .card:hover {
-  border-color: rgba(0, 200, 83, 0.4);
+  border-color: var(--green-a35);
   transform: translateY(-2px);
 }
+
+.chart-line { stroke: var(--green); }

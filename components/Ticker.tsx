@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 
 const staticItems = [
-  { label: "SKILLS",     value: "20+", change: "(+∞%)",      changeColor: "#00c853", labelColor: "#ffd700" },
-  { label: "PROJECTS",   value: "8",   change: "(+3 YTD)",   changeColor: "#00c853", labelColor: "#ffd700" },
-  { label: "AWARDS",     value: "5",   change: "(+2 YTD)",   changeColor: "#00c853", labelColor: "#ffd700" },
-  { label: "BUGS",       value: "0",   change: "(-100%)",    changeColor: "#ff3d57", labelColor: "#ffd700" },
-  { label: "COFFEE/DAY", value: "∞",   change: "(+999%)",    changeColor: "#00c853", labelColor: "#b87333" },
-  { label: "BEANS",      value: "∞",   change: "(roasting)", changeColor: "#00c853", labelColor: "#b87333" },
-  { label: "COLD BREW",  value: "∞",   change: "(always on)",changeColor: "#00c853", labelColor: "#b87333" },
+  { label: "SKILLS",     value: "20+", change: "(+∞%)",      changeColor: "var(--green)", labelColor: "var(--yellow)" },
+  { label: "PROJECTS",   value: "8",   change: "(+3 YTD)",   changeColor: "var(--green)", labelColor: "var(--yellow)" },
+  { label: "AWARDS",     value: "5",   change: "(+2 YTD)",   changeColor: "var(--green)", labelColor: "var(--yellow)" },
+  { label: "BUGS",       value: "0",   change: "(-100%)",    changeColor: "var(--red)",   labelColor: "var(--yellow)" },
+  { label: "COFFEE/DAY", value: "∞",   change: "(+999%)",    changeColor: "var(--green)", labelColor: "var(--coffee)" },
+  { label: "BEANS",      value: "∞",   change: "(roasting)", changeColor: "var(--green)", labelColor: "var(--coffee)" },
+  { label: "COLD BREW",  value: "∞",   change: "(always on)",changeColor: "var(--green)", labelColor: "var(--coffee)" },
 ];
 
 const SYMBOL_LABELS: Record<string, string> = {
@@ -33,13 +33,13 @@ function fmtChange(q: MarketQuote): string {
 
 type TickerItem = { label: string; value: string; change: string; changeColor: string; labelColor: string };
 
-function TickerItem({ label, value, change, changeColor, labelColor }: TickerItem) {
+function TickerItemEl({ label, value, change, changeColor, labelColor }: TickerItem) {
   return (
     <span className="inline-flex items-center gap-1.5 mr-8 font-mono text-[10px] whitespace-nowrap">
       <span style={{ color: labelColor }}>{label}</span>
-      <span style={{ color: "#e6edf3" }} className="font-bold">{value}</span>
+      <span style={{ color: "var(--text-primary)" }} className="font-bold">{value}</span>
       <span style={{ color: changeColor }}>{change}</span>
-      <span style={{ color: "#484f58" }} className="ml-4">·</span>
+      <span style={{ color: "var(--text-muted)" }} className="ml-4">·</span>
     </span>
   );
 }
@@ -57,8 +57,8 @@ export function Ticker() {
           label:       SYMBOL_LABELS[q.symbol] ?? q.symbol,
           value:       fmt(q.price, q.symbol),
           change:      fmtChange(q),
-          changeColor: q.changePct >= 0 ? "#00c853" : "#ff3d57",
-          labelColor:  "#ffd700",
+          changeColor: q.changePct >= 0 ? "var(--green)" : "var(--red)",
+          labelColor:  "var(--yellow)",
         }));
         setMarketItems(items);
       } catch {
@@ -76,11 +76,11 @@ export function Ticker() {
   return (
     <div
       className="fixed top-16 left-0 right-0 z-40 overflow-hidden"
-      style={{ background: "#161b22", borderBottom: "1px solid #30363d", height: 36 }}
+      style={{ background: "var(--bg-secondary)", borderBottom: "1px solid var(--border)", height: 36 }}
     >
       <div className="ticker-track flex items-center h-full w-max">
         {[...allItems, ...allItems].map((item, i) => (
-          <TickerItem key={i} {...item} />
+          <TickerItemEl key={i} {...item} />
         ))}
       </div>
     </div>

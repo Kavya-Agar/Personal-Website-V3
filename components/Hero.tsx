@@ -29,7 +29,7 @@ export function Hero() {
     <section
       id="hero"
       className="relative min-h-screen flex flex-col"
-      style={{ background: "#0d1117" }}
+      style={{ background: "var(--bg)" }}
     >
       {/* Chart background */}
       <div
@@ -40,7 +40,7 @@ export function Hero() {
           <div
             key={y}
             className="absolute left-0 right-0"
-            style={{ top: y, height: 1, background: "rgba(48,54,61,0.5)" }}
+            style={{ top: y, height: 1, background: "var(--border)", opacity: 0.5 }}
           />
         ))}
 
@@ -51,19 +51,17 @@ export function Hero() {
         >
           <defs>
             <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%"   stopColor="#00c853" stopOpacity="0.15" />
-              <stop offset="100%" stopColor="#00c853" stopOpacity="0"    />
+              <stop offset="0%"   style={{ stopColor: "var(--green)", stopOpacity: 0.15 }} />
+              <stop offset="100%" style={{ stopColor: "var(--green)", stopOpacity: 0 }} />
             </linearGradient>
             <clipPath id="chartClip">
               <rect ref={clipRectRef} x="0" y="0" width="0" height="500" />
             </clipPath>
           </defs>
 
-          {/* Fill and line share the same clip — revealed in perfect sync */}
-          {/* translate(0,-40): shifts start from y=440 → y=400 (bottom grid line), end from y=40 → y=0 (top) */}
           <g clipPath="url(#chartClip)" transform="translate(0, -40)">
             <path d={`${d} L 900 540 L 0 540 Z`} fill="url(#chartFill)" />
-            <path d={d} fill="none" stroke="#00c853" strokeWidth="2" />
+            <path d={d} fill="none" className="chart-line" strokeWidth="2" />
           </g>
         </svg>
       </div>
@@ -73,42 +71,42 @@ export function Hero() {
         <div
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded mb-8 w-fit"
           style={{
-            background: "rgba(0,200,83,0.08)",
-            border: "1px solid rgba(0,200,83,0.35)",
+            background: "var(--green-a8)",
+            border: "1px solid var(--green-a35)",
           }}
         >
           <span
             className="inline-block rounded-full"
-            style={{ width: 7, height: 7, background: "#00c853", boxShadow: "0 0 6px #00c853" }}
+            style={{ width: 7, height: 7, background: "var(--green)", boxShadow: "0 0 6px var(--green)" }}
           />
-          <span className="font-mono text-[10px]" style={{ color: "#00c853" }}>
+          <span className="font-mono text-[10px]" style={{ color: "var(--green)" }}>
             AVAILABLE FOR INTERNSHIPS · SUMMER 2026
           </span>
         </div>
 
         <h1
           className="font-bold leading-none mb-4"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 88, color: "#e6edf3", letterSpacing: "-2px" }}
+          style={{ fontFamily: "Inter, sans-serif", fontSize: 88, color: "var(--text-primary)", letterSpacing: "-2px" }}
         >
           Kavya Agar
         </h1>
 
         <p
           className="font-semibold mb-6"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 28, color: "#8b949e" }}
+          style={{ fontFamily: "Inter, sans-serif", fontSize: 28, color: "var(--text-dim)" }}
         >
           Computer Science @ Texas A&amp;M University
         </p>
 
         <p
           className="font-mono text-sm mb-10 flex items-center gap-1"
-          style={{ color: "#00c853" }}
+          style={{ color: "var(--green)" }}
         >
           {"> Building systems · Fueled by espresso · Shipping clean code"}
           <span
             ref={cursorRef}
             className="inline-block ml-1"
-            style={{ width: 10, height: 18, background: "#00c853", verticalAlign: "middle" }}
+            style={{ width: 10, height: 18, background: "var(--green)", verticalAlign: "middle" }}
           />
         </p>
 
@@ -117,8 +115,8 @@ export function Hero() {
             href="#projects"
             className="inline-flex items-center justify-center font-semibold text-sm transition-opacity hover:opacity-90"
             style={{
-              background: "#00c853",
-              color: "#0d1117",
+              background: "var(--green)",
+              color: "var(--bg)",
               fontFamily: "Inter, sans-serif",
               padding: "14px 32px",
               borderRadius: 6,
@@ -130,14 +128,14 @@ export function Hero() {
             href="#contact"
             className="inline-flex items-center justify-center font-semibold text-sm transition-colors"
             style={{
-              color: "#e6edf3",
+              color: "var(--text-primary)",
               fontFamily: "Inter, sans-serif",
               padding: "14px 32px",
-              border: "1px solid #30363d",
+              border: "1px solid var(--border)",
               borderRadius: 6,
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(0,200,83,0.4)")}
-            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "#30363d")}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--green-a35)")}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
           >
             Contact Me
           </a>
@@ -147,7 +145,7 @@ export function Hero() {
 
       <p
         className="absolute bottom-8 right-20 font-mono text-[10px]"
-        style={{ color: "#8b949e" }}
+        style={{ color: "var(--text-dim)" }}
       >
         scroll to explore ↓
       </p>
