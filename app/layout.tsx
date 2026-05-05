@@ -4,7 +4,7 @@ import { ThemeGallery } from "@/components/ThemeGallery";
 import { themes } from "@/lib/themes";
 
 export const metadata: Metadata = {
-  title: "Kavya Agar — CS @ Texas A&M",
+  title: "Kavya Agar — Software Engineer",
   description: "Building systems · Fueled by espresso · Shipping clean code",
 };
 
