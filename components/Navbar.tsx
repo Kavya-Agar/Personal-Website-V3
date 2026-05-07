@@ -277,7 +277,7 @@ export function Navbar() {
 
         <div style={{ borderTop: "1px solid var(--border-subtle)" }} className="pt-4 mt-4">
           <a
-            href="/Kavya%20Agar%20Resume.pdf"
+            href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-3 rounded-md text-sm font-semibold transition-opacity hover:opacity-80"

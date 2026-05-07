@@ -44,11 +44,11 @@ export function ResumeModal({ onClose }: { onClose: () => void }) {
             <span className="w-3 h-3 rounded-full" style={{ background: "#27c93f" }} />
           </div>
           <span className="font-mono text-[11px]" style={{ color: "var(--text-dim)" }}>
-            Kavya_Agar_Resume.pdf
+            resume.pdf
           </span>
           <a
-            href="/Resume.pdf"
-            download="Resume.pdf"
+            href="/resume.pdf"
+            download="resume.pdf"
             className="font-mono text-[10px] px-2 py-1 rounded transition-colors hover:opacity-80"
             style={{
               color: "var(--green)",
@@ -63,7 +63,7 @@ export function ResumeModal({ onClose }: { onClose: () => void }) {
 
         {/* PDF viewer */}
         <iframe
-          src="/Resume.pdf#toolbar=0"
+          src="/resume.pdf#toolbar=0"
           className="flex-1 w-full"
           style={{ border: "none", background: "var(--bg-subtle)" }}
           title="Kavya Agar Resume"
