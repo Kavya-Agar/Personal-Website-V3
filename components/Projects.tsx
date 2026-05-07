@@ -21,11 +21,11 @@ const projects = [
     href: "https://github.com/Kavya-Agar/fin-ance",
   },
   {
-    name: "NLP Projects",
-    desc: "Natural language processing research and experiments — text classification, named entity recognition, and transformer fine-tuning.",
-    stack: ["Python", "PyTorch", "HuggingFace", "NLP"],
-    status: "OPEN SOURCE",
-    href: "https://github.com/Kavya-Agar/NLP",
+    name: "Quant-Options-Engine",
+    desc: "From-scratch options pricing engine implementing Black-Scholes Greeks, 50K-path Monte Carlo GBM simulation with antithetic variance reduction, and a Brent's method IV solver across live options chains via yfinance/FRED. FastAPI backend serving a React dashboard with real-time Greeks sliders and a theoretical vs. market mispricing chart.",
+    stack: ["Python", "FastAPI", "React", "NumPy", "SciPy", "Recharts"],
+    status: "LIVE",
+    href: "https://github.com/Kavya-Agar/Quant-Options-Engine",
   },
   {
     name: "Portfolio V3",
