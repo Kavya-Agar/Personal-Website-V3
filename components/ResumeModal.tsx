@@ -47,8 +47,8 @@ export function ResumeModal({ onClose }: { onClose: () => void }) {
             Kavya_Agar_Resume.pdf
           </span>
           <a
-            href="/Kavya%20Agar%20Resume.pdf"
-            download="Kavya_Agar_Resume.pdf"
+            href="/Resume.pdf"
+            download="Resume.pdf"
             className="font-mono text-[10px] px-2 py-1 rounded transition-colors hover:opacity-80"
             style={{
               color: "var(--green)",
@@ -63,7 +63,7 @@ export function ResumeModal({ onClose }: { onClose: () => void }) {
 
         {/* PDF viewer */}
         <iframe
-          src="/Kavya%20Agar%20Resume.pdf#toolbar=0"
+          src="/Resume.pdf#toolbar=0"
           className="flex-1 w-full"
           style={{ border: "none", background: "var(--bg-subtle)" }}
           title="Kavya Agar Resume"

@@ -119,7 +119,7 @@ export function About() {
                     </span>
                   </a>
                   <a
-                    href="/Kavya%20Agar%20Resume.pdf"
+                    href="/Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-2 py-0.5 rounded font-mono text-[10px] transition-colors shrink-0"
