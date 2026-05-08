@@ -6,6 +6,7 @@ const staticItems = [
   { label: "SKILLS",     value: "20+", change: "(+∞%)",      changeColor: "var(--green)", labelColor: "var(--yellow)" },
   { label: "PROJECTS",   value: "8",   change: "(+3 YTD)",   changeColor: "var(--green)", labelColor: "var(--yellow)" },
   { label: "AWARDS",     value: "5",   change: "(+2 YTD)",   changeColor: "var(--green)", labelColor: "var(--yellow)" },
+  { label: "USERS",      value: "150+", change: "(↑3x)",      changeColor: "var(--green)", labelColor: "var(--yellow)" },
   { label: "BUGS",       value: "0",   change: "(-100%)",    changeColor: "var(--red)",   labelColor: "var(--yellow)" },
   { label: "COFFEE/DAY", value: "∞",   change: "(+999%)",    changeColor: "var(--green)", labelColor: "var(--coffee)" },
   { label: "BEANS",      value: "∞",   change: "(roasting)", changeColor: "var(--green)", labelColor: "var(--coffee)" },
