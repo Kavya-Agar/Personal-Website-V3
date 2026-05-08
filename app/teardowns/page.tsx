@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { caseStudies } from "@/lib/teardowns";
+import { teardowns } from "@/lib/teardowns";
 
 export const metadata = {
   title: "Teardowns — Kavya Agar",
@@ -72,9 +72,10 @@ export default function TeardownsPage() {
 
         {/* Grid of teardowns */}
         <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-2">
-          {caseStudies.map((study) => (
-            <div
+          {teardowns.map((study) => (
+            <Link
               key={study.id}
+              href={`/teardowns/${study.id}`}
               className="card p-8 flex flex-col"
               style={{ cursor: "pointer", transition: "all 0.3s ease" }}
             >
@@ -140,30 +141,23 @@ export default function TeardownsPage() {
                   {study.critique}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
-        {/* Template section for new teardowns */}
-        <div className="mt-16 pt-8" style={{ borderTop: "1px solid var(--border-subtle)" }}>
-          <p className="font-mono text-[10px] mb-4" style={{ color: "var(--green)" }}>
-            // adding new teardowns
-          </p>
-          <p className="text-sm" style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
-            To add a new teardown, edit <code style={{ color: "var(--yellow)" }}>lib/teardowns.ts</code> and add an object to the <code style={{ color: "var(--yellow)" }}>caseStudies</code> array:
-          </p>
-          <pre className="mt-3 p-4 rounded text-xs overflow-auto" style={{ background: "var(--bg-secondary)", color: "var(--text-dim)" }}>
-{`{
-  id: "app-slug",
-  appName: "App Name",
-  thesis: "How [App] Did X",
-  category: "Category",
-  description: "2-3 sentence insight...",
-  keyInsights: ["Insight 1", "Insight 2", "Insight 3"],
-  critique: "One balanced take...",
-}`}
-          </pre>
-        </div>
+        {/*
+          Template for adding new teardowns (see lib/teardowns.ts):
+          {
+            id: "your-slug",
+            appName: "Company/App Name",
+            thesis: "How [Company] Did X",
+            category: "Category Name",
+            description: "2-3 sentence summary for the list view",
+            keyInsights: ["Insight 1", "Insight 2", "Insight 3"],
+            critique: "One balanced critique",
+            content: `# Full detailed content goes here...`,
+          }
+        */}
       </main>
     </div>
   );
