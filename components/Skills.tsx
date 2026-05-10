@@ -74,10 +74,10 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="py-32 px-20"
+      className="py-20 md:py-32 px-4 sm:px-8 md:px-20"
       style={{ background: "var(--bg-secondary)", borderTop: "1px solid var(--border)" }}
     >
-      <div className="max-w-5xl">
+      <div className="max-w-5xl mx-auto">
         <p className="font-mono text-[11px] mb-2" style={{ color: "var(--green)" }}>
           [ SKILLS &amp; TECHNOLOGIES ]
         </p>
@@ -93,7 +93,7 @@ export function Skills() {
 
         <div className="grid gap-6 md:grid-cols-3 mb-8">
           {skillColumns.map(({ title, borderColor, barColor, skills }) => (
-            <div key={title} className="card p-5" style={{ borderColor: `${borderColor}40` }}>
+            <div key={title} className="card p-5 transition-all duration-200 hover:shadow-lg" style={{ borderColor: `${borderColor}40`, boxShadow: "var(--shadow-1)" }}>
               <p className="font-mono text-[11px] mb-5" style={{ color: borderColor }}>{title}</p>
               <div className="space-y-4">
                 {skills.map(({ name, level, Icon }) => (
@@ -116,13 +116,13 @@ export function Skills() {
         </div>
 
         {/* Additional */}
-        <div>
-          <p className="font-mono text-[11px] mb-3" style={{ color: "var(--text-dim)" }}>Also familiar with:</p>
+        <div className="card p-6" style={{ boxShadow: "var(--shadow-1)" }}>
+          <p className="font-mono text-[11px] mb-4" style={{ color: "var(--green)" }}>[ ALSO FAMILIAR WITH ]</p>
           <div className="flex flex-wrap gap-2">
             {additional.map(({ name, Icon }) => (
-              <span key={name} className="font-mono text-[11px] px-2.5 py-1 rounded inline-flex items-center gap-1.5"
-                style={{ color: "var(--text-dim)", background: "var(--bg-subtle)", border: "1px solid var(--border)" }}>
-                <Icon size={11} />
+              <span key={name} className="font-mono text-[10px] px-2.5 py-1.5 rounded-full inline-flex items-center gap-1.5 transition-all"
+                style={{ color: "var(--green)", background: "var(--green-a8)", border: "1px solid var(--green-a20)" }}>
+                <Icon size={12} style={{ opacity: 0.9 }} />
                 {name}
               </span>
             ))}

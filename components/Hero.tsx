@@ -33,7 +33,7 @@ export function Hero() {
     >
       {/* Chart background */}
       <div
-        className="absolute right-0 top-[200px] pointer-events-none overflow-hidden"
+        className="absolute right-0 top-[200px] pointer-events-none overflow-hidden hidden sm:block"
         style={{ width: "62.5%", height: 500 }}
       >
         {[0, 100, 200, 300, 400].map((y) => (
@@ -67,9 +67,9 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center px-20 pt-[100px]">
+      <div className="relative z-10 flex-1 flex flex-col justify-center px-4 sm:px-8 md:px-20 pt-[100px]">
         <div
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded mb-8 w-fit"
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded mb-8 w-fit animate-pulse-subtle"
           style={{
             background: "var(--green-a8)",
             border: "1px solid var(--green-a35)",
@@ -80,29 +80,29 @@ export function Hero() {
             style={{ width: 7, height: 7, background: "var(--green)", boxShadow: "0 0 6px var(--green)" }}
           />
           <span className="font-mono text-[10px]" style={{ color: "var(--green)" }}>
-            AVAILABLE FOR INTERNSHIPS · SUMMER 2026
+            OPEN TO PM INTERNSHIPS · SUMMER 2026
           </span>
         </div>
 
         <h1
-          className="font-bold leading-none mb-4"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 88, color: "var(--text-primary)", letterSpacing: "-2px" }}
+          className="font-bold leading-none mb-4 text-6xl sm:text-7xl md:text-[88px]"
+          style={{ fontFamily: "Inter, sans-serif", color: "var(--text-primary)", letterSpacing: "-2px" }}
         >
           Kavya Agar
         </h1>
 
         <p
-          className="font-semibold mb-6"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 28, color: "var(--text-dim)" }}
+          className="font-semibold mb-6 text-xl sm:text-2xl md:text-[28px]"
+          style={{ fontFamily: "Inter, sans-serif", color: "var(--text-dim)" }}
         >
-          Computer Science @ Texas A&amp;M University
+          CS @ Texas A&amp;M · Aspiring Product Manager
         </p>
 
         <p
-          className="font-mono text-sm mb-10 flex items-center gap-1"
+          className="font-mono text-xs sm:text-sm mb-10 flex items-center gap-1"
           style={{ color: "var(--green)" }}
         >
-          {"> Building systems · Fueled by espresso · Shipping clean code"}
+          {"> Building products · Bridging eng and strategy"}
           <span
             ref={cursorRef}
             className="inline-block ml-1"
@@ -110,32 +110,36 @@ export function Hero() {
           />
         </p>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
           <a
             href="#projects"
-            className="inline-flex items-center justify-center font-semibold text-sm transition-opacity hover:opacity-90"
+            className="w-full sm:w-auto inline-flex items-center justify-center font-semibold text-sm sm:text-base transition-all duration-200 cursor-pointer
+              hover:shadow-xl hover:shadow-green/20 hover:scale-[1.02] active:scale-95
+              focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green"
             style={{
               background: "var(--green)",
               color: "var(--bg)",
               fontFamily: "Inter, sans-serif",
-              padding: "14px 32px",
+              padding: "16px 32px",
               borderRadius: 6,
-            }}
+              "--ring-offset-color": "var(--bg)",
+            } as React.CSSProperties}
           >
-            View Projects →
+            View Work →
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center font-semibold text-sm transition-colors"
+            className="w-full sm:w-auto inline-flex items-center justify-center font-semibold text-sm sm:text-base transition-all duration-200 cursor-pointer
+              hover:shadow-md hover:shadow-green/10 hover:scale-[1.01] active:scale-95
+              focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green"
             style={{
               color: "var(--text-primary)",
               fontFamily: "Inter, sans-serif",
-              padding: "14px 32px",
+              padding: "16px 32px",
               border: "1px solid var(--border)",
               borderRadius: 6,
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--green-a35)")}
-            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+              "--ring-offset-color": "var(--bg)",
+            } as React.CSSProperties}
           >
             Contact Me
           </a>
@@ -144,7 +148,7 @@ export function Hero() {
       </div>
 
       <p
-        className="absolute bottom-8 right-20 font-mono text-[10px]"
+        className="absolute bottom-8 right-4 sm:right-20 font-mono text-[10px]"
         style={{ color: "var(--text-dim)" }}
       >
         scroll to explore ↓

@@ -4,21 +4,21 @@ export function About() {
   const marketData = [
     { label: "Graduation", value: "May 2027",                 change: "On Track",      positive: true },
     { label: "University", value: "Texas A&M",                change: "Top 20 CS",     positive: true },
-    { label: "Focus",      value: "SWE · ML · Cloud",         change: "Diversified",   positive: true },
+    { label: "Focus",      value: "Product · Strategy",       change: "PM Pivot",      positive: true },
   ];
 
   const coursework = [
-    "Data Structures & Algorithms", "Operating Systems", "Computer Systems",
-    "Software Engineering", "Computer Graphics", "Database Management", "Statistics",
+    "Statistics", "Database Management", "Software Engineering",
+    "Business Strategy", "Data Structures & Algorithms", "Computer Systems", "Operating Systems",
   ];
 
   return (
     <section
       id="about"
-      className="py-32 px-20"
+      className="py-20 md:py-32 px-4 sm:px-8 md:px-20"
       style={{ background: "var(--bg)", borderTop: "1px solid var(--border)" }}
     >
-      <div className="max-w-6xl">
+      <div className="max-w-6xl mx-auto">
         <p className="font-mono text-[11px] mb-2" style={{ color: "var(--coffee)" }}>
           [ ABOUT ME ]
         </p>
@@ -31,7 +31,7 @@ export function About() {
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Terminal panel */}
-          <div className="card overflow-hidden">
+          <div className="card overflow-hidden transition-all duration-200 hover:shadow-lg" style={{ boxShadow: "var(--shadow-1)" }}>
             <div
               className="flex items-center gap-2 px-4 py-3"
               style={{ background: "var(--bg-secondary)", borderBottom: "1px solid var(--border)" }}
@@ -60,13 +60,13 @@ export function About() {
                     Kavya Agar
                   </p>
                   <p className="font-mono text-[11px] mb-3" style={{ color: "var(--text-dim)" }}>
-                    CS Student · Software Engineer · ML Enthusiast
+                    CS Student · Aspiring PM · Builder
                   </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {["Python", "Java", "React", "Machine Learning", "AWS"].map((tag) => (
+                  <div className="flex flex-wrap gap-2">
+                    {["Product Strategy", "User Research", "Data Analysis", "Roadmapping", "Cross-functional"].map((tag) => (
                       <span
                         key={tag}
-                        className="font-mono text-[10px] px-2 py-0.5 rounded"
+                        className="font-mono text-[9px] px-2.5 py-1 rounded-full transition-colors"
                         style={{ color: "var(--green)", background: "var(--green-a8)", border: "1px solid var(--green-a20)" }}
                       >
                         {tag}
@@ -77,12 +77,13 @@ export function About() {
               </div>
 
               {/* Bio */}
-              <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--text-dim)" }}>
+              <p className="text-sm leading-relaxed mb-6 max-w-lg" style={{ color: "var(--text-dim)" }}>
                 CS student at{" "}
-                <span style={{ color: "var(--text-primary)" }}>Texas A&amp;M University</span> working at
-                the intersection of software engineering, machine learning, and cloud infrastructure.
-                I care about building reliable, production-ready systems — from fine-tuning LLMs to
-                shipping full-stack applications with real users.
+                <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>Texas A&amp;M University</span> pivoting
+                into product management. I spent years learning how software is built — now I care more
+                about <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>what to build and why</span>. I
+                bring an engineering foundation to product decisions: understanding tradeoffs, speaking to
+                devs, and grounding strategy in data.
               </p>
 
               {/* Contact info */}
@@ -100,18 +101,10 @@ export function About() {
                     href="https://linkedin.com/in/kavya-agar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex gap-3 items-center group"
-                    onMouseEnter={(e) => {
-                      const val = e.currentTarget.querySelector<HTMLElement>(".link-val");
-                      if (val) val.style.color = "var(--text-primary)";
-                    }}
-                    onMouseLeave={(e) => {
-                      const val = e.currentTarget.querySelector<HTMLElement>(".link-val");
-                      if (val) val.style.color = "var(--text-dim)";
-                    }}
+                    className="flex gap-3 items-center group cursor-pointer transition-colors"
                   >
                     <span style={{ color: "var(--yellow)" }}>linkedin</span>
-                    <span className="link-val transition-colors" style={{ color: "var(--text-dim)" }}>
+                    <span className="transition-colors group-hover:text-primary" style={{ color: "var(--text-dim)" }}>
                       linkedin.com/in/kavya-agar
                     </span>
                     <span className="font-mono text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "var(--green)" }}>
@@ -122,7 +115,7 @@ export function About() {
                     href="/resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-2 py-0.5 rounded font-mono text-[10px] transition-colors shrink-0"
+                    className="px-3 py-1 rounded-full font-mono text-[9px] transition-all shrink-0 hover:shadow-sm"
                     style={{ color: "var(--green)", background: "var(--green-a8)", border: "1px solid var(--green-a20)" }}
                   >
                     view resume ↗
@@ -135,7 +128,7 @@ export function About() {
           {/* Right column */}
           <div className="space-y-5">
             {/* Market Data card */}
-            <div className="card p-5">
+            <div className="card p-5 transition-all duration-200 hover:shadow-lg" style={{ boxShadow: "var(--shadow-1)" }}>
               <p className="font-mono text-[11px] mb-4" style={{ color: "var(--green)" }}>
                 [ MARKET DATA ]
               </p>
@@ -144,8 +137,8 @@ export function About() {
                   <div key={label} className="flex items-center justify-between">
                     <span className="font-mono text-[11px]" style={{ color: "var(--text-dim)" }}>{label}</span>
                     <span className="font-mono text-[11px]" style={{ color: "var(--text-primary)" }}>{value}</span>
-                    <span className="font-mono text-[10px] px-2 py-0.5 rounded"
-                      style={{ color: "var(--green)", background: "var(--green-a8)" }}>
+                    <span className="font-mono text-[9px] px-2.5 py-1 rounded-full transition-colors"
+                      style={{ color: "var(--green)", background: "var(--green-a8)", border: "1px solid var(--green-a20)" }}>
                       {change}
                     </span>
                   </div>
@@ -154,7 +147,7 @@ export function About() {
             </div>
 
             {/* Education card */}
-            <div className="card p-5">
+            <div className="card p-5 transition-all duration-200 hover:shadow-lg" style={{ boxShadow: "var(--shadow-1)" }}>
               <p className="font-mono text-[11px] mb-4" style={{ color: "var(--green)" }}>
                 [ EDUCATION ]
               </p>
@@ -167,10 +160,10 @@ export function About() {
               <p className="font-mono text-[11px] mb-4" style={{ color: "var(--text-muted)" }}>
                 Aug 2024 – May 2027
               </p>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-2">
                 {coursework.map((c) => (
-                  <span key={c} className="font-mono text-[10px] px-2 py-0.5 rounded"
-                    style={{ color: "var(--text-dim)", background: "var(--bg-subtle)", border: "1px solid var(--border)" }}>
+                  <span key={c} className="font-mono text-[9px] px-2.5 py-1 rounded-full transition-colors"
+                    style={{ color: "var(--green)", background: "var(--green-a8)", border: "1px solid var(--green-a20)" }}>
                     {c}
                   </span>
                 ))}

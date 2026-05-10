@@ -261,22 +261,14 @@ export function Navbar() {
           // navigate
         </p>
 
-        <nav className="flex flex-col gap-0">
+        <nav className="flex flex-col gap-1">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="flex items-center gap-3 px-4 py-2 rounded-md transition-colors group"
+              className="flex items-center gap-3 px-4 py-3 rounded-md transition-all cursor-pointer group hover:bg-green-a8 hover:text-primary"
               style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "var(--text-primary)";
-                e.currentTarget.style.background = "rgba(255,255,255,0.04)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "var(--text-dim)";
-                e.currentTarget.style.background = "transparent";
-              }}
             >
               <span style={{ color: "var(--green)" }}>{link.icon}</span>
               <span className="text-sm font-medium">{link.label}</span>

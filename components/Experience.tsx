@@ -30,10 +30,10 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="py-32 px-20"
+      className="py-20 md:py-32 px-4 sm:px-8 md:px-20"
       style={{ background: "var(--bg)", borderTop: "1px solid var(--border)" }}
     >
-      <div className="max-w-4xl">
+      <div className="max-w-4xl mx-auto">
         <p className="font-mono text-[11px] mb-2" style={{ color: "var(--green)" }}>
           [ WORK EXPERIENCE ]
         </p>
@@ -64,39 +64,40 @@ export function Experience() {
                 </div>
 
                 {/* Dot */}
-                <div className="relative flex-none mt-1.5">
+                <div className="relative flex-none mt-2">
                   <div
-                    className="w-3 h-3 rounded-full border-2"
+                    className="w-4 h-4 rounded-full border-2 transition-all"
                     style={{
                       background: "var(--bg)",
                       borderColor: "var(--green)",
-                      boxShadow: "0 0 8px var(--green-a50)",
-                      marginLeft: -6,
+                      boxShadow: "0 0 12px var(--green-glow)",
+                      marginLeft: -8,
                     }}
                   />
                 </div>
 
                 {/* Content */}
-                <div className="card flex-1 p-6">
+                <div className="card flex-1 p-6 transition-all duration-200 hover:shadow-lg"
+                  style={{ boxShadow: "var(--shadow-1)" }}>
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div>
                       <h3 className="font-semibold text-base mb-0.5"
                         style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}>
                         {exp.role}
                       </h3>
-                      <p className="font-mono text-sm" style={{ color: "var(--green)" }}>
+                      <p className="font-mono text-sm font-medium" style={{ color: "var(--green)" }}>
                         {exp.company}
                       </p>
-                      <p className="font-mono text-[11px] mt-0.5" style={{ color: "var(--text-muted)" }}>
-                        {exp.location}
+                      <p className="font-mono text-[11px] mt-1" style={{ color: "var(--text-muted)" }}>
+                        📍 {exp.location}
                       </p>
                     </div>
                     <span
-                      className="font-mono text-[10px] px-2 py-1 rounded shrink-0"
+                      className="font-mono text-[10px] px-3 py-1 rounded-full shrink-0 whitespace-nowrap transition-all"
                       style={{
                         color: "var(--green)",
                         background: "var(--green-a8)",
-                        border: "1px solid var(--green-a20)",
+                        border: "1px solid var(--green-a35)",
                       }}
                     >
                       {exp.badge}
@@ -113,10 +114,10 @@ export function Experience() {
                     ))}
                   </ul>
 
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-2">
                     {exp.stack.map((s) => (
-                      <span key={s} className="font-mono text-[10px] px-2 py-0.5 rounded"
-                        style={{ color: "var(--yellow)", background: "rgba(255,215,0,0.08)", border: "1px solid rgba(255,215,0,0.2)" }}>
+                      <span key={s} className="font-mono text-[9px] px-2.5 py-1 rounded-full transition-colors"
+                        style={{ color: "var(--green)", background: "var(--green-a8)", border: "1px solid var(--green-a20)" }}>
                         {s}
                       </span>
                     ))}

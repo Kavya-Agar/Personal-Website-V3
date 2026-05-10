@@ -3,23 +3,23 @@ import Link from "next/link";
 const sections = [
   {
     label: "// currently building",
-    title: "Personal website v2",
-    body: "Rebuilding my site with a finance terminal aesthetic. Coffee-fueled, shipped in sprints.",
+    title: "Personal website v3",
+    body: "Rebuilding my site to reflect a PM focus — cleaner framing, sharper story. The terminal aesthetic stays.",
   },
   {
     label: "// currently reading",
-    title: "The Pragmatic Programmer",
-    body: "Classic software craftsmanship. Taking it slow, highlighting every other page.",
+    title: "Inspired — Marty Cagan",
+    body: "The PM bible. Working through how great product teams discover and deliver products people actually want.",
   },
   {
     label: "// currently focused on",
-    title: "Internship recruiting · Fall 2025",
-    body: "Applying to SWE roles at fintech and infra companies. Open to referrals.",
+    title: "PM internship recruiting · Summer 2026",
+    body: "Targeting PM roles at fintech and consumer tech companies. My eng background is the edge. Open to referrals.",
   },
   {
     label: "// currently brewing",
     title: "Ethiopian Yirgacheffe",
-    body: "Light roast, pour-over. Notes of blueberry and citrus. The best debugging companion.",
+    body: "Light roast, pour-over. Notes of blueberry and citrus. The best thinking companion.",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function NowPage() {
           What I&apos;m up to right now.
         </p>
         <p className="font-mono text-[11px] mb-10" style={{ color: "var(--text-muted)" }}>
-          Last updated · April 2025
+          Last updated · May 2026
         </p>
 
         <div className="mb-12" style={{ height: 1, background: "var(--border-subtle)" }} />

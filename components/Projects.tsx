@@ -55,10 +55,10 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-32 px-20"
+      className="py-20 md:py-32 px-4 sm:px-8 md:px-20"
       style={{ background: "var(--bg-secondary)", borderTop: "1px solid var(--border)" }}
     >
-      <div className="max-w-6xl">
+      <div className="max-w-6xl mx-auto">
         <p className="font-mono text-[11px] mb-2" style={{ color: "var(--green)" }}>
           [ PROJECTS ]
         </p>
@@ -72,47 +72,57 @@ export function Projects() {
           {projects.length} projects shipped · 3 in production · ∞ ideas in the pipeline
         </p>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((proj) => {
             const style = statusStyles[proj.status] ?? statusStyles.WIP;
+
             return (
               <a
                 key={proj.name}
                 href={proj.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card p-5 flex flex-col gap-3 cursor-pointer no-underline"
+                className="card p-6 flex flex-col gap-3 cursor-pointer no-underline transition-all duration-200 hover:shadow-lg hover:scale-[1.01]"
+                style={{
+                  color: "var(--text-primary)",
+                  borderColor: "var(--green-a20)",
+                }}
               >
-                <div className="flex items-start justify-between">
+                <div className="flex items-start justify-between gap-3">
                   <h3
-                    className="font-semibold text-base leading-tight"
+                    className="font-semibold text-base leading-tight flex-1"
                     style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}
                   >
                     {proj.name}
                   </h3>
                   <span
-                    className="font-mono text-[9px] px-1.5 py-0.5 rounded shrink-0 ml-2"
+                    className="font-mono text-[9px] px-2 py-1 rounded-full shrink-0 whitespace-nowrap"
                     style={{ color: style.color, background: style.bg, border: `1px solid ${style.border}` }}
                   >
                     {proj.status}
                   </span>
                 </div>
 
-                <p className="text-xs leading-relaxed flex-1"
+                <p className="text-sm leading-relaxed flex-1"
                   style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
                   {proj.desc}
                 </p>
 
-                <div className="flex items-center justify-between mt-auto">
+                <div className="flex items-center justify-between mt-auto gap-3">
                   <div className="flex flex-wrap gap-1.5">
-                    {proj.stack.map((s) => (
-                      <span key={s} className="font-mono text-[9px] px-1.5 py-0.5 rounded"
-                        style={{ color: "var(--text-dim)", background: "var(--bg-subtle)", border: "1px solid var(--border)" }}>
+                    {proj.stack.slice(0, 3).map((s) => (
+                      <span key={s} className="font-mono text-[9px] px-2 py-1 rounded-full"
+                        style={{ color: "var(--green)", background: "var(--green-a8)", border: "1px solid var(--green-a20)" }}>
                         {s}
                       </span>
                     ))}
+                    {proj.stack.length > 3 && (
+                      <span className="font-mono text-[9px] px-2 py-1" style={{ color: "var(--text-muted)" }}>
+                        +{proj.stack.length - 3}
+                      </span>
+                    )}
                   </div>
-                  <span className="font-mono text-[10px] shrink-0 ml-3" style={{ color: "var(--text-muted)" }}>↗</span>
+                  <span className="font-mono text-[10px] shrink-0" style={{ color: "var(--green)" }}>↗</span>
                 </div>
               </a>
             );

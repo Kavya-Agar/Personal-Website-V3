@@ -22,10 +22,10 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-32 px-20"
+      className="py-20 md:py-32 px-4 sm:px-8 md:px-20"
       style={{ background: "var(--bg)", borderTop: "1px solid var(--border)" }}
     >
-      <div className="max-w-5xl">
+      <div className="max-w-5xl mx-auto">
         <p className="font-mono text-[11px] mb-2" style={{ color: "var(--coffee)" }}>
           [ CONTACT ]
         </p>
