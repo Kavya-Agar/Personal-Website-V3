@@ -102,7 +102,7 @@ export function Hero() {
           className="font-mono text-xs sm:text-sm mb-10 flex items-center gap-1"
           style={{ color: "var(--green)" }}
         >
-          {"> Building products · Bridging eng and strategy"}
+          {"> Technical depth, product vision"}
           <span
             ref={cursorRef}
             className="inline-block ml-1"
