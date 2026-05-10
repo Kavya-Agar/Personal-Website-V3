@@ -80,7 +80,7 @@ export function Hero() {
             style={{ width: 7, height: 7, background: "var(--green)", boxShadow: "0 0 6px var(--green)" }}
           />
           <span className="font-mono text-[10px]" style={{ color: "var(--green)" }}>
-            OPEN TO PM INTERNSHIPS · SUMMER 2026
+            OPEN TO PM INTERNSHIPS · SUMMER 2027
           </span>
         </div>
 

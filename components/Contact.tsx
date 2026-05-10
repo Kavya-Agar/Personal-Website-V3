@@ -7,7 +7,7 @@ const contactLinks = [
   { label: "GitHub",   value: "github.com/Kavya-Agar",          href: "https://github.com/Kavya-Agar" },
   { label: "LinkedIn", value: "linkedin.com/in/kavya-agar",     href: "https://www.linkedin.com/in/kavya-agar/" },
   { label: "Location", value: "Houston, TX",                    href: null },
-  { label: "Status",   value: "Summer 2026 Internships",        href: null },
+  { label: "Status",   value: "Summer 2027 Internships",        href: null },
 ];
 
 export function Contact() {

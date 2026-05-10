@@ -13,7 +13,7 @@ const sections = [
   },
   {
     label: "// currently focused on",
-    title: "PM internship recruiting · Summer 2026",
+    title: "PM internship recruiting · Summer 2027",
     body: "Targeting PM roles at fintech and consumer tech companies. My eng background is the edge. Open to referrals.",
   },
   {

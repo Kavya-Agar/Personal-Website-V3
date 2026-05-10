@@ -44,7 +44,7 @@ const COMMANDS: Record<string, (args: string[]) => string[]> = {
         "GPA       3.5 / 4.00 · Dean's List",
         "Focus     SWE · ML · Cloud",
         "Stack     Python, Java, TypeScript, AWS",
-        "Status    open to SWE internships · Summer 2026",
+        "Status    open to SWE internships · Summer 2027",
       ];
     }
     if (file === "about.md") {
