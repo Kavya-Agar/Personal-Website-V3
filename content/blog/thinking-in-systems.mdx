@@ -1,0 +1,75 @@
+---
+title: "Thinking in Systems: A PM's Mental Model"
+date: "2026-04-10"
+description: "Why feedback loops, stocks, and flows are the most underrated tools in a product manager's kit — and how I use them to think about product problems."
+tags: ["product", "mental-models", "systems-thinking"]
+draft: false
+---
+
+## What even is a system?
+
+Donella Meadows defined a system as *a set of elements interconnected in such a way that they produce their own pattern of behavior over time*.
+
+That sounds abstract. Here's what it means for a PM: every feature you ship is a lever in a system. Pull it expecting a linear response, and you'll be surprised — often unpleasantly.
+
+## The two things PMs consistently get wrong
+
+**1. Mistaking correlation for causal structure**
+
+You ship a referral program. DAU goes up 20%. You attribute it to the referral program and double the incentive. DAU stays flat. The referral program was correlated with growth, but the actual driver was seasonality.
+
+The fix: map the feedback loops before interpreting data. A causal loop diagram takes 15 minutes and saves weeks of building the wrong thing.
+
+**2. Ignoring delays**
+
+In most systems, cause and effect are separated in time. You invest in onboarding improvements in Q1. You won't see the retention lift until Q3, when those users hit their 90-day mark.
+
+PMs who don't account for delays either over-correct (shipping more features when the last batch hasn't had time to compound) or under-invest (abandoning initiatives that haven't "worked" yet when they simply haven't had time).
+
+## The three structures that explain almost everything
+
+### Reinforcing loops (R)
+
+Growth, virality, compounding — these are all reinforcing loops. More users → more content → better product → more users.
+
+The thing about reinforcing loops: they amplify in both directions. The same structure that drives hypergrowth drives death spirals. Understanding which reinforcing loops exist in your product is table stakes.
+
+### Balancing loops (B)
+
+These are the system's immune response. User frustration → churn → team scrambles → product improves → frustration drops. Most products have multiple balancing loops that act as natural ceilings.
+
+When growth stalls, the question isn't "what feature should we build?" It's "which balancing loop is the binding constraint right now?"
+
+### Delays
+
+Not a loop structure — but the thing that makes loops confusing. Delays turn simple dynamics into oscillation. They're why software teams keep oscillating between over-staffing and under-staffing, why growth teams cycle between burning out and coasting.
+
+## A concrete example: the retention flywheel
+
+Here's the simplified system map for a typical SaaS product:
+
+```
+Acquisition → New Users
+New Users → Active Users (delayed by onboarding time)
+Active Users → Retained Users (filtered by value realization)
+Retained Users → Revenue
+Revenue → Acquisition spend (reinforcing)
+Retained Users → Word-of-mouth (reinforcing, longer delay)
+Active Users → Support load → Team cost (balancing)
+```
+
+Most teams optimize acquisition because it's the most measurable loop. But the binding constraint is almost always somewhere in the middle — between "new user" and "retained user."
+
+## How I use this day-to-day
+
+Before spec'ing any feature, I ask:
+1. Which loop does this touch?
+2. Is it reinforcing or balancing?
+3. What's the delay before I'd expect to see signal?
+4. What's the second-order effect — what else changes when this loop changes?
+
+It doesn't take long. It prevents a lot of expensive mistakes.
+
+---
+
+*Recommended reading: Donella Meadows' [Thinking in Systems](https://www.chelseagreen.com/product/thinking-in-systems/) is the clearest introduction. The field of system dynamics has produced better mental models for product work than most PM books.*
