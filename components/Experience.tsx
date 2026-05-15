@@ -1,16 +1,14 @@
 const experiences = [
   {
-    role: "Software Engineering Intern · Team Lead",
-    company: "JPMorgan Chase & Co.",
-    period: "Jun 2023 – Aug 2023",
+    role: "Business Development Intern",
+    company: "Aspen Technology",
+    period: "May 2026 – Present",
     location: "Houston, TX",
-    badge: "+90% efficiency",
+    badge: "Current",
     bullets: [
-      "Engineered a multithreaded Java data pipeline for a distributed system migrating 10TB+ from Apache Cassandra to AWS S3, implementing custom Parquet conversion and improving migration efficiency by 90%",
-      "Collaborated with 3 senior engineers through 10+ code reviews to harden system reliability, performance, and data integrity, writing unit tests and validating end-to-end pipeline correctness",
-      "Led daily Agile stand-ups for an 8-person cross-functional team, coordinating sprint execution and presenting the final solution to Executive Directors",
+      "[Upcoming summer 2026]",
     ],
-    stack: ["Java", "Apache Cassandra", "AWS S3", "Parquet", "Agile"],
+    stack: ["Business Development", "Strategy"],
   },
   {
     role: "Technical Business Analyst Intern",
@@ -23,6 +21,19 @@ const experiences = [
       "Partnered with PMs and engineers to translate data insights into product strategy decisions, contributing to an estimated 15% revenue impact",
     ],
     stack: ["Python", "BeautifulSoup", "Selenium", "Data Analysis"],
+  },
+  {
+    role: "Software Engineering Intern · Team Lead",
+    company: "JPMorgan Chase & Co.",
+    period: "Jun 2023 – Aug 2023",
+    location: "Houston, TX",
+    badge: "+90% efficiency",
+    bullets: [
+      "Engineered a multithreaded Java data pipeline for a distributed system migrating 10TB+ from Apache Cassandra to AWS S3, implementing custom Parquet conversion and improving migration efficiency by 90%",
+      "Collaborated with 3 senior engineers through 10+ code reviews to harden system reliability, performance, and data integrity, writing unit tests and validating end-to-end pipeline correctness",
+      "Led daily Agile stand-ups for an 8-person cross-functional team, coordinating sprint execution and presenting the final solution to Executive Directors",
+    ],
+    stack: ["Java", "Apache Cassandra", "AWS S3", "Parquet", "Agile"],
   },
 ];
 
@@ -46,25 +57,29 @@ export function Experience() {
 
         {/* Timeline */}
         <div className="relative">
+          {/* Timeline line - hidden on mobile, shown on md+ */}
           <div
-            className="absolute left-[120px] top-0 bottom-0 w-px"
+            className="hidden md:block absolute left-[80px] top-0 bottom-0 w-px"
             style={{ background: "linear-gradient(to bottom, var(--green), var(--green-a8))" }}
           />
 
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             {experiences.map((exp, i) => (
-              <div key={i} className="flex gap-8">
-                {/* Date */}
-                <div className="w-[120px] shrink-0 pt-1 text-right">
-                  <p className="font-mono text-[10px] leading-relaxed" style={{ color: "var(--text-dim)" }}>
+              <div key={i} className="flex flex-col md:flex-row md:gap-8 gap-0">
+                {/* Date - stacked on mobile, side-by-side on md+ */}
+                <div className="w-full md:w-[80px] md:shrink-0 md:pt-1 mb-2 md:mb-0">
+                  <p className="font-mono text-[10px] md:block hidden" style={{ color: "var(--text-dim)", lineHeight: "1.6" }}>
                     {exp.period.split("–").map((part, j) => (
                       <span key={j} className="block">{part.trim()}</span>
                     ))}
                   </p>
+                  <p className="font-mono text-[10px] md:hidden" style={{ color: "var(--text-dim)" }}>
+                    {exp.period}
+                  </p>
                 </div>
 
-                {/* Dot */}
-                <div className="relative flex-none mt-2">
+                {/* Dot - hidden on mobile, shown on md+ */}
+                <div className="relative flex-none mt-2 hidden md:block">
                   <div
                     className="w-4 h-4 rounded-full border-2 transition-all"
                     style={{
@@ -77,23 +92,23 @@ export function Experience() {
                 </div>
 
                 {/* Content */}
-                <div className="card flex-1 p-6 transition-all duration-200 hover:shadow-lg"
+                <div className="card flex-1 p-4 md:p-6 transition-all duration-200 hover:shadow-lg"
                   style={{ boxShadow: "var(--shadow-1)" }}>
-                  <div className="flex items-start justify-between gap-4 mb-4">
-                    <div>
-                      <h3 className="font-semibold text-base mb-0.5"
+                  <div className="flex flex-col sm:flex-row items-start justify-between gap-3 mb-4">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-sm sm:text-base mb-0.5 break-words"
                         style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}>
                         {exp.role}
                       </h3>
-                      <p className="font-mono text-sm font-medium" style={{ color: "var(--green)" }}>
+                      <p className="font-mono text-xs sm:text-sm font-medium" style={{ color: "var(--green)" }}>
                         {exp.company}
                       </p>
-                      <p className="font-mono text-[11px] mt-1" style={{ color: "var(--text-muted)" }}>
+                      <p className="font-mono text-[10px] sm:text-[11px] mt-1" style={{ color: "var(--text-muted)" }}>
                         📍 {exp.location}
                       </p>
                     </div>
                     <span
-                      className="font-mono text-[10px] px-3 py-1 rounded-full shrink-0 whitespace-nowrap transition-all"
+                      className="font-mono text-[9px] sm:text-[10px] px-2 sm:px-3 py-1 rounded-full shrink-0 whitespace-nowrap transition-all"
                       style={{
                         color: "var(--green)",
                         background: "var(--green-a8)",
@@ -106,17 +121,17 @@ export function Experience() {
 
                   <ul className="space-y-2 mb-4">
                     {exp.bullets.map((b, j) => (
-                      <li key={j} className="flex gap-3 text-sm leading-relaxed"
+                      <li key={j} className="flex gap-3 text-xs sm:text-sm leading-relaxed"
                         style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
                         <span style={{ color: "var(--green)" }} className="shrink-0 mt-0.5">▸</span>
-                        {b}
+                        <span>{b}</span>
                       </li>
                     ))}
                   </ul>
 
                   <div className="flex flex-wrap gap-2">
                     {exp.stack.map((s) => (
-                      <span key={s} className="font-mono text-[9px] px-2.5 py-1 rounded-full transition-colors"
+                      <span key={s} className="font-mono text-[8px] sm:text-[9px] px-2 sm:px-2.5 py-1 rounded-full transition-colors"
                         style={{ color: "var(--green)", background: "var(--green-a8)", border: "1px solid var(--green-a20)" }}>
                         {s}
                       </span>
