@@ -139,6 +139,51 @@ export const teardowns: Teardown[] = [
 [Vision and strategic direction]
     `.trim(),
   },
+  {
+    id: "klarna",
+    appName: "Klarna",
+    thesis: "How Klarna Democratized Buy-Now-Pay-Later",
+    category: "Fintech",
+    description: "Klarna transformed point-of-sale financing from hidden credit lines into transparent, interest-free installments. Their insight: make consumer credit frictionless at checkout.",
+    keyInsights: [
+      "Merchant integration at checkout as the distribution channel",
+      "Risk modeling through underwriting at scale",
+      "Transparent fixed payments to build consumer trust",
+    ],
+    critique: "Dependency on merchant fees for profitability; consumer debt patterns and default risk in downturns",
+    content: `# Klarna: Buy Now, Pay Later Simplified
+
+## The Problem
+[What financing problem Klarna solved]
+
+## Core Innovation
+[How Klarna changed consumer lending]
+
+## Product Strategy
+[Checkout integration and payment plans]
+
+## Business Model
+[Revenue from merchants, risk management]
+
+## Market Position
+[Growth, competitors, market share]
+
+## Regulatory Landscape
+[BNPL regulatory scrutiny and compliance]
+
+## Consumer Impact
+[How Klarna changed shopping behavior]
+
+## Unit Economics
+[Profitability and path to sustainability]
+
+## Challenges & Criticisms
+[Debt concerns, market saturation, profitability]
+
+## Future Outlook
+[Strategic direction and market expansion]
+    `.trim(),
+  },
 ];
 
 export function getTeardownById(id: string): Teardown | undefined {
