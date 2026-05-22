@@ -46,10 +46,12 @@ const candles: Candle[] = [
 export function Hero() {
   const cursorRef   = useRef<HTMLSpanElement>(null);
   const clipRectRef = useRef<SVGRectElement>(null);
+  const nameRef     = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     cursorRef.current?.classList.add("cursor-blink");
     clipRectRef.current?.classList.add("chart-reveal");
+    nameRef.current?.classList.add("glitch-once");
   }, []);
 
   const lastCX    = START_X + (candles.length - 1) * SPACING;
@@ -161,6 +163,7 @@ export function Hero() {
         </div>
 
         <h1
+          ref={nameRef}
           className="font-bold leading-none mb-4 text-6xl sm:text-7xl md:text-[88px]"
           style={{ fontFamily: "Inter, sans-serif", color: "var(--text-primary)", letterSpacing: "-2px" }}
         >
@@ -219,6 +222,32 @@ export function Hero() {
           >
             Contact Me
           </a>
+        </div>
+
+        {/* Mobile-only terminal readout — fills the visual gap when the chart is hidden */}
+        <div
+          className="mt-10 sm:hidden rounded-lg p-4 font-mono text-[11px] space-y-2"
+          style={{ background: "var(--bg-secondary)", border: "1px solid var(--border)" }}
+        >
+          <div className="flex items-center gap-2 mb-3 pb-2" style={{ borderBottom: "1px solid var(--border-subtle)" }}>
+            <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#ff5f56" }} />
+            <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#ffbd2e" }} />
+            <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#27c93f" }} />
+            <span style={{ color: "var(--text-muted)" }}>kavya@portfolio: ~</span>
+          </div>
+          <div><span style={{ color: "var(--green)" }}>$ </span><span style={{ color: "var(--text-dim)" }}>whoami</span></div>
+          <div style={{ color: "var(--text-muted)" }}>kavya.agar — CS @ Texas A&amp;M, Houston TX</div>
+          <div className="pt-1"><span style={{ color: "var(--green)" }}>$ </span><span style={{ color: "var(--text-dim)" }}>cat status.txt</span></div>
+          <div style={{ color: "var(--text-muted)" }}>open to PM internships · summer 2027</div>
+          <div className="pt-1"><span style={{ color: "var(--green)" }}>$ </span><span style={{ color: "var(--text-dim)" }}>ls projects/</span></div>
+          <div style={{ color: "var(--text-muted)" }}>financial-ner  stock-sentiment  fin-ance  quant-options</div>
+          <div className="flex items-center gap-1 pt-1">
+            <span style={{ color: "var(--green)" }}>$ </span>
+            <span
+              className="inline-block"
+              style={{ width: 6, height: 12, background: "var(--green)", animation: "blink 1s step-end infinite" }}
+            />
+          </div>
         </div>
 
       </div>

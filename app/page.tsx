@@ -11,6 +11,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { TerminalEaster } from "@/components/TerminalEaster";
+import { RevealSection } from "@/components/RevealSection";
 
 export default function Home() {
   return (
@@ -19,18 +20,17 @@ export default function Home() {
       <TerminalEaster />
       <Navbar />
       <Ticker />
-      {/* Push content below fixed navbar (64px) + ticker (36px) */}
       <main className="pt-[100px]">
         <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Certifications />
-        <Projects />
-        <StockHeatmap />
-        <Contact />
+        <RevealSection><About /></RevealSection>
+        <RevealSection><Skills /></RevealSection>
+        <RevealSection><Experience /></RevealSection>
+        <RevealSection><Certifications /></RevealSection>
+        <RevealSection><Projects /></RevealSection>
+        <RevealSection><StockHeatmap /></RevealSection>
+        <RevealSection><Contact /></RevealSection>
       </main>
-      <Footer />
+      <RevealSection><Footer /></RevealSection>
     </>
   );
 }

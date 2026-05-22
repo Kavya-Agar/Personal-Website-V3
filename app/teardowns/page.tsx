@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { teardowns } from "@/lib/teardowns";
 
+function readingTime(content: string) {
+  return Math.ceil(content.split(/\s+/).length / 200);
+}
+
 export const metadata = {
   title: "Teardowns — Kavya Agar",
   description: "Product teardowns and case studies of fintech apps.",
@@ -61,11 +65,13 @@ export default function TeardownsPage() {
           Teardowns
         </h1>
 
-        <p className="text-base mb-2" style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
-          Deep dives into fintech product strategy and design.
+        <p className="text-base mb-4 max-w-2xl leading-relaxed" style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
+          I write teardowns to think in public about product. Every decision a company makes — what
+          to build, how to price it, where to put the button — reflects a belief about the user and
+          the market. Writing forces clarity on those beliefs. These are mine.
         </p>
         <p className="font-mono text-[11px] mb-10" style={{ color: "var(--text-muted)" }}>
-          Case studies analyzing competitive moats, UX patterns, and strategic decisions
+          {teardowns.length} teardowns · fintech focus · updated irregularly
         </p>
 
         <div className="mb-12" style={{ height: 1, background: "var(--border-subtle)" }} />
@@ -79,17 +85,22 @@ export default function TeardownsPage() {
               className="card p-8 flex flex-col"
               style={{ cursor: "pointer", transition: "all 0.3s ease" }}
             >
-              {/* Category tag */}
-              <span
-                className="font-mono text-[10px] px-2 py-1 rounded w-fit mb-4"
-                style={{
-                  color: "var(--green)",
-                  background: "var(--green-a8)",
-                  border: "1px solid rgba(0,200,83,0.2)",
-                }}
-              >
-                {study.category}
-              </span>
+              {/* Category tag + reading time */}
+              <div className="flex items-center justify-between mb-4">
+                <span
+                  className="font-mono text-[10px] px-2 py-1 rounded"
+                  style={{
+                    color: "var(--green)",
+                    background: "var(--green-a8)",
+                    border: "1px solid rgba(0,200,83,0.2)",
+                  }}
+                >
+                  {study.category}
+                </span>
+                <span className="font-mono text-[10px]" style={{ color: "var(--text-muted)" }}>
+                  ~{readingTime(study.content)} min read
+                </span>
+              </div>
 
               {/* Title */}
               <h2

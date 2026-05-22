@@ -1,3 +1,6 @@
+"use client";
+import { useState } from "react";
+
 const projects = [
   {
     name: "Financial NER Analyzer",
@@ -52,6 +55,8 @@ const statusStyles: Record<string, { color: string; bg: string; border: string }
 };
 
 export function Projects() {
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+
   return (
     <section
       id="projects"
@@ -87,6 +92,8 @@ export function Projects() {
                   color: "var(--text-primary)",
                   borderColor: "var(--green-a20)",
                 }}
+                onMouseEnter={() => setHoveredProject(proj.name)}
+                onMouseLeave={() => setHoveredProject(null)}
               >
                 <div className="flex items-start justify-between gap-3">
                   <h3
@@ -110,14 +117,14 @@ export function Projects() {
 
                 <div className="flex items-center justify-between mt-auto gap-3">
                   <div className="flex flex-wrap gap-1.5">
-                    {proj.stack.slice(0, 3).map((s) => (
-                      <span key={s} className="font-mono text-[9px] px-2 py-1 rounded-full"
+                    {(hoveredProject === proj.name ? proj.stack : proj.stack.slice(0, 3)).map((s) => (
+                      <span key={s} className="font-mono text-[9px] px-2 py-1 rounded-full transition-all duration-150"
                         style={{ color: "var(--green)", background: "var(--green-a8)", border: "1px solid var(--green-a20)" }}>
                         {s}
                       </span>
                     ))}
-                    {proj.stack.length > 3 && (
-                      <span className="font-mono text-[9px] px-2 py-1" style={{ color: "var(--text-muted)" }}>
+                    {hoveredProject !== proj.name && proj.stack.length > 3 && (
+                      <span className="font-mono text-[9px] px-2 py-1 transition-all duration-150" style={{ color: "var(--text-muted)" }}>
                         +{proj.stack.length - 3}
                       </span>
                     )}

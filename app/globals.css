@@ -105,6 +105,33 @@ p {
   animation: chartReveal 2.5s ease both 0.5s;
 }
 
+/* Scroll-reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  width: 100%;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Name glitch — single fire on load */
+@keyframes glitch-once {
+  0%   { transform: none; text-shadow: none; }
+  8%   { transform: skewX(-4deg); text-shadow: 3px 0 var(--red), -3px 0 var(--blue); }
+  18%  { transform: none; text-shadow: none; }
+  30%  { transform: skewX(2deg) translateX(2px); text-shadow: -2px 0 var(--green); }
+  42%  { transform: none; text-shadow: none; }
+  54%  { transform: skewX(-1deg); text-shadow: 2px 0 var(--red), -1px 0 var(--blue); }
+  65%  { transform: none; text-shadow: none; }
+  100% { transform: none; text-shadow: none; }
+}
+.glitch-once {
+  animation: glitch-once 0.5s ease forwards 0.9s;
+}
+
 .card {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
@@ -165,6 +192,16 @@ p {
   }
 
   .animate-pulse-subtle {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .glitch-once {
     animation: none;
   }
 }
