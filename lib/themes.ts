@@ -1,4 +1,4 @@
-export type ThemeId = "default" | "nord" | "monokai" | "dracula" | "vscode" | "light" | "catppuccin" | "nightowl";
+export type ThemeId = "default" | "britain" | "monokai" | "dracula" | "vscode" | "light" | "catppuccin" | "nightowl";
 export type ThemeVars = Record<string, string>;
 export type Theme = { id: ThemeId; name: string; vars: ThemeVars };
 
@@ -79,13 +79,13 @@ export const themes: Record<ThemeId, Theme> = {
     "#82aaff", [130, 170, 255],
     "#ffcb8b", "#ff5874"
   ),
-  nord: buildTheme(
-    "nord", "Nord",
-    "#2e3440", "#3b4252", "#434c5e",
-    "#4c566a", "#434c5e", "rgba(46,52,64,0.92)",
-    "#eceff4", "#9099aa", "#616e88",
-    "#88c0d0", [136, 192, 208],
-    "#ebcb8b", "#bf616a"
+  britain: buildTheme(
+    "britain", "Britain",
+    "#010e36", "#012169", "#01308a",
+    "#1a4faa", "#01308a", "rgba(1,14,54,0.92)",
+    "#ffffff", "#a0b8e8", "#4a6aaa",
+    "#c8102e", [200, 16, 46],
+    "#ffd700", "#ff4040"
   ),
   monokai: buildTheme(
     "monokai", "Monokai",
