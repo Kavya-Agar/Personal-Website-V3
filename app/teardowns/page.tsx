@@ -44,7 +44,7 @@ export default function TeardownsPage() {
       </header>
 
       {/* Content */}
-      <main className="px-8 md:px-20 py-20 max-w-5xl">
+      <main className="px-8 md:px-20 py-20 max-w-7xl">
         <p className="font-mono text-[11px] mb-4" style={{ color: "var(--text-dim)" }}>
           // product teardowns
         </p>
@@ -71,7 +71,7 @@ export default function TeardownsPage() {
         <div className="mb-12" style={{ height: 1, background: "var(--border-subtle)" }} />
 
         {/* Grid of teardowns */}
-        <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-2">
+        <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-3">
           {teardowns.map((study) => (
             <Link
               key={study.id}

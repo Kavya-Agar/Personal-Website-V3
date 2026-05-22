@@ -4,6 +4,21 @@ import Link from "next/link";
 import { getTeardownById } from "@/lib/teardowns";
 import { useParams } from "next/navigation";
 
+function renderInline(text: string): React.ReactNode {
+  const parts: React.ReactNode[] = [];
+  const regex = /\*\*(.*?)\*\*/g;
+  let lastIndex = 0;
+  let match;
+  let i = 0;
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) parts.push(text.slice(lastIndex, match.index));
+    parts.push(<strong key={i++} style={{ color: "var(--text-primary)", fontWeight: 600 }}>{match[1]}</strong>);
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
+  return parts.length === 1 ? parts[0] : <>{parts}</>;
+}
+
 export default function TeardownDetailPage() {
   const params = useParams();
   const teardown = getTeardownById(params.id as string);
@@ -137,41 +152,54 @@ export default function TeardownDetailPage() {
           className="prose prose-invert max-w-none"
           style={{ color: "var(--text-primary)" }}
         >
-          {teardown.content.split("\n\n").map((paragraph, idx) => {
-            // Check if it's a heading
-            if (paragraph.startsWith("# ")) {
+          {teardown.content.split("\n\n").map((block, idx) => {
+            if (block.startsWith("# ")) {
               return (
                 <h2
                   key={idx}
                   className="font-bold text-2xl mt-10 mb-4"
                   style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}
                 >
-                  {paragraph.replace(/^# /, "")}
+                  {renderInline(block.replace(/^# /, ""))}
                 </h2>
               );
             }
 
-            if (paragraph.startsWith("## ")) {
+            if (block.startsWith("## ")) {
               return (
                 <h3
                   key={idx}
                   className="font-semibold text-base mt-6 mb-3"
                   style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}
                 >
-                  {paragraph.replace(/^## /, "")}
+                  {renderInline(block.replace(/^## /, ""))}
                 </h3>
               );
             }
 
-            // Regular paragraph
-            if (paragraph.trim()) {
+            const lines = block.split("\n");
+            const isList = lines.every(l => l.trim() === "" || l.trim().startsWith("- "));
+            if (isList && lines.some(l => l.trim().startsWith("- "))) {
+              return (
+                <ul key={idx} className="space-y-2 mb-4 pl-1">
+                  {lines.filter(l => l.trim().startsWith("- ")).map((line, i) => (
+                    <li key={i} className="flex gap-2 text-base" style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}>
+                      <span style={{ color: "var(--green)" }} className="shrink-0">▸</span>
+                      <span>{renderInline(line.replace(/^- /, ""))}</span>
+                    </li>
+                  ))}
+                </ul>
+              );
+            }
+
+            if (block.trim()) {
               return (
                 <p
                   key={idx}
                   className="text-base leading-relaxed mb-4"
                   style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}
                 >
-                  {paragraph}
+                  {renderInline(block)}
                 </p>
               );
             }
