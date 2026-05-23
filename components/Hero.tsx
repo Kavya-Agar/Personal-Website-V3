@@ -52,6 +52,20 @@ export function Hero() {
     cursorRef.current?.classList.add("cursor-blink");
     clipRectRef.current?.classList.add("chart-reveal");
     nameRef.current?.classList.add("glitch-once");
+
+    let timeoutId: ReturnType<typeof setTimeout>;
+
+    const triggerGlitch = () => {
+      const el = nameRef.current;
+      if (!el) return;
+      el.classList.remove("glitch-once");
+      void el.offsetWidth; // force reflow so animation replays
+      el.classList.add("glitch-once");
+      timeoutId = setTimeout(triggerGlitch, 60000 + Math.random() * 30000);
+    };
+
+    timeoutId = setTimeout(triggerGlitch, 60000 + Math.random() * 30000);
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const lastCX    = START_X + (candles.length - 1) * SPACING;
@@ -158,7 +172,7 @@ export function Hero() {
             style={{ width: 7, height: 7, background: "var(--green)", boxShadow: "0 0 6px var(--green)" }}
           />
           <span className="font-mono text-[10px]" style={{ color: "var(--green)" }}>
-            OPEN TO PM INTERNSHIPS · SUMMER 2027
+            OPEN TO INTERNSHIPS · SUMMER 2027
           </span>
         </div>
 
