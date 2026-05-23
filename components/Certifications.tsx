@@ -14,8 +14,8 @@ const certifications = [
   {
     name: "Databricks Generative AI Fundamentals",
     issuer: "Databricks",
-    date: "2025",
-    credentialId: "BCG GenAI Job Simulation",
+    date: "Aug 2025",
+    credentialId: "Expires Aug 2027",
   },
 ];
 
@@ -56,7 +56,7 @@ export function Certifications() {
               </div>
               {cert.credentialId && (
                 <p className="font-mono text-[11px]" style={{ color: "var(--text-muted)" }}>
-                  ID: {cert.credentialId}
+                  {cert.credentialId}
                 </p>
               )}
             </div>
