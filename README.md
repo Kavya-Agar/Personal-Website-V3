@@ -24,7 +24,7 @@ npm run lint
 ## Features
 
 - Live market data (SPX, DJI, IXIC, VIX) via Stooq & Yahoo Finance
-- 8 switchable themes (Terminal, VS Code, Light, Catppuccin, Night Owl, Nord, Monokai, Dracula)
+- 8 switchable themes (Terminal, VS Code, Light, Catppuccin, Night Owl, Britain, Monokai, Dracula)
 - Command palette (⌘K) for navigation and actions
 - Hidden terminal easter egg (backtick to toggle) with tab-completion and command history
 - TradingView S&P 500 heatmap widget
