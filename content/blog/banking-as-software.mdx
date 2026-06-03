@@ -1,0 +1,85 @@
+---
+title: "Why every bank is now a software company"
+date: "2026-6-2"
+description: "How banks stopped selling money and started shipping product and why the ones that haven't figured that out yet are already losing."
+tags: ["fintech", "product", "banking", "software"]
+draft: false
+---
+
+## JPMorgan Chase's annual technology budget is approximately $19.8 billion in 2026.
+
+More than the entire venture capital investment in US fintech in 2020. That's not a tech budget. That's a confession.
+
+But JPMorgan isn't an anomaly. Capital One restructured its entire engineering org in the early 2010s to operate like a tech company. Two-pizza teams, continuous deployment, the works. Bank of America has 40,000 technologists on staff. The question stopped being *whether* banks become software companies. It's now which ones do it fast enough.
+
+## The Interface Is The Relationship
+I spent a summer at JPMorgan migrating over 10 terabytes of data off legacy infrastructure. Not building anything a customer would ever see, but helping a bank quietly replace its own foundation while the house stayed standing. That's what modernization actually looks like. Not a rebrand. Not a redesigned app. A decade of engineers moving data from one system to another, making sure nothing breaks.
+
+Because while that work was happening in the back, something else was happening up front. Customers went from visiting a branch twice a year to opening a banking app twenty times a month. Banks had maybe five years to rebuild a century of earned trust into a mobile experience. Most didn't move fast enough. The ones that didn't ceded the interface to someone else entirely.
+
+That "someone else" has a name. When Apple Pay launched in 2014, Chase had to negotiate with Apple over interchange fees on their own customers' cards. A Chase customer tapped **their** Chase card but Apple owned that interaction. The bank became the backend to Apple's frontend. The relationship, the data, and the brand moment. Apple kept it all.
+
+Chime is the sharper example. There is no bank charter. They don't even call themselves a bank. It runs entirely on Bancorp Bank and Stride Bank's infrastructures while the customer has no idea. The banks handle the FDIC coverage, the actual funds, the regulatory compliance. Chime just builds the app. To its users, Chime *is* the bank. The backend is irrelevant. That's exactly the point. You no longer need a charter to own the customer. You just need a better interface.
+
+## When the Algorithm Makes the Decision, You're a Tech Company
+For most of banking history, the most important decision a bank made was made by a person. A loan officer who knew the customer, read the room, and exercised their judgment. It was slow, inconsistent, and deeply human. That person is largely gone now. Not because banks got cheap, but because a model does it better.
+
+Credit underwriting, fraud detection, personalized offers. None of these have a human meaningfully in the loop anymore. When you get declined for a credit card, an algorithm made that call in milliseconds. When your sudden $10,000 transaction in Morocco gets flagged, a real-time inference engine caught it before any analyst could. The bank's most consequential decisions now run on code.
+
+JPMorgan's COiN (Contract Intelligence) system reviewed 12,000 commercial credit agreements in seconds. Work that previously took 360,000 hours of lawyer time annually. Capital One built its own internal ML platform rather than buying vendor tools, betting that proprietary models were a competitive moat worth owning. They were right. I built a small version of this. My Financial NER Analyzer fine-tuned DistilBERT on transaction datasets to classify financial documents and extract named entities, hitting 98% validation accuracy on a pipeline processing 500+ documents a week. At scale, with real capital on the line, that's the difference between a good risk model and a bad one. Between profit and loss.
+
+When your core product is a model, your competitive advantage isn't capital or branch count anymore. It's data quality, engineering velocity, and the ability to iterate on inference. That's not banking. That's software.
+
+## The Banks That Figured It Out Early
+Capital One didn't stumble into becoming a tech company. They decided to be one. In the early 2010s, Richard Fairbank made a bet that the future wasn't about branch count or loan volume. It was about data and software. Capital One began rebuilding its engineering org from the ground up. Internal platforms built in-house rather than outsourced to vendors. They were running on AWS before most banks even had a cloud strategy.
+
+The results compounded. By owning their own infrastructure, Capital One could iterate on models faster than competitors buying off-the-shelf products. Their fraud detection improved. Their risk pricing sharpened. Their mobile experience caught up. Every engineering investment fed back into the product. At Capital One, the product *was* the engineering.
+
+JPMorgan followed a different path but arrived at the same conclusion. Rather than restructuring around a tech-first philosophy, they simply outspent everyone. $19.8 billion a year buys a lot of engineers. COiN, their contract intelligence system. Payments infrastructure processing billions of transactions daily. An internal developer platform that rivals what most tech companies ship.
+
+Two different strategies. The same underlying bet. Software is now the core competency of banking, not a support function of it.
+
+The banks that figured this out didn't just modernize. They pulled away. And the gap between them and the ones still running on legacy infrastructure gets wider every year.
+
+## Tech Debt as Existential Risk
+There is a number that doesn't get talked about enough in banking circles. 95% of ATM transactions and 80% of in-person transactions still run on COBOL. A programming language from 1959. Older than the internet, older than the PC, older than most of the executives making decisions about whether to replace it.
+
+Nobody replaced it because nobody had to. It worked. And in banking, "it works" is enough to keep something running for decades.
+
+The problem isn't that COBOL is slow. The problem is that the developers who know how to maintain it are retiring faster than banks can train replacements. When something breaks, the pool of people who can fix it shrinks every year. That's not technical debt. That's a ticking clock.
+
+TSB Bank made it go off. In 2018, TSB attempted to migrate 5 million customer accounts from their legacy system to a new platform. It failed. 1.9 million customers were locked out of their accounts for weeks. Fraud spiked as bad actors exploited the chaos. The remediation cost £330 million. The CEO resigned. TSB didn't fail because they tried to modernize. They failed because they waited so long that modernization itself became a crisis.
+
+That's the trap. Legacy infrastructure feels safe right up until it doesn't. Every year a bank delays rebuilding its core systems, the migration gets harder, the risk gets higher, and the cost compounds. The banks running on modern infrastructure aren't just faster. They're more resilient. They can deploy a fix in hours, not quarters.
+
+I saw the other side of this firsthand. The 10 terabytes I helped move off Cassandra at JPMorgan was one small piece of a much larger effort to get ahead of exactly this problem. The engineers I worked with weren't just migrating data. They were buying the bank time.
+
+## What Banks Actually Ship Now
+The product used to be simple. A checking account. A loan. A credit card. The bank built it, the customer used it, the relationship was bilateral. That model is gone.
+
+The most forward-thinking banks today ship infrastructure. Not just apps for their own customers, but APIs, SDKs, and developer platforms that other companies build on top of. JPMorgan launched a payments API that lets merchants integrate Chase payment rails directly into their checkout flow. Capital One built Nessie, a public API originally designed for internal use, now used by thousands of developers. The product surface expanded from the customer-facing app to the entire ecosystem sitting on top of the bank's balance sheet.
+
+Embedded finance made this inevitable. When Shopify offers merchants a business account, or Uber pays drivers instantly after a trip, there's a bank somewhere in that stack. It just isn't visible. Banks that embraced this became platforms. Banks that didn't became utilities, quiet infrastructure with someone else's brand on top.
+
+The fraud models, the recommendation engines, the real-time underwriting APIs. These are products now. They get roadmaps, they have PMs, they ship in sprints. The engineering culture that Capital One built in the 2010s wasn't just about modernizing internal systems. It was about becoming the kind of company that could build and iterate on these products faster than anyone else.
+
+I've been on the other side of this. My Stock Sentiment Dashboard and Options Pricing Engine both consume financial APIs, pulling live market data to run models and surface insights in real time. As a developer building on top of banking infrastructure, the quality of that infrastructure is everything. A well-designed API is a product. A poorly documented one is a wall. The banks that ship the former attract the ecosystem. The ones that ship the latter get bypassed.
+
+What banks actually ship now is leverage. Software that multiplies the value of their balance sheet without adding proportional cost. That's not a banking insight. That's a software company insight.
+
+## The Last Moat
+Every moat banks relied on for a century has been eroded.
+
+Branch count doesn't matter when the app is the relationship. Capital requirements don't matter when you can rent a charter from Bancorp and ship a better interface. Brand recognition doesn't matter when a generation of customers opened their first financial account with Chime or Robinhood and have no particular loyalty to anyone.
+
+Two things remain. Data and trust.
+
+Banks sit on decades of transaction history across hundreds of millions of customers. No fintech startup can replicate that overnight. It is the single most defensible asset in banking. A complete picture of how people earn, spend, save, and borrow across their entire financial lives. The banks that learn to activate that data through better models, better personalization, and sharper risk pricing will compound their advantage every year.
+
+Trust is the other half. Chime can build a better app. Stripe can build better payments infrastructure. But when markets crash and people panic, they still move their money to JPMorgan. That's not irrational. FDIC coverage, regulatory oversight, institutional credibility. These still mean something. The psychological weight of a century-old institution doesn't disappear because a fintech has a cleaner UI.
+
+But here's the thing. Neither of these moats is passive anymore. Data sitting in a legacy database is not an advantage. It's a liability waiting to be exploited by someone with better infrastructure. Trust built over a century can erode in a single outage, a single breach, a single TSB-style failure.
+
+The last moat isn't data. It isn't trust. It's the software good enough to activate both.
+
+The banks that understand that are already pulling away. The ones that don't are running out of time.
