@@ -78,7 +78,7 @@ export default function TeardownsPage() {
 
         {/* Grid of teardowns */}
         <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-3">
-          {teardowns.map((study) => (
+          {[...teardowns].sort((a, b) => (b.date ?? "").localeCompare(a.date ?? "")).map((study) => (
             <Link
               key={study.id}
               href={`/teardowns/${study.id}`}
