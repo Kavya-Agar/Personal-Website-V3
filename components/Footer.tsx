@@ -5,7 +5,7 @@ export function Footer() {
       style={{ borderTop: "1px solid var(--border)" }}
     >
       <span className="font-mono text-[10px]" style={{ color: "var(--text-muted)" }}>
-        © 2025 Kavya Agar
+        © {new Date().getFullYear()} Kavya Agar
       </span>
       <span className="font-mono text-[10px] text-center sm:text-left" style={{ color: "var(--text-muted)" }}>
         Built with Next.js · Fueled by coffee
