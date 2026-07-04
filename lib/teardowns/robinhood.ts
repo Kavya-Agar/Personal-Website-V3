@@ -12,7 +12,7 @@ export const robinhood: Teardown = {
     "Reciprocity, variable reward, and habit formation stacked in sequence",
   ],
   date: "2026-06-08",
-  critique: "Democratizing finance and optimizing for monetizable behavior are two goals in direct tension — the onboarding reveals which one wins",
+  critique: "Democratizing finance and optimizing for monetizable behavior are two goals in direct tension; the onboarding reveals which one wins",
   content: `# How Robinhood Turns a Signup Into a Trader
 
 You download Robinhood because you want to invest. Maybe you saw something about index funds. Maybe a friend mentioned it. Maybe you just got your first real paycheck and feel like you should be doing something with it.

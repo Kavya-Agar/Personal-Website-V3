@@ -17,15 +17,15 @@ export const klarna: Teardown = {
 
 ## The Problem
 
-Consumer credit has always existed — credit cards, store cards, layaway, installment loans. But the traditional model was opaque by design: revolving credit with variable interest rates, minimum payments that extended debt indefinitely, and fees that punished late payment. For merchants, getting customers over the purchase threshold was the core conversion problem. For consumers, big-ticket items were gated by credit limits and interest rate anxiety.
+Consumer credit has always existed (credit cards, store cards, layaway, installment loans). But the traditional model was opaque by design: revolving credit with variable interest rates, minimum payments that extended debt indefinitely, and fees that punished late payment. For merchants, getting customers over the purchase threshold was the core conversion problem. For consumers, big-ticket items were gated by credit limits and interest rate anxiety.
 
-Klarna's founding insight (Stockholm, 2005) was that credit doesn't have to be opaque or permanent. A simple four-installment plan — pay 25% now, 25% in two weeks, 25% in four weeks, 25% in six weeks, zero interest, fixed amounts — is fundamentally different psychologically from "charge it to the card." It's a commitment with an end date, not a floating liability.
+Klarna's founding insight (Stockholm, 2005) was that credit doesn't have to be opaque or permanent. A simple four-installment plan (pay 25% now, 25% in two weeks, 25% in four weeks, 25% in six weeks, zero interest, fixed amounts) is fundamentally different psychologically from "charge it to the card." It's a commitment with an end date, not a floating liability.
 
 ## Core Innovation
 
-Klarna's product innovation is less about technology and more about reframing. "Buy now, pay later" existed before Klarna, but it was anchored to high-interest store financing. Klarna stripped the interest, made the schedule transparent, and integrated directly at checkout — removing every moment of friction between desire and purchase.
+Klarna's product innovation is less about technology and more about reframing. "Buy now, pay later" existed before Klarna, but it was anchored to high-interest store financing. Klarna stripped the interest, made the schedule transparent, and integrated directly at checkout, removing every moment of friction between desire and purchase.
 
-The underwriting model is what makes this work at scale. Klarna runs a soft credit check in milliseconds at checkout, using a combination of traditional credit bureau data and behavioral signals (device, purchase history, merchant context) to approve or decline a purchase. The average decision takes under a second. Approval rates are high — 90%+ for returning customers — because Klarna has progressively more data on each user.
+The underwriting model is what makes this work at scale. Klarna runs a soft credit check in milliseconds at checkout, using a combination of traditional credit bureau data and behavioral signals (device, purchase history, merchant context) to approve or decline a purchase. The average decision takes under a second. Approval rates are high (90%+ for returning customers) because Klarna has progressively more data on each user.
 
 The merchant value proposition is equally important: Klarna guarantees payment to the merchant at the time of purchase, absorbing all default risk. Merchants pay a per-transaction fee (typically 3–6% of transaction value, higher than a credit card interchange rate) in exchange for: higher conversion rates, higher average order values, and zero default risk. For fashion, electronics, and home goods retailers, the conversion lift frequently justifies the fee premium.
 
@@ -35,11 +35,11 @@ Klarna's product has evolved from a single checkout option into a shopping platf
 
 **Pay in 4 (US) / Pay in 3 (UK):** The core BNPL product. Split a purchase into equal installments over 6 weeks, zero interest if paid on time. This is the product that drove Klarna's consumer growth.
 
-**Pay in 30 (Pay Later):** Buy now, pay the full amount in 30 days. Designed for purchase-to-delivery timing — you don't pay until you've received and decided to keep the item. Extremely useful for apparel where return rates are high.
+**Pay in 30 (Pay Later):** Buy now, pay the full amount in 30 days. Designed for purchase-to-delivery timing; you don't pay until you've received and decided to keep the item. Extremely useful for apparel where return rates are high.
 
 **Financing (6–36 months):** Traditional installment loans for larger purchases, carrying interest. This product makes the economics work for big-ticket items where the interest-free model doesn't cover Klarna's cost of capital.
 
-**Klarna App (Shopping Experience):** Klarna rebranded its consumer interface as a shopping destination — price comparison, wish lists, store browsing, cashback offers. The ambition: become the starting point for intent-to-purchase, capturing affiliate and advertising revenue before checkout.
+**Klarna App (Shopping Experience):** Klarna rebranded its consumer interface as a shopping destination (price comparison, wish lists, store browsing, cashback offers). The ambition: become the starting point for intent-to-purchase, capturing affiliate and advertising revenue before checkout.
 
 **Klarna Card:** A Visa card that wraps Klarna's Pay in 4 around any purchase, not just Klarna-integrated merchants. This extends the BNPL model to the entire card-accepting world.
 
@@ -49,13 +49,13 @@ Klarna's product has evolved from a single checkout option into a shopping platf
 
 Klarna's revenue comes from two primary sources, with the balance shifting as the company matures:
 
-**Merchant fees (~60–70% of revenue):** Every time a consumer uses Klarna at checkout, the merchant pays a fee. This is the core revenue engine — Klarna is paid by merchants to increase their conversion and average order value. The fee varies by product (Pay in 4 vs. financing) and merchant (volume discounts for large partners).
+**Merchant fees (~60–70% of revenue):** Every time a consumer uses Klarna at checkout, the merchant pays a fee. This is the core revenue engine; Klarna is paid by merchants to increase their conversion and average order value. The fee varies by product (Pay in 4 vs. financing) and merchant (volume discounts for large partners).
 
-**Consumer fees and interest (~20–30% of revenue):** Late fees on Pay in 4 (charged when a consumer misses an installment) and interest on financing products. Klarna has historically downplayed this — and regulatory pressure has pushed them to further minimize it — but it's meaningful at scale.
+**Consumer fees and interest (~20–30% of revenue):** Late fees on Pay in 4 (charged when a consumer misses an installment) and interest on financing products. Klarna has historically downplayed this, and regulatory pressure has pushed them to further minimize it, but it's meaningful at scale.
 
 **Advertising and affiliate (~10%):** Klarna's app has 118M+ users browsing for products. Merchants pay for placement, promotions, and targeted campaigns. This is the highest-margin business, and Klarna has been investing in it aggressively as it grows.
 
-The economics are tightly coupled to credit losses (defaults) and cost of capital (Klarna funds the gap between merchant payment and consumer collection). In bull markets, credit losses are low and capital is cheap; in downturns, both deteriorate simultaneously. Klarna's 2022 losses — and a valuation cut from $45.6B to $6.7B — were driven precisely by this: rising defaults, rising funding costs, and a growth slowdown.
+The economics are tightly coupled to credit losses (defaults) and cost of capital (Klarna funds the gap between merchant payment and consumer collection). In bull markets, credit losses are low and capital is cheap; in downturns, both deteriorate simultaneously. Klarna's 2022 losses (and a valuation cut from $45.6B to $6.7B) were driven precisely by this: rising defaults, rising funding costs, and a growth slowdown.
 
 ## Market Position
 
@@ -69,27 +69,27 @@ Klarna was the dominant BNPL provider globally through 2021, before the category
 
 **Global:** PayPal Pay Later and credit card issuers (Citi Flex, Chase My Chase Plan) have activated BNPL features for their massive existing user bases, competing without needing to acquire a new customer or build a new merchant network.
 
-Klarna IPO'd on the New York Stock Exchange in September 2025, raising $1.37B at a priced valuation of ~$15.1B — a significant recovery from the 2022 trough but still well below the $45.6B peak.
+Klarna IPO'd on the New York Stock Exchange in September 2025, raising $1.37B at a priced valuation of ~$15.1B. This is a significant recovery from the 2022 trough but still well below the $45.6B peak.
 
 ## Regulatory Landscape
 
-BNPL arrived in a regulatory gap — because it wasn't technically credit (no interest on the core product), it escaped the consumer protection rules that govern credit cards and loans in most jurisdictions. That gap is closing:
+BNPL arrived in a regulatory gap. Because it wasn't technically credit (no interest on the core product), it escaped the consumer protection rules that govern credit cards and loans in most jurisdictions. That gap is closing:
 
 **UK:** The Financial Conduct Authority has finalized rules requiring BNPL lenders to conduct affordability checks and register as consumer credit firms, with the new regime taking effect July 15, 2026. This adds compliance cost and may suppress approval rates.
 
 **EU:** The revised Consumer Credit Directive explicitly includes BNPL in consumer credit regulation, requiring clear disclosure of loan terms, right of withdrawal, and creditworthiness assessments, with BNPL coverage applying from November 20, 2026.
 
-**US:** The CFPB briefly signaled it would treat BNPL providers more like credit card companies for certain regulatory purposes, but rescinded that interpretive rule in May 2025 and dropped enforcement — leaving BNPL in a lighter-touch regulatory position in the US than in the UK or EU.
+**US:** The CFPB briefly signaled it would treat BNPL providers more like credit card companies for certain regulatory purposes, but rescinded that interpretive rule in May 2025 and dropped enforcement, leaving BNPL in a lighter-touch regulatory position in the US than in the UK or EU.
 
-For Klarna, regulation is a double-edged sword. More compliance cost and lower approval rates hurt the consumer business. But tighter regulation raises barriers to entry and may squeeze out smaller, less sophisticated BNPL players — benefiting Klarna's scale advantage.
+For Klarna, regulation is a double-edged sword. More compliance cost and lower approval rates hurt the consumer business. But tighter regulation raises barriers to entry and may squeeze out smaller, less sophisticated BNPL players, benefiting Klarna's scale advantage.
 
 ## Consumer Impact
 
 BNPL has genuinely expanded access to consumer credit for people who couldn't qualify for credit cards or who prefer predictability over revolving debt. For a 22-year-old without a credit history buying a $400 winter coat, Pay in 4 is a better product than a store card with 29% APR.
 
-The concern — and it's legitimate — is that the frictionless experience overcorrects. When buying something feels like splitting a bill rather than taking out a loan, consumers may systematically underestimate total obligations. Research consistently shows BNPL users carry multiple simultaneous installment plans and occasionally lose track. The design that reduces friction at purchase also reduces the salience of debt.
+The concern (and it's legitimate) is that the frictionless experience overcorrects. When buying something feels like splitting a bill rather than taking out a loan, consumers may systematically underestimate total obligations. Research consistently shows BNPL users carry multiple simultaneous installment plans and occasionally lose track. The design that reduces friction at purchase also reduces the salience of debt.
 
-Klarna's response has been to build debt visibility into the app — showing outstanding balances clearly, sending payment reminders — while pushing back against regulatory requirements they argue are overly burdensome for a product with lower consumer harm than credit cards.
+Klarna's response has been to build debt visibility into the app (showing outstanding balances clearly, sending payment reminders) while pushing back against regulatory requirements they argue are overly burdensome for a product with lower consumer harm than credit cards.
 
 ## Unit Economics
 
@@ -103,7 +103,7 @@ Klarna's path to sustained profitability runs through repeat usage (driving LTV)
 
 ## Challenges & Criticisms
 
-**Credit loss volatility:** Klarna's underwriting is good in normal conditions and deteriorates in downturns. The 2022 writedowns demonstrated real exposure to macroeconomic cycles — a structural risk that doesn't affect merchant fee revenue but hits profitability significantly.
+**Credit loss volatility:** Klarna's underwriting is good in normal conditions and deteriorates in downturns. The 2022 writedowns demonstrated real exposure to macroeconomic cycles; this is a structural risk that doesn't affect merchant fee revenue but hits profitability significantly.
 
 **Merchant fee compression:** As BNPL has become table stakes for online retailers, merchants have more leverage. Klarna competes against Affirm, Afterpay, and PayPal for the same merchant integrations, pushing fees down.
 
@@ -113,7 +113,7 @@ Klarna's path to sustained profitability runs through repeat usage (driving LTV)
 
 ## Future Outlook
 
-Klarna's highest-conviction bet is the shopping app: owning consumer intent before checkout, not just financing at checkout. If Klarna becomes where people go to discover and compare products — the way Pinterest or Google Shopping functions but with integrated payment — the advertising and affiliate revenue model could substantially reduce dependence on volatile credit economics.
+Klarna's highest-conviction bet is the shopping app: owning consumer intent before checkout, not just financing at checkout. If Klarna becomes where people go to discover and compare products (the way Pinterest or Google Shopping functions but with integrated payment), the advertising and affiliate revenue model could substantially reduce dependence on volatile credit economics.
 
 The Klarna Card extends the BNPL model to the offline and non-integrated world, making BNPL a general-purpose payment method rather than a checkout add-on. This is the right long-term move if consumers genuinely prefer installment thinking to revolving credit.
 

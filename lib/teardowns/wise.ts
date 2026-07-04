@@ -17,21 +17,21 @@ export const wise: Teardown = {
 
 ## Overview
 
-In 2011, Taavet Hinrikus and Kristo Käärmann discovered they were each paying thousands of pounds a year in hidden bank fees on international transfers. Their solution — matching each other's currency needs directly, bypassing banks entirely — became the founding insight of Wise (originally TransferWise). Today Wise processes roughly $243 billion in cross-border transfers annually, serves around 19 million customers, and trades primarily on Nasdaq (with a secondary listing on the London Stock Exchange, where it originally listed in 2021). Their product thesis is deceptively simple: show people what they're actually paying.
+In 2011, Taavet Hinrikus and Kristo Käärmann discovered they were each paying thousands of pounds a year in hidden bank fees on international transfers. Their solution (matching each other's currency needs directly, bypassing banks entirely) became the founding insight of Wise (originally TransferWise). Today Wise processes roughly $243 billion in cross-border transfers annually, serves around 19 million customers, and trades primarily on Nasdaq (with a secondary listing on the London Stock Exchange, where it originally listed in 2021). Their product thesis is deceptively simple: show people what they're actually paying.
 
 ## The Problem
 
 International money transfers were (and to some degree remain) one of the most opaque consumer financial products in existence. Traditional banks quote an exchange rate, but that rate typically includes a hidden margin of 2–5% on top of the real mid-market rate. A $10,000 transfer could silently cost $200–500 more than it should.
 
-The complexity is real — banks manage currency risk, regulatory compliance across jurisdictions, correspondent banking relationships, and liquidity management. But customers weren't paying for complexity, they were paying because they had no alternative and no visibility. The status quo persisted because the hidden fee was invisible by design.
+The complexity is real; banks manage currency risk, regulatory compliance across jurisdictions, correspondent banking relationships, and liquidity management. But customers weren't paying for complexity, they were paying because they had no alternative and no visibility. The status quo persisted because the hidden fee was invisible by design.
 
 ## Solution & Strategy
 
 Wise's core product decision was radical honesty: always show the mid-market rate (the real exchange rate you'd find on Google), quote the fee explicitly and upfront, and display exactly how much the recipient will receive before you confirm the transfer.
 
-This transparency wasn't just ethical — it was a marketing strategy. Customers who discovered their bank had been charging them 4% implicitly for years became evangelists. Word-of-mouth and comparison-site traffic drove acquisition more efficiently than paid advertising.
+This transparency wasn't just ethical; it was a marketing strategy. Customers who discovered their bank had been charging them 4% implicitly for years became evangelists. Word-of-mouth and comparison-site traffic drove acquisition more efficiently than paid advertising.
 
-The early technology was clever: Wise netted opposite currency flows, so a GBP→EUR transfer from a UK user would be matched against a EUR→GBP transfer from a European user. Money didn't cross borders — only accounting did. As volume grew, Wise built direct bank integrations, local payment networks, and its own treasury operations to manage flows at scale.
+The early technology was clever: Wise netted opposite currency flows, so a GBP→EUR transfer from a UK user would be matched against a EUR→GBP transfer from a European user. Money didn't cross borders; only accounting did. As volume grew, Wise built direct bank integrations, local payment networks, and its own treasury operations to manage flows at scale.
 
 ## Key Features
 
@@ -43,22 +43,22 @@ The early technology was clever: Wise netted opposite currency flows, so a GBP�
 
 **Wise Platform:** White-label infrastructure enabling banks and fintechs (including Monzo, N26, and others) to offer Wise-powered international transfers within their own products.
 
-**Debit Card:** A card tied to the Wise Account that converts at the mid-market rate with no foreign transaction fee — a genuine alternative to travel cards and currency exchange booths.
+**Debit Card:** A card tied to the Wise Account that converts at the mid-market rate with no foreign transaction fee; a genuine alternative to travel cards and currency exchange booths.
 
 ## Business Model
 
-Wise's revenue model is straightforward and directly tied to customer value: take a small percentage of transfer volume. Their average take rate has been declining by design — around 0.67% in FY2024, down to roughly 0.53–0.58% by FY2025 — compared to banks charging 2–5% implicitly. Wise is cheaper because they've built more efficient infrastructure, and it deliberately passes efficiency gains through to customers as lower prices rather than holding the rate flat.
+Wise's revenue model is straightforward and directly tied to customer value: take a small percentage of transfer volume. Their average take rate has been declining by design (around 0.67% in FY2024, down to roughly 0.53–0.58% by FY2025) compared to banks charging 2–5% implicitly. Wise is cheaper because they've built more efficient infrastructure, and it deliberately passes efficiency gains through to customers as lower prices rather than holding the rate flat.
 
 Revenue breakdown (FY2024):
-- **Transfers:** ~70% of revenue — per-transaction fees on cross-border sends
-- **Interest income:** ~20% — earned on customer balances in Wise accounts
-- **Other:** ~10% — card fees, API/platform licensing, business account fees
+- **Transfers:** ~70% of revenue (per-transaction fees on cross-border sends)
+- **Interest income:** ~20% (earned on customer balances in Wise accounts)
+- **Other:** ~10% (card fees, API/platform licensing, business account fees)
 
-This is an unusually clean model: Wise makes money when customers make transfers, aligned with customer success. As interest rates rose post-2022, the balance income component grew substantially, improving margins. Wise turned profitable in 2021 and has maintained profitability since — rare for a fintech of its growth stage.
+This is an unusually clean model: Wise makes money when customers make transfers, aligned with customer success. As interest rates rose post-2022, the balance income component grew substantially, improving margins. Wise turned profitable in 2021 and has maintained profitability since. This is rare for a fintech of its growth stage.
 
 ## Competitive Positioning
 
-**vs. Traditional banks:** Banks still hold most international transfer volume by sheer inertia and trust. Wise consistently beats them on price by 3–8x and speed by 1–3 days. The opportunity remains massive — bank customers who haven't switched are still the primary growth pool.
+**vs. Traditional banks:** Banks still hold most international transfer volume by sheer inertia and trust. Wise consistently beats them on price by 3–8x and speed by 1–3 days. The opportunity remains massive; bank customers who haven't switched are still the primary growth pool.
 
 **vs. PayPal/Venmo:** PayPal's international transfers are expensive and opaque, and Venmo is US-only. Wise targets this directly, particularly for freelancers and small businesses who transact internationally.
 
@@ -72,17 +72,17 @@ This is an unusually clean model: Wise makes money when customers make transfers
 
 **The price calculator on the homepage:** Before creating an account, you can see exactly what a transfer will cost. This single UX decision built enormous trust and made Wise the reference point for fair pricing. Comparison sites link to it constantly.
 
-**Transfer progress tracking:** Wise decomposed transfers into visible steps — "received your GBP," "converted to EUR at X rate," "sent to recipient bank" — with timestamps. In an industry where "3–5 business days" was the norm, this transparency was radical.
+**Transfer progress tracking:** Wise decomposed transfers into visible steps ("received your GBP," "converted to EUR at X rate," "sent to recipient bank") with timestamps. In an industry where "3–5 business days" was the norm, this transparency was radical.
 
 **Recipient detail validation:** Wise validates IBAN and account numbers in real-time and warns you before sending if details look wrong. Reducing recipient errors directly reduces support costs and customer frustration.
 
-**Onboarding that front-loads value:** The first transfer flow is designed to get money moving before asking you to fully set up an account — you see the real cost before committing, which dramatically improves conversion.
+**Onboarding that front-loads value:** The first transfer flow is designed to get money moving before asking you to fully set up an account. You see the real cost before committing, which dramatically improves conversion.
 
 ## Challenges
 
 **Recipient bank detail complexity:** Despite improvements, collecting local bank details for some corridors (especially in Asia and Africa) remains confusing. IBAN vs. sort code vs. routing number vs. SWIFT creates real friction for first-time international senders.
 
-**Customer support at scale:** As a company now serving around 19 million customers, Wise's support responsiveness has declined. Compliance holds — where transfers are frozen for verification — are a common complaint, and the resolution process lacks urgency.
+**Customer support at scale:** As a company now serving around 19 million customers, Wise's support responsiveness has declined. Compliance holds (where transfers are frozen for verification) are a common complaint, and the resolution process lacks urgency.
 
 **Regulatory complexity:** Operating in 160+ countries means navigating licenses, capital requirements, and compliance rules in dozens of jurisdictions simultaneously. Regulatory changes (particularly around AML/KYC) can slow feature rollout or increase operational cost.
 
@@ -90,11 +90,11 @@ This is an unusually clean model: Wise makes money when customers make transfers
 
 ## Future Vision
 
-Wise's stated mission is to "move money without borders: instant, convenient, transparent, and eventually free." The "eventually free" framing is interesting — it implies a long-term model where interest income, card interchange, and platform licensing cross-subsidize transfer fees into irrelevance.
+Wise's stated mission is to "move money without borders: instant, convenient, transparent, and eventually free." The "eventually free" framing is interesting; it implies a long-term model where interest income, card interchange, and platform licensing cross-subsidize transfer fees into irrelevance.
 
 Wise Platform is the highest-optionality bet: if banks and fintechs white-label Wise infrastructure, Wise collects fees without acquiring customers directly. This B2B2C model could dwarf the consumer business at scale.
 
-Expansion into SMB financial services — expense management, corporate cards, accounts payable — moves Wise up the value chain from a transfer tool into a full treasury product for small businesses operating internationally.
+Expansion into SMB financial services (expense management, corporate cards, accounts payable) moves Wise up the value chain from a transfer tool into a full treasury product for small businesses operating internationally.
 
 ## Key Metrics
 
@@ -102,7 +102,7 @@ Expansion into SMB financial services — expense management, corporate cards, a
 - **Customers:** ~19M active (FY2026, +21% YoY)
 - **Revenue:** Net revenue up 19% YoY (FY2026)
 - **Profit:** Consistently profitable since 2021
-- **Take rate:** Declining by design — ~0.67% (FY2024) down to ~0.53–0.58% (FY2025)
+- **Take rate:** Declining by design (~0.67% in FY2024 down to ~0.53–0.58% in FY2025)
 - **Countries:** 160+ send, 80+ receive
 - **Market cap:** ~£9.5B; primary listing moved from LSE to Nasdaq in May 2026 (LSE remains secondary)`,
 };
