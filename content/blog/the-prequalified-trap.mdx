@@ -1,0 +1,53 @@
+---
+title: "The Prequalified Trap"
+date: "2026-7-4"
+description: "\"Check your rate, no impact to your credit score\" is true and also the least important part of the sentence. How prequalification became a lead-generation funnel with the borrower's interests as an afterthought."
+tags: ["fintech", "product", "credit", "dark-patterns"]
+draft: false
+---
+
+## The Sentence That Isn't Lying
+
+"See your rate. No impact to your credit score." That sentence is technically accurate on Credit Karma, Affirm, Upstart, and every buy now, pay later (BNPL) checkout button in the country. A soft pull really doesn't ding your score. That part is true.
+
+What the sentence doesn't say is that "prequalified" is not the same model, the same data, or the same decision as the one that determines whether you're actually approved. It's an estimate, produced by a company that gets paid when you apply, evaluated against a real underwriting model it usually doesn't have access to, run by an issuer it doesn't work for. The gap between those two models is where a meaningful chunk of the credit industry now makes its money.
+
+## What "Prequalified" Actually Is
+
+A soft pull gives a lending platform a thin slice of your credit file, enough to run it through a proprietary scoring model and estimate your odds of approval for a given product. It does not touch the credit bureau's inquiry record, so it's genuinely free to check. But it's also not the issuer's decision. It's a guess about the issuer's decision, made by a third party with an incentive to guess generously.
+
+Real underwriting happens later, after a hard pull, using the issuer's actual model, actual policies, actual risk appetite that day. The two models can disagree, and disagreement isn't rare. It's the whole reason the funnel exists in a form separate from the actual application.
+
+I can see the disagreement in my own account. Credit Karma currently tells me I'm pre-approved for more than 80 cards, on a credit file that's barely a few years old. That number isn't a signal of how creditworthy I am. It's a signal of how loose the estimating model is allowed to be when the company generating it gets paid regardless of whether any of those 80 approvals would survive a real underwriting decision.
+
+## The Case That Made the Gap Explicit
+
+In 2022, the FTC found that Credit Karma had been telling users they were "pre-approved" or had "90% odds" of approval for credit cards. Almost a third of the people who got one of these offers and went through the trouble of applying were denied. The FTC ordered Credit Karma to pay $3 million, later distributed to 497,425 consumers who had wasted a hard inquiry and their time chasing an offer the company's own language implied was close to certain ([FTC](https://www.ftc.gov/news-events/news/press-releases/2023/01/ftc-finalizes-order-requiring-credit-karma-pay-3-million-halt-deceptive-pre-approved-claims)).
+
+Almost a third. Not an edge case, not a handful of unlucky applicants. A denial rate that high means "pre-approved" wasn't functioning as a prediction. It was functioning as a call to action that happened to look like a prediction. The FTC's language for this is worth sitting with: the company deployed dark patterns to misrepresent that consumers were "pre-approved."
+
+The reason this is structurally interesting rather than just a company behaving badly: Credit Karma doesn't get paid when you get approved. It gets paid, through affiliate arrangements with issuers, largely for the application itself. A denial rate of 30% isn't a bug in that business model. It's a rounding error.
+
+## Buy Now, Pay Later Runs the Same Play at Checkout
+
+The BNPL version of this replaces the credit card offer with a four-installment payment plan at checkout, and the same "no impact to your score" framing does real work. The CFPB's research on BNPL usage found that between 2021 and 2022, borrowers with deep subprime credit scores (FICO 300-579) accounted for 45% of BNPL originations, with subprime borrowers (580-619) adding another 16% ([CFPB](https://www.consumerfinance.gov/archive/newsroom/cfpb-research-reveals-heavy-buy-now-pay-later-use-among-borrowers-with-high-credit-balances-and-multiple-pay-in-four-loans/)). More than three-fifths of BNPL borrowers held multiple simultaneous BNPL loans at some point in the year, and a third had loans from more than one provider at once.
+
+None of this shows up in the moment you tap "Pay in 4" at checkout. The interface shows you one loan, from one provider, with one soft pull. It has no visibility into the other three loans you took out from other apps last week, and until recently, neither did the credit bureaus, since Klarna and Afterpay have historically resisted reporting BNPL activity to them at all. Affirm started reporting in 2025. The rest of the industry is still deciding whether visibility helps or hurts the funnel.
+
+The repayment numbers are, to be fair, not catastrophic. CFPB data shows even deep subprime BNPL borrowers repaid 96% of the time. The risk isn't that these loans individually default at alarming rates. It's that a mechanism explicitly designed to feel like a single, low-stakes, no-consequence decision is, for a large share of users, actually one node in a debt-stacking pattern the interface has no way of surfacing back to them.
+
+## Why the Loop Doesn't Self-Correct
+
+This is worth looking at as a system, not just a list of bad incentives, because the reason it persists isn't that everyone involved is acting in bad faith. It's that the feedback loop that should discipline overly generous prequalification is slow, diffuse, and lands on the wrong party.
+
+If a lead-gen platform's prequalification model is too loose, the cost shows up as a hard inquiry ding and a denial letter for the user, weeks or months later, disconnected from the moment the "90% odds" badge was shown. The platform doesn't feel that cost. It already got paid for the application. There's a reinforcing loop on one side, tighter targeting produces more applications produces more affiliate revenue produces more investment in the funnel, and there's supposed to be a balancing loop on the other side, denials and bad experiences should push the model toward accuracy, but that loop has a long delay and lands on people who mostly don't complain to a regulator. It complains to the credit bureau's transaction log instead, quietly, as another hard inquiry with no context attached.
+
+Regulation is what finally closes that loop, because the market mechanism that should do it (users getting angry enough, loudly enough, to change platform behavior) is too slow and too diffuse to compete with the funnel it's supposed to constrain.
+
+## The Harder Question
+
+None of this requires believing prequalification tools are useless. A soft pull that's actually well-calibrated is a genuine improvement over blind applications, fewer wasted hard inquiries, faster comparison shopping, real information before a real commitment. That's not nothing.
+
+But the business model of the platform showing you the estimate is rarely aligned with the accuracy of the estimate. Credit Karma gets paid closer to the application than the approval. BNPL checkout buttons get paid at the transaction, not at successful repayment three installments later. In both cases, the number on your screen, the odds, the "you're prequalified" banner, is a marketing input wearing the clothes of a prediction. It's usually not lying. It's just not obligated to be right, and the FTC had to find one case where the gap between "usually not wrong" and "right" got wide enough, and public enough, to become a $3 million problem instead of a quiet cost absorbed by half a million people one denial letter at a time.
+
+*Sources: FTC press release, "FTC Finalizes Order Requiring Credit Karma to Pay $3 Million and Halt Deceptive 'Pre-Approved' Claims" (January 2023); CFPB, "CFPB Research Reveals Heavy Buy Now, Pay Later Use Among Borrowers with High Credit Balances and Multiple Pay-in-Four Loans."*
