@@ -24,7 +24,7 @@ That speed is not an accident. It is the product.
 
 ## Step 1: The Download Decision
 
-Robinhood's App Store presence is its first funnel layer. Green numbers, a clean chart, and the words "Invest for free." Reviews averaging 4.2 stars, top ones mentioning ease of use. Not a single number about investment returns.
+Robinhood's App Store presence is its first funnel layer. Green numbers, a clean chart, and the words "Invest for free." Reviews averaging around 4 stars, top ones mentioning ease of use. Not a single number about investment returns.
 
 The framing from the first pixel is access. You are being let in. Other brokerages have minimums, paperwork, advisors who look at you funny if your account is under $50,000. Robinhood has none of that. The implicit promise is that what was previously unavailable to you is now available. That framing does not go away. It runs through every screen of the onboarding.
 
@@ -175,5 +175,5 @@ The question isn't whether Robinhood is good or bad. It's whether a product can 
 The onboarding suggests the answer is: it can try to do both, but the incentives will show up in the details. And in consumer product design, the details are everything.
 
 
-*Sources: FINRA AWC No. 2020056173901 (June 2021); Robinhood S-1 filing (July 2021); Influence by Robert Cialdini (1984); reporting on the Alex Kearns case by the Chicago Tribune and Bloomberg (June 2020).*`,
+*Sources: FINRA AWC No. 2020066971201 (June 2021); Robinhood S-1 filing (July 2021); Influence by Robert Cialdini (1984); reporting on the Alex Kearns case by Forbes and CNN Business (June 2020).*`,
 };

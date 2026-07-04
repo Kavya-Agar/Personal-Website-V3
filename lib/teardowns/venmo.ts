@@ -37,7 +37,7 @@ Geographic concentration mattered enormously. Venmo dominated college campuses f
 
 ## Monetization
 
-For years, Venmo was famously unprofitable — PayPal (which acquired Braintree, which acquired Venmo, in a 2013 deal) tolerated massive losses to own the social payments category. The core product (bank-funded P2P transfers) generates no revenue; the business model came later:
+For years, Venmo was famously unprofitable — PayPal (which acquired Braintree in 2013 for $800M, after Braintree had itself acquired Venmo in 2012 for $26.2M) tolerated massive losses to own the social payments category. The core product (bank-funded P2P transfers) generates no revenue; the business model came later:
 
 **Instant Transfer (2018):** Pay 1.5% to receive funds in 30 minutes vs. 1–3 business days. This was the first time Venmo charged users for anything, and it worked because the base case (slow free) was genuinely painful for users who needed money quickly.
 
@@ -47,7 +47,7 @@ For years, Venmo was famously unprofitable — PayPal (which acquired Braintree,
 
 **Business Profiles (2021):** Merchants can accept Venmo payments with a 1.9% + $0.10 fee. QR code acceptance at checkout brought Venmo into commerce directly.
 
-**Pay with Venmo at Amazon (2022):** A watershed partnership. Integrating Venmo at one of the world's largest checkout flows validated Venmo as a payment method beyond P2P.
+**Pay with Venmo at Amazon (2022–2024):** A watershed partnership when launched, integrating Venmo at one of the world's largest checkout flows to validate Venmo as a payment method beyond P2P. Amazon discontinued accepting direct Venmo payments in January 2024, though Venmo-branded debit and credit cards still work there — a notable data point against the commerce thesis, not just supporting evidence for it.
 
 PayPal's long-term monetization thesis for Venmo is conversion: turn Venmo's massive balance-holding user base (millions of Americans hold Venmo balances as a quasi-checking account) into commerce transactions, where take rates are much higher than P2P.
 
@@ -57,7 +57,7 @@ PayPal's long-term monetization thesis for Venmo is conversion: turn Venmo's mas
 
 **Fraud and scams:** Venmo's irreversibility (by design — you can't "undo" a payment) combined with social trust makes it a favorite vector for scams. Romance scams, fake purchase scams, and money mule schemes all exploit Venmo's frictionless payment flow. The company's response has been slower than the problem's growth.
 
-**Regulatory scrutiny:** The IRS's 2022 rule requiring payment apps to issue 1099-Ks for transactions over $600 created compliance complexity for Venmo users receiving payments for goods and services. The policy is still evolving, but any friction on receiving payments could dampen informal commerce on the platform.
+**Regulatory scrutiny:** A 2022 IRS rule would have required payment apps to issue 1099-Ks for transactions over $600, but the threshold was repeatedly delayed and then reversed by 2025 legislation, reverting the reporting trigger back to $20,000/200 transactions. The reduced compliance burden removed one source of friction on receiving payments for goods and services, though the episode shows how quickly this regulatory picture can shift again.
 
 **Geographic limitation:** Venmo is US-only. This is both a limitation and a strategic choice — domestic P2P is the highest-volume, lowest-friction use case. But it means Venmo can't follow users internationally, ceding that territory entirely to Wise, Revolut, and others.
 
@@ -83,15 +83,15 @@ PayPal's long-term monetization thesis for Venmo is conversion: turn Venmo's mas
 
 PayPal's strategic challenge is unlocking Venmo's monetization without destroying what makes it valuable. Every new fee, every compliance friction, every commerce integration risks eroding the casual social feel that drives the social feed engagement that drives retention.
 
-The bet on commerce (Venmo as a checkout option) is the most credible path to material revenue. If Venmo becomes a preferred payment method for online and in-person commerce among 18–35 year olds — and the Amazon integration suggests this is plausible — the take rate on that volume dwarfs P2P fees.
+The bet on commerce (Venmo as a checkout option) is the most credible path to material revenue. If Venmo becomes a preferred payment method for online and in-person commerce among 18–35 year olds, the take rate on that volume dwarfs P2P fees — though Amazon's 2024 decision to drop direct Venmo payments is a real setback for that thesis, not just a hypothetical risk.
 
 The social feed's long-term relevance is uncertain. Younger users' behavior on social platforms has shifted toward private messaging; the public activity feed aesthetic feels more 2014 than 2025. Venmo's design challenge is staying culturally current without abandoning the social mechanics that defined it.
 
 ## Key Metrics
 
 - **Users:** 90M+ registered, ~50M monthly actives
-- **Annual payment volume:** ~$250B+
-- **Revenue:** ~$900M (FY2023, estimated)
+- **Annual payment volume:** ~$276B (2023, and growing)
+- **Revenue:** ~$1.1B (2023, estimated); PayPal has targeted ~$2B by 2027
 - **Instant Transfer attach rate:** Significant revenue driver, exact rate not disclosed
 - **Credit card holders:** Millions (Synchrony partnership)
 - **Parent company:** PayPal Holdings (acquired via Braintree for $800M in 2013)`,

@@ -33,7 +33,7 @@ This created a powerful bottom-up sales motion. Developers made the integration 
 
 ## Business Model
 
-Stripe's primary revenue driver is a simple per-transaction fee: 2.9% + $0.30 on card transactions in the US, with pricing adjusted by country, card type, and volume. This sounds thin, but at scale the math is extraordinary — Stripe reportedly processes over $1 trillion in annual volume, generating tens of billions in revenue.
+Stripe's primary revenue driver is a simple per-transaction fee: 2.9% + $0.30 on card transactions in the US, with pricing adjusted by country, card type, and volume. This sounds thin, but at scale the math is extraordinary — Stripe processed $1.9 trillion in payment volume in 2025, generating roughly $6.9B in net revenue (and about $19B in gross/ARR terms).
 
 Beyond the core take rate, Stripe has built a growing suite of paid add-ons: Radar (ML fraud detection), Billing (subscription management), Tax (automated sales tax calculation), Issuing (card issuance), Treasury (banking APIs), and Connect (marketplace payouts). Each product captures incremental margin from customers already on the platform, raising ARPU without new acquisition cost.
 
@@ -47,9 +47,9 @@ Stripe has expanded in deliberate layers, moving up the stack from infrastructur
 
 **Stripe.js + Checkout (2012–2014)** — Prebuilt UI components for card collection that handle PCI compliance automatically. Lowered the bar further and removed a common failure mode.
 
-**Connect (2015)** — Multi-party payment flows for marketplaces and platforms. Uber, Lyft, and DoorDash built their payout infrastructure here. This was the first product that couldn't be replicated by a developer writing their own Stripe clone.
+**Connect (2012)** — Multi-party payment flows for marketplaces and platforms. Lyft was an early adopter; Uber, by contrast, didn't sign on as a Stripe payments partner until a 2023 deal. This was the first product that couldn't be replicated by a developer writing their own Stripe clone.
 
-**Billing & Subscriptions (2016)** — SaaS-native subscription management with trials, proration, metered billing, and dunning. Competed directly with Zuora and Recurly.
+**Billing & Subscriptions (2018)** — SaaS-native subscription management with trials, proration, metered billing, and dunning. Competed directly with Zuora and Recurly.
 
 **Radar (2016)** — Machine learning fraud detection trained on Stripe's network-wide transaction data. This is a genuine network effect: more transaction volume means better fraud models for everyone.
 
@@ -71,7 +71,7 @@ Stripe has expanded in deliberate layers, moving up the stack from infrastructur
 
 The global payments processing market is enormous — over $2 trillion in annual revenue by some estimates, given total card volume in the tens of trillions. Stripe occupies a premium segment: internet-native businesses, SaaS companies, and technology-forward enterprises.
 
-Stripe's last private valuation was $50B (down from a peak of $95B during the 2021 bull market), with revenues estimated at $15–20B. An IPO has been anticipated for years; the company has stayed private partly because its founders have no immediate need for liquidity and partly because they can use equity more flexibly as a private company.
+Stripe's valuation has swung sharply: $95B at the 2021 peak, down to $50B in a March 2023 secondary, then recovering through $70B (2024) and $91.5B (early 2025) to $159B in a February 2026 tender offer. An IPO has been anticipated for years; the company has stayed private partly because its founders have no immediate need for liquidity and partly because they can use equity more flexibly as a private company.
 
 The competitive threat to watch is not any single processor — it's the card networks (Visa, Mastercard) and large banks developing their own developer-friendly products. If the networks internalize more of the stack, the take rate that flows to processors like Stripe compresses.
 
@@ -95,10 +95,10 @@ The real question is whether Stripe can maintain its premium positioning as paym
 
 ## Key Metrics
 
-- **Payment volume:** ~$1 trillion processed annually (estimated)
-- **Revenue:** ~$15–20B annually (estimated, private company)
-- **Valuation:** $50B (2023 secondary round, down from $95B peak)
-- **Merchants:** Millions of businesses across 140+ countries
+- **Payment volume:** $1.9 trillion processed in 2025
+- **Revenue:** ~$6.9B net revenue (2025); ~$19B gross/ARR
+- **Valuation:** $159B (February 2026 tender offer, up from a $95B 2021 peak and a $50B 2023 trough)
+- **Merchants:** Millions of businesses; merchants can be based in 46+ countries, with customers able to pay from 195+
 - **Products:** 15+ distinct products beyond core payments
-- **Employees:** ~8,000 (as of 2024)`,
+- **Employees:** ~8,100 (as of 2025)`,
 };

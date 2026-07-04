@@ -53,9 +53,9 @@ Klarna's revenue comes from two primary sources, with the balance shifting as th
 
 **Consumer fees and interest (~20–30% of revenue):** Late fees on Pay in 4 (charged when a consumer misses an installment) and interest on financing products. Klarna has historically downplayed this — and regulatory pressure has pushed them to further minimize it — but it's meaningful at scale.
 
-**Advertising and affiliate (~10%):** Klarna's app has 85M+ users browsing for products. Merchants pay for placement, promotions, and targeted campaigns. This is the highest-margin business, and Klarna has been investing in it aggressively as it grows.
+**Advertising and affiliate (~10%):** Klarna's app has 118M+ users browsing for products. Merchants pay for placement, promotions, and targeted campaigns. This is the highest-margin business, and Klarna has been investing in it aggressively as it grows.
 
-The economics are tightly coupled to credit losses (defaults) and cost of capital (Klarna funds the gap between merchant payment and consumer collection). In bull markets, credit losses are low and capital is cheap; in downturns, both deteriorate simultaneously. Klarna's 2022 losses — and a valuation cut from $46B to $6.7B — were driven precisely by this: rising defaults, rising funding costs, and a growth slowdown.
+The economics are tightly coupled to credit losses (defaults) and cost of capital (Klarna funds the gap between merchant payment and consumer collection). In bull markets, credit losses are low and capital is cheap; in downturns, both deteriorate simultaneously. Klarna's 2022 losses — and a valuation cut from $45.6B to $6.7B — were driven precisely by this: rising defaults, rising funding costs, and a growth slowdown.
 
 ## Market Position
 
@@ -69,17 +69,17 @@ Klarna was the dominant BNPL provider globally through 2021, before the category
 
 **Global:** PayPal Pay Later and credit card issuers (Citi Flex, Chase My Chase Plan) have activated BNPL features for their massive existing user bases, competing without needing to acquire a new customer or build a new merchant network.
 
-Klarna IPO'd on the New York Stock Exchange in July 2024, raising ~$1.2B at a valuation of approximately $15B — a significant recovery from the 2022 trough but still well below the $46B peak.
+Klarna IPO'd on the New York Stock Exchange in September 2025, raising $1.37B at a priced valuation of ~$15.1B — a significant recovery from the 2022 trough but still well below the $45.6B peak.
 
 ## Regulatory Landscape
 
 BNPL arrived in a regulatory gap — because it wasn't technically credit (no interest on the core product), it escaped the consumer protection rules that govern credit cards and loans in most jurisdictions. That gap is closing:
 
-**UK:** The Financial Conduct Authority is requiring BNPL lenders to conduct affordability checks and register as consumer credit firms. This adds compliance cost and may suppress approval rates.
+**UK:** The Financial Conduct Authority has finalized rules requiring BNPL lenders to conduct affordability checks and register as consumer credit firms, with the new regime taking effect July 15, 2026. This adds compliance cost and may suppress approval rates.
 
-**EU:** The revised Consumer Credit Directive explicitly includes BNPL in consumer credit regulation, requiring clear disclosure of loan terms, right of withdrawal, and creditworthiness assessments.
+**EU:** The revised Consumer Credit Directive explicitly includes BNPL in consumer credit regulation, requiring clear disclosure of loan terms, right of withdrawal, and creditworthiness assessments, with BNPL coverage applying from November 20, 2026.
 
-**US:** The CFPB issued guidance treating BNPL providers as credit card companies for certain regulatory purposes, requiring dispute resolution processes and periodic billing statements.
+**US:** The CFPB briefly signaled it would treat BNPL providers more like credit card companies for certain regulatory purposes, but rescinded that interpretive rule in May 2025 and dropped enforcement — leaving BNPL in a lighter-touch regulatory position in the US than in the UK or EU.
 
 For Klarna, regulation is a double-edged sword. More compliance cost and lower approval rates hurt the consumer business. But tighter regulation raises barriers to entry and may squeeze out smaller, less sophisticated BNPL players — benefiting Klarna's scale advantage.
 
@@ -109,7 +109,7 @@ Klarna's path to sustained profitability runs through repeat usage (driving LTV)
 
 **Consumer trust and regulation:** The "spend now, worry later" user experience design has attracted regulatory and media scrutiny. Managing this reputational risk while maintaining the product's core appeal is an ongoing tension.
 
-**Profitability timeline:** Despite being 19 years old, Klarna has only recently approached sustained profitability. The IPO puts pressure on demonstrating durable earnings, not just revenue growth.
+**Profitability timeline:** Despite being over 20 years old, Klarna has only recently approached sustained profitability. The IPO puts pressure on demonstrating durable earnings, not just revenue growth.
 
 ## Future Outlook
 
@@ -121,11 +121,11 @@ Post-IPO, Klarna faces the same challenge as every maturing fintech: proving tha
 
 ## Key Metrics
 
-- **GMV:** ~$100B annually
-- **Merchants:** 500,000+ globally
-- **Consumers:** 85M+ active users
-- **Revenue:** ~$2.8B (FY2023)
-- **Markets:** 45 countries
-- **IPO:** NYSE, July 2024, ~$15B valuation
-- **Employees:** ~5,000 (post-restructuring from ~7,000 in 2022)`,
+- **GMV:** $127.9B (FY2025, +22% YoY)
+- **Merchants:** ~966,000 globally (surpassed 1M in early 2026)
+- **Consumers:** 118M+ active users (FY2025)
+- **Revenue:** $3.5B (FY2025, +25% YoY)
+- **Markets:** 26 countries
+- **IPO:** NYSE, September 2025, $1.37B raised at ~$15.1B valuation
+- **Employees:** ~2,900 (down from ~5,527 in 2022)`,
 };

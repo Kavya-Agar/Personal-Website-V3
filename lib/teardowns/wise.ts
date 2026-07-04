@@ -17,7 +17,7 @@ export const wise: Teardown = {
 
 ## Overview
 
-In 2011, Taavet Hinrikus and Kristo Käärmann discovered they were each paying thousands of pounds a year in hidden bank fees on international transfers. Their solution — matching each other's currency needs directly, bypassing banks entirely — became the founding insight of Wise (originally TransferWise). Today Wise processes over £100 billion in cross-border transfers annually, serves 16 million customers, and is publicly traded on the London Stock Exchange. Their product thesis is deceptively simple: show people what they're actually paying.
+In 2011, Taavet Hinrikus and Kristo Käärmann discovered they were each paying thousands of pounds a year in hidden bank fees on international transfers. Their solution — matching each other's currency needs directly, bypassing banks entirely — became the founding insight of Wise (originally TransferWise). Today Wise processes roughly $243 billion in cross-border transfers annually, serves around 19 million customers, and trades primarily on Nasdaq (with a secondary listing on the London Stock Exchange, where it originally listed in 2021). Their product thesis is deceptively simple: show people what they're actually paying.
 
 ## The Problem
 
@@ -47,7 +47,7 @@ The early technology was clever: Wise netted opposite currency flows, so a GBP�
 
 ## Business Model
 
-Wise's revenue model is straightforward and directly tied to customer value: take a small percentage of transfer volume. Their average take rate is roughly 0.6% across all currency corridors, compared to banks charging 2–5% implicitly. Wise is cheaper because they've built more efficient infrastructure, not because they're subsidizing losses.
+Wise's revenue model is straightforward and directly tied to customer value: take a small percentage of transfer volume. Their average take rate has been declining by design — around 0.67% in FY2024, down to roughly 0.53–0.58% by FY2025 — compared to banks charging 2–5% implicitly. Wise is cheaper because they've built more efficient infrastructure, and it deliberately passes efficiency gains through to customers as lower prices rather than holding the rate flat.
 
 Revenue breakdown (FY2024):
 - **Transfers:** ~70% of revenue — per-transaction fees on cross-border sends
@@ -82,7 +82,7 @@ This is an unusually clean model: Wise makes money when customers make transfers
 
 **Recipient bank detail complexity:** Despite improvements, collecting local bank details for some corridors (especially in Asia and Africa) remains confusing. IBAN vs. sort code vs. routing number vs. SWIFT creates real friction for first-time international senders.
 
-**Customer support at scale:** As a 16 million customer company, Wise's support responsiveness has declined. Compliance holds — where transfers are frozen for verification — are a common complaint, and the resolution process lacks urgency.
+**Customer support at scale:** As a company now serving around 19 million customers, Wise's support responsiveness has declined. Compliance holds — where transfers are frozen for verification — are a common complaint, and the resolution process lacks urgency.
 
 **Regulatory complexity:** Operating in 160+ countries means navigating licenses, capital requirements, and compliance rules in dozens of jurisdictions simultaneously. Regulatory changes (particularly around AML/KYC) can slow feature rollout or increase operational cost.
 
@@ -98,11 +98,11 @@ Expansion into SMB financial services — expense management, corporate cards, a
 
 ## Key Metrics
 
-- **Annual transfer volume:** ~£118B (FY2024)
-- **Customers:** 16M+
-- **Revenue:** ~£1.1B (FY2024)
+- **Annual transfer volume:** ~$243B (FY2026, +31% YoY)
+- **Customers:** ~19M active (FY2026, +21% YoY)
+- **Revenue:** Net revenue up 19% YoY (FY2026)
 - **Profit:** Consistently profitable since 2021
-- **Average cost to customer:** ~0.61% of transfer amount
+- **Take rate:** Declining by design — ~0.67% (FY2024) down to ~0.53–0.58% (FY2025)
 - **Countries:** 160+ send, 80+ receive
-- **Market cap:** ~£8B (London Stock Exchange, listed 2021)`,
+- **Market cap:** ~£9.5B; primary listing moved from LSE to Nasdaq in May 2026 (LSE remains secondary)`,
 };
