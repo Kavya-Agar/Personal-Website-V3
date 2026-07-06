@@ -1,16 +1,18 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import type { BlogPostMeta } from "@/lib/blog";
+import type { Teardown } from "@/lib/teardowns";
 
 type Command = {
   label: string;
-  category: "Navigate" | "Links" | "Actions";
+  category: "Navigate" | "Links" | "Articles" | "Actions";
   shortcut?: string;
   icon: React.ReactNode;
   action: () => void;
 };
 
-const commands: Command[] = [
+const baseCommands: Command[] = [
   {
     label: "Home",
     category: "Navigate",
@@ -122,7 +124,7 @@ const commands: Command[] = [
   },
 ];
 
-const CATEGORIES: Command["category"][] = ["Navigate", "Links", "Actions"];
+const CATEGORIES: Command["category"][] = ["Navigate", "Articles", "Links", "Actions"];
 
 interface Props {
   open: boolean;
@@ -133,8 +135,44 @@ export function CommandPalette({ open, onClose }: Props) {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(0);
   const [visible, setVisible] = useState(false);
+  const [commands, setCommands] = useState<Command[]>(baseCommands);
   const inputRef = useRef<HTMLInputElement>(null);
   const selectedRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    async function fetchArticles() {
+      try {
+        const [blogRes, teardowsRes] = await Promise.all([
+          fetch("/api/blog"),
+          fetch("/api/teardowns"),
+        ]);
+
+        const blogs: BlogPostMeta[] = await blogRes.json();
+        const teardowns: Teardown[] = await teardowsRes.json();
+
+        const articles: Command[] = [
+          ...blogs.slice(0, 3).map((b) => ({
+            label: b.title,
+            category: "Articles" as const,
+            icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>,
+            action: () => { window.location.href = `/blog/${b.slug}`; },
+          })),
+          ...teardowns.slice(0, 3).map((t) => ({
+            label: t.appName,
+            category: "Articles" as const,
+            icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>,
+            action: () => { window.location.href = `/teardowns/${t.id}`; },
+          })),
+        ];
+
+        setCommands([...baseCommands, ...articles]);
+      } catch (err) {
+        console.error("Failed to fetch articles:", err);
+      }
+    }
+
+    fetchArticles();
+  }, []);
 
   const filtered = commands.filter((c) =>
     c.label.toLowerCase().includes(query.toLowerCase()) ||

@@ -61,10 +61,10 @@ export function Hero() {
       el.classList.remove("glitch-once");
       void el.offsetWidth; // force reflow so animation replays
       el.classList.add("glitch-once");
-      timeoutId = setTimeout(triggerGlitch, 60000 + Math.random() * 30000);
+      timeoutId = setTimeout(triggerGlitch, 5000 + Math.random() * 3000);
     };
 
-    timeoutId = setTimeout(triggerGlitch, 60000 + Math.random() * 30000);
+    timeoutId = setTimeout(triggerGlitch, 5000 + Math.random() * 3000);
     return () => clearTimeout(timeoutId);
   }, []);
 
@@ -188,7 +188,7 @@ export function Hero() {
           className="font-semibold mb-6 text-xl sm:text-2xl md:text-[28px]"
           style={{ fontFamily: "Inter, sans-serif", color: "var(--text-dim)" }}
         >
-          CS @ Texas A&amp;M · Aspiring Product Manager
+          CS @ Texas A&amp;M
         </p>
 
         <p
