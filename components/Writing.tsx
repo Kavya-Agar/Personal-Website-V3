@@ -90,7 +90,7 @@ export function Writing() {
         <div className="mb-12">
           <h2
             className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "Inter, sans-serif", color: "var(--text-primary)" }}
+            style={{ fontFamily: "DM Sans, sans-serif", color: "var(--text-primary)" }}
           >
             Writing
           </h2>
@@ -118,7 +118,7 @@ export function Writing() {
                   <h3
                     className="text-lg font-semibold mb-2 group-hover:text-green transition-colors"
                     style={{
-                      fontFamily: "Inter, sans-serif",
+                      fontFamily: "DM Sans, sans-serif",
                       color: "var(--text-primary)",
                     }}
                   >
@@ -178,7 +178,7 @@ export function Writing() {
             className="inline-flex items-center font-semibold text-sm sm:text-base transition-all duration-200 cursor-pointer hover:gap-2"
             style={{
               color: "var(--green)",
-              fontFamily: "Inter, sans-serif",
+              fontFamily: "DM Sans, sans-serif",
             }}
           >
             View all articles <span className="ml-1">→</span>

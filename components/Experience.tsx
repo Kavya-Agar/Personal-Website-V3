@@ -50,7 +50,7 @@ export function Experience() {
         </p>
         <h2
           className="font-bold mb-12"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 48, color: "var(--text-primary)" }}
+          style={{ fontFamily: "DM Sans, sans-serif", fontSize: 48, color: "var(--text-primary)" }}
         >
           The Ledger
         </h2>
@@ -97,7 +97,7 @@ export function Experience() {
                   <div className="flex flex-col sm:flex-row items-start justify-between gap-3 mb-4">
                     <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-sm sm:text-base mb-0.5 break-words"
-                        style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}>
+                        style={{ color: "var(--text-primary)", fontFamily: "DM Sans, sans-serif" }}>
                         {exp.role}
                       </h3>
                       <p className="font-mono text-xs sm:text-sm font-medium" style={{ color: "var(--green)" }}>
@@ -122,7 +122,7 @@ export function Experience() {
                   <ul className="space-y-2 mb-4">
                     {exp.bullets.map((b, j) => (
                       <li key={j} className="flex gap-3 text-xs sm:text-sm leading-relaxed"
-                        style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
+                        style={{ color: "var(--text-dim)", fontFamily: "DM Sans, sans-serif" }}>
                         <span style={{ color: "var(--green)" }} className="shrink-0 mt-0.5">▸</span>
                         <span>{b}</span>
                       </li>

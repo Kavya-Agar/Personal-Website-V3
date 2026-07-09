@@ -178,15 +178,15 @@ export function Hero() {
 
         <h1
           ref={nameRef}
-          className="font-bold leading-none mb-4 text-6xl sm:text-7xl md:text-[88px]"
-          style={{ fontFamily: "Inter, sans-serif", color: "var(--text-primary)", letterSpacing: "-2px" }}
+          className="font-bold leading-none mb-4 text-6xl sm:text-7xl md:text-[92px]"
+          style={{ fontFamily: "'Space Mono', monospace", color: "var(--text-primary)", letterSpacing: "-3px" }}
         >
           Kavya Agar
         </h1>
 
         <p
           className="font-semibold mb-6 text-xl sm:text-2xl md:text-[28px]"
-          style={{ fontFamily: "Inter, sans-serif", color: "var(--text-dim)" }}
+          style={{ fontFamily: "DM Sans, sans-serif", color: "var(--text-dim)" }}
         >
           CS @ Texas A&amp;M
         </p>
@@ -212,7 +212,7 @@ export function Hero() {
             style={{
               background: "var(--green)",
               color: "var(--bg)",
-              fontFamily: "Inter, sans-serif",
+              fontFamily: "DM Sans, sans-serif",
               padding: "16px 32px",
               borderRadius: 6,
               "--ring-offset-color": "var(--bg)",
@@ -227,7 +227,7 @@ export function Hero() {
               focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green"
             style={{
               color: "var(--text-primary)",
-              fontFamily: "Inter, sans-serif",
+              fontFamily: "DM Sans, sans-serif",
               padding: "16px 32px",
               border: "1px solid var(--border)",
               borderRadius: 6,

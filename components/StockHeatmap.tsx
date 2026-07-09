@@ -61,7 +61,7 @@ export function StockHeatmap() {
         </p>
         <h2
           className="text-3xl font-bold mb-3"
-          style={{ color: "#e6edf3", fontFamily: "Inter, sans-serif" }}
+          style={{ color: "#e6edf3", fontFamily: "DM Sans, sans-serif" }}
         >
           S&amp;P 500 Heatmap
         </h2>

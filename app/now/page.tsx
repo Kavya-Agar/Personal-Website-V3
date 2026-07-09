@@ -65,7 +65,7 @@ export default function NowPage() {
         <h1
           className="font-bold mb-3"
           style={{
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "DM Sans, sans-serif",
             fontSize: 80,
             color: "var(--text-primary)",
             lineHeight: 1,
@@ -74,7 +74,7 @@ export default function NowPage() {
           Now
         </h1>
 
-        <p className="text-base mb-2" style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
+        <p className="text-base mb-2" style={{ color: "var(--text-dim)", fontFamily: "DM Sans, sans-serif" }}>
           What I&apos;m up to right now.
         </p>
         <p className="font-mono text-[11px] mb-10" style={{ color: "var(--text-muted)" }}>
@@ -91,13 +91,13 @@ export default function NowPage() {
               </p>
               <h2
                 className="font-bold text-xl mb-3"
-                style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}
+                style={{ color: "var(--text-primary)", fontFamily: "DM Sans, sans-serif" }}
               >
                 {title}
               </h2>
               <p
                 className="text-sm leading-relaxed"
-                style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}
+                style={{ color: "var(--text-dim)", fontFamily: "DM Sans, sans-serif" }}
               >
                 {body}
               </p>

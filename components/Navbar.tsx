@@ -277,7 +277,7 @@ export function Navbar() {
               href={link.href}
               onClick={() => setMenuOpen(false)}
               className="flex items-center gap-3 px-4 py-3 rounded-md transition-all cursor-pointer group hover:bg-green-a8 hover:text-primary"
-              style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}
+              style={{ color: "var(--text-dim)", fontFamily: "DM Sans, sans-serif" }}
             >
               <span style={{ color: "var(--green)" }}>{link.icon}</span>
               <span className="text-sm font-medium">{link.label}</span>
@@ -295,7 +295,7 @@ export function Navbar() {
               color: "var(--green)",
               background: "var(--green-a8)",
               border: "1px solid var(--green-a35)",
-              fontFamily: "Inter, sans-serif",
+              fontFamily: "DM Sans, sans-serif",
             }}
           >
             Resume ↗

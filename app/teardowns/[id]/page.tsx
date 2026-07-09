@@ -71,7 +71,7 @@ export default async function TeardownDetailPage({ params }: { params: Promise<{
         <h1
           className="font-bold mb-2"
           style={{
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "DM Sans, sans-serif",
             fontSize: 48,
             color: "var(--text-primary)",
             lineHeight: 1.2,
@@ -81,7 +81,7 @@ export default async function TeardownDetailPage({ params }: { params: Promise<{
         </h1>
 
         {/* Thesis */}
-        <p className="text-xl font-semibold mb-6" style={{ color: "var(--green)", fontFamily: "Inter, sans-serif" }}>
+        <p className="text-xl font-semibold mb-6" style={{ color: "var(--green)", fontFamily: "DM Sans, sans-serif" }}>
           {teardown.thesis}
         </p>
 
@@ -106,7 +106,7 @@ export default async function TeardownDetailPage({ params }: { params: Promise<{
 
         {/* Key insights */}
         <div className="mt-12 pt-8" style={{ borderTop: "1px solid var(--border-subtle)" }}>
-          <h2 className="font-semibold text-lg mb-6" style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}>
+          <h2 className="font-semibold text-lg mb-6" style={{ color: "var(--text-primary)", fontFamily: "DM Sans, sans-serif" }}>
             Key Insights
           </h2>
           <ul className="space-y-3">
@@ -121,7 +121,7 @@ export default async function TeardownDetailPage({ params }: { params: Promise<{
 
         {/* Critique */}
         <div className="mt-12 pt-8 pb-12" style={{ borderTop: "1px solid var(--border-subtle)" }}>
-          <h2 className="font-semibold text-lg mb-4" style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}>
+          <h2 className="font-semibold text-lg mb-4" style={{ color: "var(--text-primary)", fontFamily: "DM Sans, sans-serif" }}>
             Critique
           </h2>
           <p className="text-base leading-relaxed" style={{ color: "var(--text-primary)" }}>

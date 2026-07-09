@@ -254,7 +254,7 @@ export function CommandPalette({ open, onClose }: Props) {
             value={query}
             onChange={(e) => { setQuery(e.target.value); setSelected(0); }}
             className="flex-1 bg-transparent outline-none text-sm"
-            style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}
+            style={{ color: "var(--text-primary)", fontFamily: "DM Sans, sans-serif" }}
           />
           <kbd className="font-mono text-[10px] px-1.5 py-0.5 rounded" style={{ color: "var(--text-muted)", background: "var(--bg)", border: "1px solid var(--border)" }}>
             ESC
@@ -266,7 +266,7 @@ export function CommandPalette({ open, onClose }: Props) {
           {filtered.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-10 gap-2">
               <span className="font-mono text-[11px]" style={{ color: "var(--text-muted)" }}>// no results</span>
-              <span className="text-sm" style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
+              <span className="text-sm" style={{ color: "var(--text-dim)", fontFamily: "DM Sans, sans-serif" }}>
                 No commands match &ldquo;{query}&rdquo;
               </span>
             </div>
@@ -288,7 +288,7 @@ export function CommandPalette({ open, onClose }: Props) {
                         style={{
                           background: isSelected ? "var(--green-a8)" : "transparent",
                           color: isSelected ? "var(--text-primary)" : "var(--text-dim)",
-                          fontFamily: "Inter, sans-serif",
+                          fontFamily: "DM Sans, sans-serif",
                           borderLeft: isSelected ? "2px solid var(--green)" : "2px solid transparent",
                         }}
                         onMouseEnter={() => setSelected(idx)}

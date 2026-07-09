@@ -69,7 +69,7 @@ export function Projects() {
         </p>
         <h2
           className="font-bold mb-2"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 48, color: "var(--text-primary)" }}
+          style={{ fontFamily: "DM Sans, sans-serif", fontSize: 48, color: "var(--text-primary)" }}
         >
           The Portfolio
         </h2>
@@ -98,7 +98,7 @@ export function Projects() {
                 <div className="flex items-start justify-between gap-3">
                   <h3
                     className="font-semibold text-base leading-tight flex-1"
-                    style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}
+                    style={{ color: "var(--text-primary)", fontFamily: "DM Sans, sans-serif" }}
                   >
                     {proj.name}
                   </h3>
@@ -111,7 +111,7 @@ export function Projects() {
                 </div>
 
                 <p className="text-sm leading-relaxed flex-1"
-                  style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
+                  style={{ color: "var(--text-dim)", fontFamily: "DM Sans, sans-serif" }}>
                   {proj.desc}
                 </p>
 

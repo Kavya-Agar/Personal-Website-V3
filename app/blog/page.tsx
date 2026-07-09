@@ -47,12 +47,12 @@ export default async function BlogPage() {
 
         <h1
           className="font-bold mb-3"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 80, color: "var(--text-primary)", lineHeight: 1 }}
+          style={{ fontFamily: "DM Sans, sans-serif", fontSize: 80, color: "var(--text-primary)", lineHeight: 1 }}
         >
           Blog
         </h1>
 
-        <p className="text-base mb-2" style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
+        <p className="text-base mb-2" style={{ color: "var(--text-dim)", fontFamily: "DM Sans, sans-serif" }}>
           Writing on product, systems thinking, and software.
         </p>
         <p className="font-mono text-[11px] mb-10" style={{ color: "var(--text-muted)" }}>
@@ -87,13 +87,13 @@ export default async function BlogPage() {
                 {/* Title */}
                 <h2
                   className="font-bold text-xl mb-2 transition-colors group-hover:text-[var(--green)]"
-                  style={{ fontFamily: "Inter, sans-serif", color: "var(--text-primary)" }}
+                  style={{ fontFamily: "DM Sans, sans-serif", color: "var(--text-primary)" }}
                 >
                   {post.title}
                 </h2>
 
                 {/* Description */}
-                <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-dim)", fontFamily: "DM Sans, sans-serif" }}>
                   {post.description}
                 </p>
 

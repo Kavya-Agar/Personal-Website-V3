@@ -128,7 +128,7 @@ export function ThemeGallery() {
             <div>
               <h2
                 className="font-semibold text-sm"
-                style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}
+                style={{ color: "var(--text-primary)", fontFamily: "DM Sans, sans-serif" }}
               >
                 Color Theme
               </h2>

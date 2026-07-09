@@ -106,7 +106,7 @@ export default function UsesPage() {
         <h1
           className="font-bold mb-3"
           style={{
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "DM Sans, sans-serif",
             fontSize: 80,
             color: "var(--text-primary)",
             lineHeight: 1,
@@ -115,7 +115,7 @@ export default function UsesPage() {
           Uses
         </h1>
 
-        <p className="text-base mb-2" style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
+        <p className="text-base mb-2" style={{ color: "var(--text-dim)", fontFamily: "DM Sans, sans-serif" }}>
           Tools and equipment I work with daily.
         </p>
         <p className="font-mono text-[11px] mb-10" style={{ color: "var(--text-muted)" }}>
@@ -136,7 +136,7 @@ export default function UsesPage() {
                     <div key={name} className="flex items-baseline gap-2">
                       <span
                         className="text-sm font-medium shrink-0"
-                        style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}
+                        style={{ color: "var(--text-primary)", fontFamily: "DM Sans, sans-serif" }}
                       >
                         {name}
                       </span>

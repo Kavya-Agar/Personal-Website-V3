@@ -83,7 +83,7 @@ export function Skills() {
         </p>
         <h2
           className="font-bold mb-2"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 48, color: "var(--text-primary)" }}
+          style={{ fontFamily: "DM Sans, sans-serif", fontSize: 48, color: "var(--text-primary)" }}
         >
           Tech Stack
         </h2>

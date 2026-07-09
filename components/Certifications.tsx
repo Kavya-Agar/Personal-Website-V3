@@ -32,7 +32,7 @@ export function Certifications() {
         </p>
         <h2
           className="font-bold mb-12"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 48, color: "var(--text-primary)" }}
+          style={{ fontFamily: "DM Sans, sans-serif", fontSize: 48, color: "var(--text-primary)" }}
         >
           Certifications
         </h2>
@@ -43,7 +43,7 @@ export function Certifications() {
               <div className="flex items-start justify-between gap-4 mb-2">
                 <div>
                   <h3 className="font-semibold text-base"
-                    style={{ color: "var(--text-primary)", fontFamily: "Inter, sans-serif" }}>
+                    style={{ color: "var(--text-primary)", fontFamily: "DM Sans, sans-serif" }}>
                     {cert.name}
                   </h3>
                   <p className="font-mono text-sm" style={{ color: "var(--green)" }}>

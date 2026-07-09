@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <h1
           className="font-bold mb-4"
           style={{
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "DM Sans, sans-serif",
             fontSize: 48,
             lineHeight: 1.1,
             color: "var(--text-primary)",
@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         {/* Description */}
         <p
           className="text-xl font-semibold mb-4"
-          style={{ fontFamily: "Inter, sans-serif", color: "var(--green)" }}
+          style={{ fontFamily: "DM Sans, sans-serif", color: "var(--green)" }}
         >
           {post.description}
         </p>

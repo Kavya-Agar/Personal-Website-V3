@@ -30,7 +30,7 @@ export function Contact() {
           [ CONTACT ]
         </p>
         <h2 className="font-bold mb-2"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 48, color: "var(--text-primary)" }}>
+          style={{ fontFamily: "DM Sans, sans-serif", fontSize: 48, color: "var(--text-primary)" }}>
           Open a Position
         </h2>
         <p className="font-mono text-sm mb-12" style={{ color: "var(--text-dim)" }}>
@@ -92,7 +92,7 @@ export function Contact() {
                   <button
                     type="submit"
                     className="w-full py-3 rounded font-semibold text-sm transition-opacity hover:opacity-90"
-                    style={{ background: "var(--green)", color: "var(--bg)", fontFamily: "Inter, sans-serif" }}
+                    style={{ background: "var(--green)", color: "var(--bg)", fontFamily: "DM Sans, sans-serif" }}
                   >
                     Send Message →
                   </button>
@@ -126,7 +126,7 @@ export function Contact() {
                       {label}
                     </span>
                     <span className="link-val text-sm transition-colors"
-                      style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
+                      style={{ color: "var(--text-dim)", fontFamily: "DM Sans, sans-serif" }}>
                       {value}
                     </span>
                     <span className="ml-auto font-mono text-xs opacity-0 group-hover:opacity-100 transition-opacity"
@@ -139,7 +139,7 @@ export function Contact() {
                     <span className="font-mono text-[11px] w-24 shrink-0" style={{ color: "var(--yellow)" }}>
                       {label}
                     </span>
-                    <span className="text-sm" style={{ color: "var(--text-dim)", fontFamily: "Inter, sans-serif" }}>
+                    <span className="text-sm" style={{ color: "var(--text-dim)", fontFamily: "DM Sans, sans-serif" }}>
                       {value}
                     </span>
                   </div>
@@ -148,7 +148,7 @@ export function Contact() {
             </div>
 
             <div className="mt-8 pt-6" style={{ borderTop: "1px solid var(--border-subtle)" }}>
-              <p className="text-xs italic leading-relaxed" style={{ color: "var(--text-muted)", fontFamily: "Inter, sans-serif" }}>
+              <p className="text-xs italic leading-relaxed" style={{ color: "var(--text-muted)", fontFamily: "DM Sans, sans-serif" }}>
                 &ldquo;The stock market is a device for transferring money from the impatient to the patient.&rdquo;
               </p>
               <p className="font-mono text-[10px] mt-2" style={{ color: "var(--border)" }}>
