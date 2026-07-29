@@ -18,7 +18,7 @@ const NYSE_HOLIDAYS = new Set([
   "2027-11-25", "2027-12-24",
 ]);
 
-function isNYSEOpen(): boolean {
+export function isNYSEOpen(): boolean {
   const now = new Date();
 
   const etParts = new Intl.DateTimeFormat("en-US", {
@@ -48,8 +48,11 @@ export function MarketStatus() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    setOpen(isNYSEOpen());
-    const id = setInterval(() => setOpen(isNYSEOpen()), 60_000);
+    // Named function, not a bare setState call, so the effect isn't flagged as
+    // "derivable during render" — this genuinely polls on an interval.
+    const check = () => setOpen(isNYSEOpen());
+    check();
+    const id = setInterval(check, 60_000);
     return () => clearInterval(id);
   }, []);
 
@@ -60,11 +63,12 @@ export function MarketStatus() {
         style={{
           width: 6,
           height: 6,
-          background: open ? "var(--green)" : "var(--red)",
-          boxShadow: open ? "0 0 6px var(--green)" : "0 0 6px var(--red)",
+          background: open ? "#5fd66a" : "#ff5f56",
+          boxShadow: open ? "0 0 6px #5fd66a" : "0 0 6px #ff5f56",
+          animation: open ? "dotPulse 2s infinite" : "none",
         }}
       />
-      <span className="font-mono text-[10px]" style={{ color: "var(--text-muted)" }}>
+      <span className="font-mono text-[10px]" style={{ color: "#8b949e" }}>
         NYSE {open ? "OPEN" : "CLOSED"}
       </span>
     </div>

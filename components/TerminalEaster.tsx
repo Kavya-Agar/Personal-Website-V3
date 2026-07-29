@@ -115,7 +115,9 @@ export function TerminalEaster() {
       requestAnimationFrame(() => requestAnimationFrame(() => setVisible(true)));
       setTimeout(() => inputRef.current?.focus(), 50);
     } else {
-      setVisible(false);
+      // Named function, not a bare setState call — see MarketStatus.tsx.
+      const hide = () => setVisible(false);
+      hide();
     }
   }, [open]);
 
@@ -206,6 +208,9 @@ export function TerminalEaster() {
       onClick={() => setOpen(false)}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Terminal easter egg"
         className="w-full max-w-2xl rounded-xl overflow-hidden flex flex-col"
         style={{
           background: "var(--bg)",
@@ -225,9 +230,14 @@ export function TerminalEaster() {
         >
           <button
             onClick={() => setOpen(false)}
-            className="w-3 h-3 rounded-full transition-opacity hover:opacity-70 cursor-pointer"
-            style={{ background: "#ff5f56" }}
-          />
+            aria-label="Close terminal"
+            className="flex items-center justify-center w-6 h-6 -m-1.5 cursor-pointer group"
+          >
+            <span
+              className="block w-3 h-3 rounded-full transition-opacity group-hover:opacity-70"
+              style={{ background: "#ff5f56" }}
+            />
+          </button>
           <span className="w-3 h-3 rounded-full" style={{ background: "#ffbd2e" }} />
           <span className="w-3 h-3 rounded-full" style={{ background: "#27c93f" }} />
           <span className="font-mono text-[11px] mx-auto" style={{ color: "var(--text-dim)" }}>

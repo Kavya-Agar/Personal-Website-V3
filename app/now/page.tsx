@@ -59,7 +59,7 @@ export default function NowPage() {
       {/* Content */}
       <main className="px-8 md:px-20 py-20 max-w-5xl">
         <p className="font-mono text-[11px] mb-4" style={{ color: "var(--text-dim)" }}>
-          // now.md
+          {"// now.md"}
         </p>
 
         <h1

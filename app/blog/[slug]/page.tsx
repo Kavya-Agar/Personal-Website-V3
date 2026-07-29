@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeShiki from "@shikijs/rehype";
 import { getBlogPost, getBlogSlugs } from "@/lib/blog";
+import { PaperNav } from "@/components/news/PaperNav";
 
 export async function generateStaticParams() {
   const slugs = await getBlogSlugs();
@@ -33,100 +34,52 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen" style={{ background: "var(--bg)" }}>
-      {/* Header */}
-      <header
-        className="flex items-center justify-between px-8 md:px-20 h-16"
-        style={{ borderBottom: "1px solid var(--border)" }}
-      >
-        <Link
-          href="/blog"
-          className="flex items-center gap-2 font-mono text-sm transition-colors hover:text-[var(--text-primary)]"
-          style={{ color: "var(--text-dim)" }}
+    <div className="news" style={{ minHeight: "100vh" }}>
+      <div className="news-grain" aria-hidden />
+      <PaperNav backHref="/blog" backLabel="Blog" maxWidth={720} />
+
+      <main style={{ maxWidth: 720, margin: "0 auto", padding: "40px clamp(16px, 4vw, 32px) 72px" }}>
+        <p
+          className="news-kicker"
+          style={{ letterSpacing: "0.2em", color: "var(--news-amber)", marginBottom: 12 }}
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 12H5M5 12l7-7M5 12l7 7" />
-          </svg>
-          blog
-        </Link>
-        <Link href="/" className="font-mono font-bold text-lg" style={{ color: "var(--green)" }}>
-          $KA
-        </Link>
-      </header>
+          {post.tags.join(" · ")}
+        </p>
 
-      {/* Content */}
-      <main className="px-8 md:px-20 py-16 max-w-3xl">
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-6">
-          {post.tags.map((tag) => (
-            <span
-              key={tag}
-              className="font-mono text-[9px] px-2.5 py-1 rounded-full"
-              style={{
-                color: "var(--green)",
-                background: "var(--green-a8)",
-                border: "1px solid var(--green-a20)",
-              }}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        {/* Title */}
         <h1
-          className="font-bold mb-4"
-          style={{
-            fontFamily: "DM Sans, sans-serif",
-            fontSize: 48,
-            lineHeight: 1.1,
-            color: "var(--text-primary)",
-            letterSpacing: "-0.02em",
-          }}
+          className="news-display"
+          style={{ fontSize: "clamp(32px, 6vw, 48px)", lineHeight: 1.08, letterSpacing: "-0.6px", marginBottom: 14 }}
         >
           {post.title}
         </h1>
 
-        {/* Description */}
-        <p
-          className="text-xl font-semibold mb-4"
-          style={{ fontFamily: "DM Sans, sans-serif", color: "var(--green)" }}
-        >
+        <p className="news-lede" style={{ marginBottom: 16 }}>
           {post.description}
         </p>
 
-        {/* Meta */}
-        <p className="font-mono text-[11px] mb-8" style={{ color: "var(--text-dim)" }}>
-          {formatDate(post.date)} · {post.readingTime} min read
-        </p>
+        <div
+          className="news-dateline news-hr"
+          style={{ paddingBottom: 20, marginBottom: 28 }}
+        >
+          By Kavya Agar · {formatDate(post.date)} · {post.readingTime} min read
+        </div>
 
-        <div className="mb-10" style={{ height: 1, background: "var(--border-subtle)" }} />
-
-        {/* Body */}
-        <article className="prose prose-invert max-w-none">
+        <article className="prose max-w-none">
           <MDXRemote
             source={post.content}
             options={{
               mdxOptions: {
                 rehypePlugins: [
-                  [rehypeShiki as never, { theme: "github-dark" }],
+                  [rehypeShiki as never, { theme: "github-light" }],
                 ],
               },
             }}
           />
         </article>
 
-        {/* Footer */}
-        <div className="mt-16 pt-8" style={{ borderTop: "1px solid var(--border-subtle)" }}>
-          <Link
-            href="/blog"
-            className="flex items-center gap-2 font-mono text-sm transition-colors hover:text-[var(--text-primary)] w-fit"
-            style={{ color: "var(--text-dim)" }}
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M19 12H5M5 12l7-7M5 12l7 7" />
-            </svg>
-            Back to Blog
+        <div className="news-hr-ink" style={{ marginTop: 48, paddingTop: 20 }}>
+          <Link href="/blog" className="news-draw" style={{ font: "500 12.5px var(--f-label)", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-muted)" }}>
+            ← Back to Blog
           </Link>
         </div>
       </main>
