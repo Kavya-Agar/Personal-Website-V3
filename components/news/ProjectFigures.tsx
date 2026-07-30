@@ -356,60 +356,114 @@ export function PortfolioV3Figure() {
   );
 }
 
-export function PomodoroFigure() {
-  const cx = 150;
-  const cy = 66;
-  const r = 42;
-  // Angle measured clockwise from 12 o'clock. Work = 25/30 of the cycle = 300°;
-  // the boundary point is where the maroon (work) arc hands off to the blue (break) arc.
-  const boundaryDeg = 300;
-  const boundary = {
-    x: cx + r * Math.sin((boundaryDeg * Math.PI) / 180),
-    y: cy - r * Math.cos((boundaryDeg * Math.PI) / 180),
-  };
-  const top = { x: cx, y: cy - r };
+export function RootDiffingFigure() {
+  const candidates = [
+    { hash: "e91d3f", score: 0.91, suspect: true },
+    { hash: "5f2b91", score: 0.42, suspect: false },
+    { hash: "70ab34", score: 0.18, suspect: false },
+  ];
+  const barX = 92;
+  const maxBarW = 108;
+  const rowY = [89, 102, 115];
   return (
     <svg {...svgProps}>
       <Kicker x={12} y={12}>
-        WORK / BREAK CYCLE
+        SPIKE ↔ COMMIT CORRELATION
       </Kicker>
-      <circle cx={cx} cy={cy} r={r} fill="none" stroke={FAINT} strokeWidth={1} />
+
+      {/* error-rate signal over time, deploys ticked below */}
+      <line x1={14} y1={46} x2={286} y2={46} stroke={FAINT} strokeWidth={1} />
       <path
-        d={`M${top.x},${top.y} A${r},${r} 0 1 1 ${boundary.x},${boundary.y}`}
+        d="M14,40 L90,39 Q130,38 150,34 Q162,20 172,17 Q182,20 194,34 Q210,38 250,39 L286,40"
         fill="none"
-        stroke="var(--news-maroon)"
-        strokeWidth={4}
+        stroke="var(--news-red)"
+        strokeWidth={1.4}
       />
-      <path
-        d={`M${boundary.x},${boundary.y} A${r},${r} 0 0 1 ${top.x},${top.y}`}
-        fill="none"
-        stroke="var(--news-blue)"
-        strokeWidth={4}
-      />
-      <text x={cx} y={cy - 2} textAnchor="middle" style={{ font: `600 15px ${MONO}`, fill: INK }}>
-        25/5
-      </text>
-      <text x={cx} y={cy + 12} textAnchor="middle" style={{ font: `400 7px ${MONO}`, fill: FAINT }}>
-        MIN
-      </text>
-      <path
-        d={`M${cx + r + 10},${cy - 18} q10,4 6,16`}
-        fill="none"
-        stroke={INK}
+      <line
+        x1={172}
+        y1={17}
+        x2={172}
+        y2={41}
+        stroke="var(--news-red)"
         strokeWidth={1}
-        markerEnd="url(#pf-repeat)"
+        strokeDasharray="2 2"
       />
-      <defs>
-        <marker id="pf-repeat" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="5" markerHeight="5" orient="auto">
-          <path d="M0,0 L8,4 L0,8 Z" fill={INK} />
-        </marker>
-      </defs>
-      <text x={cx + r + 14} y={cy - 24} style={{ font: `400 7px ${MONO}`, fill: FAINT }}>
-        repeat
+      {[
+        { x: 40, hash: "a1c9", suspect: false },
+        { x: 100, hash: "5f2b", suspect: false },
+        { x: 172, hash: "e91d", suspect: true },
+        { x: 240, hash: "70ab", suspect: false },
+      ].map((c) => (
+        <g key={c.x}>
+          <line
+            x1={c.x}
+            y1={41}
+            x2={c.x}
+            y2={51}
+            stroke={c.suspect ? "var(--news-red)" : INK}
+            strokeWidth={c.suspect ? 2 : 1}
+          />
+          <text
+            x={c.x}
+            y={60}
+            textAnchor="middle"
+            style={{
+              font: `400 7px ${MONO}`,
+              fill: c.suspect ? "var(--news-red)" : FAINT,
+            }}
+          >
+            {c.hash}
+          </text>
+        </g>
+      ))}
+
+      <line x1={14} y1={67} x2={286} y2={67} stroke="var(--rule-faint)" strokeWidth={1} />
+      <text x={14} y={77} style={{ font: `600 7px ${LABEL}`, letterSpacing: "0.1em", fill: FAINT }}>
+        RANKED CANDIDATES
       </text>
-      <text x={12} y={124} style={{ font: `400 7.5px ${MONO}`, fill: FAINT }}>
-        session tracking · custom intervals
-      </text>
+
+      <rect
+        x={10}
+        y={rowY[0] - 7}
+        width={280}
+        height={14}
+        fill="none"
+        stroke="var(--news-red)"
+        strokeWidth={0.8}
+        strokeDasharray="2 2"
+      />
+      {candidates.map((c, i) => {
+        const w = maxBarW * c.score;
+        const y = rowY[i];
+        return (
+          <g key={c.hash}>
+            <text x={14} y={y + 3} style={{ font: `600 8px ${MONO}`, fill: INK }}>
+              {i + 1}
+            </text>
+            <text
+              x={26}
+              y={y + 3}
+              style={{
+                font: `${c.suspect ? 700 : 400} 7.5px ${MONO}`,
+                fill: c.suspect ? "var(--news-red)" : INK,
+              }}
+            >
+              {c.hash}
+            </text>
+            <rect
+              x={barX}
+              y={y - 4}
+              width={w}
+              height={7}
+              fill={c.suspect ? "var(--news-red)" : INK}
+              fillOpacity={c.suspect ? 1 : 0.35 - i * 0.1}
+            />
+            <text x={barX + w + 5} y={y + 3} style={{ font: `400 7px ${MONO}`, fill: FAINT }}>
+              {c.score.toFixed(2)}
+            </text>
+          </g>
+        );
+      })}
     </svg>
   );
 }
@@ -420,7 +474,7 @@ export const projectFigures: Record<string, () => React.JSX.Element> = {
   "FIN-ance": FinanceFigure,
   "Quant-Options-Engine": OptionsFigure,
   "Portfolio V3": PortfolioV3Figure,
-  Pomodoro: PomodoroFigure,
+  "Root-Diffing-Agent": RootDiffingFigure,
 };
 
 export const projectFigureCaptions: Record<string, string> = {
@@ -434,6 +488,6 @@ export const projectFigureCaptions: Record<string, string> = {
     "Fig. 6 — Long call payoff at expiry: flat below the strike (K), then 1:1 above it, crossing breakeven (B/E).",
   "Portfolio V3":
     "Fig. 7 — Wireframe of the prior edition: live ticker strip, hero copy, and an animated index chart.",
-  Pomodoro:
-    "Fig. 8 — One cycle: a 25-minute work interval (maroon) followed by a 5-minute break (blue), then repeat.",
+  "Root-Diffing-Agent":
+    "Fig. 8 — Four deploys, one error spike: candidates re-ranked by correlation strength, not merge order — e91d3f leads at 0.91.",
 };

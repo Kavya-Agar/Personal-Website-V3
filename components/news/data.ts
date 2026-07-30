@@ -179,12 +179,12 @@ export const projects: Project[] = [
     stackLine: "Next.js · TypeScript · Tailwind CSS",
   },
   {
-    name: "Pomodoro",
-    status: "Open source",
-    statusColor: "var(--news-blue)",
-    href: "https://github.com/Kavya-Agar/pomodoro",
-    desc: "Minimalist focus timer implementing the Pomodoro technique with session tracking and customizable work/break intervals.",
-    stackLine: "JavaScript · HTML/CSS",
+    name: "Root-Diffing-Agent",
+    status: "Work in progress",
+    statusColor: "var(--news-amber)",
+    href: "https://github.com/Kavya-Agar/Root-Diffing-Agent",
+    desc: "When an app breaks after a deploy, this correlates error-log spikes against the commit and config diff history instead of manually git-bisecting — ranking likely culprits by statistical correlation across a noisy signal, with reasoning, not just “last commit before the error.”",
+    stackLine: "Python · Git · pandas · statistical correlation",
   },
 ];
 
