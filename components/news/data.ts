@@ -271,7 +271,7 @@ export const toolsOfTheTrade = [
   "MacBook Air 13″, Apple M3, 16 GB, with a 4K external display.",
   "VS Code as primary IDE, Catppuccin Macchiato; Xcode for Swift.",
   "macOS Terminal with Zsh, fzf and the GitHub CLI.",
-  "Notion, Figma, Discord, and lo-fi on Spotify.",
+  "Notion, Figma, and on Spotify.",
 ];
 
 export const coursework =

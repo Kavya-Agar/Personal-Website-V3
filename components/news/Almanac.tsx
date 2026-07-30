@@ -75,19 +75,37 @@ export function Almanac() {
             Style · Tools of the trade
           </p>
           <div className="news-cols" style={{ columnRule: "none" }}>
-            {toolsOfTheTrade.map((line, i) => (
-              <p
-                key={line}
-                className="news-body-sm"
-                style={{
-                  fontSize: 15.5,
-                  lineHeight: 1.5,
-                  marginBottom: i === toolsOfTheTrade.length - 1 ? 0 : 9,
-                }}
-              >
-                {line}
-              </p>
-            ))}
+            {toolsOfTheTrade.map((line, i) => {
+              const isSpotify = typeof line === "string" && line.includes("Spotify");
+              return (
+                <p
+                  key={String(line) + i}
+                  className="news-body-sm"
+                  style={{
+                    fontSize: 15.5,
+                    lineHeight: 1.5,
+                    marginBottom: i === toolsOfTheTrade.length - 1 ? 0 : 9,
+                  }}
+                >
+                  {isSpotify ? (
+                    <>
+                      {line.split("Spotify")[0]}
+                      <a
+                        href="https://open.spotify.com/user/yl13p1w8blgq8w320k2fsedzs"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "var(--ink)" }}
+                      >
+                        Spotify
+                      </a>
+                      {line.split("Spotify")[1]}
+                    </>
+                  ) : (
+                    line
+                  )}
+                </p>
+              );
+            })}
           </div>
         </div>
 
