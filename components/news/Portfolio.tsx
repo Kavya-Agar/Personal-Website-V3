@@ -1,5 +1,6 @@
 import { SectionHead } from "./ui";
 import { projects } from "./data";
+import { projectFigures, projectFigureCaptions } from "./ProjectFigures";
 
 export function Portfolio() {
   return (
@@ -50,30 +51,23 @@ export function Portfolio() {
             </h3>
             <div
               style={{
-                height: 118,
-                backgroundColor: "var(--paper-shade)",
-                backgroundImage: "radial-gradient(var(--ink) 1.4px, transparent 1.5px)",
-                backgroundSize: "7px 7px",
-                opacity: 0.4,
-                marginBottom: 10,
-                display: "flex",
-                alignItems: "flex-end",
-                padding: 9,
+                border: "1px solid var(--rule)",
+                background: "var(--paper)",
+                padding: "10px 12px 8px",
+                marginBottom: 6,
               }}
             >
-              <span
-                className="news-kicker"
-                style={{
-                  fontSize: 10,
-                  letterSpacing: "0.16em",
-                  color: "var(--ink)",
-                  background: "var(--paper)",
-                  padding: "3px 7px",
-                }}
-              >
-                Placeholder · screenshot or diagram
-              </span>
+              {(() => {
+                const Figure = projectFigures[p.name];
+                return Figure ? <Figure /> : null;
+              })()}
             </div>
+            <p
+              className="news-mono"
+              style={{ color: "var(--ink-muted)", fontSize: 11, lineHeight: 1.4, marginBottom: 10 }}
+            >
+              {projectFigureCaptions[p.name]}
+            </p>
             <p className="news-body" style={{ marginBottom: 9 }}>
               {p.desc}
             </p>

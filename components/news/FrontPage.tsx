@@ -340,7 +340,7 @@ export function FrontPage({
           </RailBox>
 
           <div>
-            <RailHead>Of Record</RailHead>
+            <RailHead>Certified</RailHead>
             <div
               style={{
                 display: "flex",

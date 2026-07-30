@@ -92,7 +92,7 @@ export function Almanac() {
         </div>
 
         <div>
-          <RailHead double>Of Record · Certifications</RailHead>
+          <RailHead double>Certified · Certifications</RailHead>
           {certs.map((c) => (
             <div key={c.name} className="news-hr" style={{ paddingBottom: 11, marginBottom: 11 }}>
               <h4 className="news-display" style={{ fontSize: 19, lineHeight: 1.2, marginBottom: 3 }}>

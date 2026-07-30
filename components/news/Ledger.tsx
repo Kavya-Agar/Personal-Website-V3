@@ -88,7 +88,7 @@ export function Ledger() {
           </RailBox>
 
           <div>
-            <RailHead>Of Record</RailHead>
+            <RailHead>Certified</RailHead>
             <div
               style={{
                 display: "flex",
