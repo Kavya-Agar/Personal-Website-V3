@@ -10,6 +10,10 @@ import type { Teardown } from "./teardowns/types";
 
 export const teardowns: Teardown[] = [stripe, wise, venmo, klarna, robinhood, amex];
 
+export const teardownsByDate: Teardown[] = [...teardowns].sort((a, b) =>
+  (b.date ?? "").localeCompare(a.date ?? "")
+);
+
 export function getTeardownById(id: string): Teardown | undefined {
   return teardowns.find((t) => t.id === id);
 }

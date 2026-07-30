@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { teardowns } from "@/lib/teardowns";
+import { teardowns, teardownsByDate } from "@/lib/teardowns";
 import { PaperNav } from "@/components/news/PaperNav";
 import { RailBox, RailHead, SectionHead } from "@/components/news/ui";
 
@@ -13,7 +13,7 @@ export const metadata = {
 };
 
 export default function TeardownsPage() {
-  const sorted = [...teardowns].sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""));
+  const sorted = teardownsByDate;
 
   return (
     <div className="news" style={{ minHeight: "100vh" }}>

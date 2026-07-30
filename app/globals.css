@@ -422,23 +422,56 @@ html[data-edition="sunday"] .news  { --paper: #fbf8f2; }
   border: 1px solid var(--rule);
   border-radius: 3px;
   font-family: var(--f-mono);
+  padding: 0.15em 0.4em;
+  font-size: 0.85em;
 }
+.news .prose :not(pre) > code::before,
+.news .prose :not(pre) > code::after { content: none; }
 .news .prose pre {
   background: var(--paper-tint) !important;
   border: 1px solid var(--rule);
   border-radius: 0;
+  margin: 1.75em 0;
 }
 .news .prose blockquote {
   border-left: 3px solid var(--news-red);
   background: transparent;
   font-style: italic;
   color: var(--ink-lede);
+  margin: 1.75em 0;
+  padding-left: 1.25em;
+}
+.news .prose blockquote p { margin: 0 0 0.6em; }
+.news .prose blockquote p:last-child { margin-bottom: 0; }
+
+/* .news p/h1-h4 { margin: 0 } resets (used by the rest of the newspaper chrome)
+   otherwise beat @tailwindcss/typography's zero-specificity :where() margins,
+   collapsing every paragraph and heading in long-form MDX bodies into one
+   flush block. Re-declare explicit rhythm here at higher specificity. */
+.news .prose p {
+  margin: 0 0 1.15em;
 }
 .news .prose h1, .news .prose h2, .news .prose h3, .news .prose h4 {
   color: var(--ink);
   font-family: var(--f-display);
   letter-spacing: normal;
+  font-weight: 400;
 }
+.news .prose h1 { margin: 1.4em 0 0.6em; font-size: 1.9em; line-height: 1.15; }
+.news .prose h2 { margin: 2em 0 0.65em; font-size: 1.5em; line-height: 1.2; }
+.news .prose h3 { margin: 1.7em 0 0.5em; font-size: 1.25em; line-height: 1.25; }
+.news .prose h4 { margin: 1.5em 0 0.5em; font-size: 1.1em; line-height: 1.3; }
+.news .prose > :first-child { margin-top: 0 !important; }
+.news .prose ul, .news .prose ol {
+  margin: 0 0 1.25em;
+  padding-left: 1.4em;
+}
+.news .prose li { margin: 0 0 0.5em; }
+.news .prose li > p { margin: 0 0 0.5em; }
+.news .prose li::marker { color: var(--news-red); }
+.news .prose hr { border: none; border-top: 1px solid var(--rule); margin: 2.5em 0; }
+.news .prose img { margin: 1.75em auto; border: 1px solid var(--rule); }
+.news .prose table { margin: 0 0 1.5em; }
 .news .prose a { text-decoration: underline; text-decoration-color: var(--rule-leader); }
 .news .prose a:hover { text-decoration-color: var(--news-red); color: var(--news-red); }
 .news .prose thead th { font-family: var(--f-mono); color: var(--ink-muted); }
