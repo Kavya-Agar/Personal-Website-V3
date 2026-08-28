@@ -282,7 +282,7 @@ p {
   --news-maroon: #7a2d32;
 
   /* Faces */
-  --f-masthead: 'UnifrakturMaguntia', 'Libre Caslon Display', serif;
+  --f-masthead: 'Playfair Display', 'Libre Caslon Display', serif;
   --f-display: 'Libre Caslon Display', Georgia, serif;
   --f-body: 'Newsreader', Georgia, serif;
   --f-label: 'Barlow Condensed', 'DM Sans', sans-serif;
@@ -329,7 +329,7 @@ html[data-edition="sunday"] .news  { --paper: #fbf8f2; }
 /* ── Newspaper type scale ────────────────────────────────────────────────── */
 
 .news-masthead {
-  font: 400 clamp(38px, 8.5vw, 82px)/1 var(--f-masthead);
+  font: 900 clamp(38px, 8.5vw, 82px)/1 var(--f-masthead);
   color: var(--ink);
   /* misregistered press impression */
   text-shadow: 0.7px 0 rgba(184, 40, 31, 0.14), -0.7px 0 rgba(31, 79, 135, 0.12);
