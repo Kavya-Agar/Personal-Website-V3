@@ -93,19 +93,24 @@ export interface LedgerEntry {
 
 export const ledger: LedgerEntry[] = [
   {
-    period: "May 2026 – Present",
+    period: "May 2026 – Aug 2026",
     location: "Houston, TX",
     role: "Business Development Intern",
-    company: "Aspen Technology",
-    badge: "Current",
-    bullets: ["Upcoming for summer 2026, on the business development desk."],
-    stackLine: "Business Development · Strategy",
+    company: "Aspen Technology (an Emerson company)",
+    badge: "40K+ accounts analyzed",
+    bullets: [
+      "Designed and built an internal CRM-style account intelligence platform covering 400+ priority accounts, mapping decision-maker personas via ZoomInfo and Industrial Info Resources for a 5-person BDR team.",
+      "Conducted global market analysis across 40,000+ accounts in Metals & Mining and Power Generation, identifying 20,000+ new potential accounts — presented directly to AspenTech's President and senior Emerson leadership.",
+      "Built 3 Power BI dashboards giving BDRs, Account Managers, and leadership visibility into coverage and market opportunity; cleaned and enriched 10,000+ account records.",
+      "Developed AI-assisted workflows using Claude for daily account research and persona identification, cutting manual research time significantly.",
+    ],
+    stackLine: "CRM Platform · Power BI · ZoomInfo · Claude AI",
   },
   {
     period: "Jan 2024 – Apr 2024",
     location: "Houston, TX",
     role: "Technical Business Analyst Intern",
-    company: "Aspen Technology",
+    company: "Aspen Technology (an Emerson company)",
     badge: "+15% revenue impact",
     bullets: [
       "Built automated Python web-scraping pipelines using BeautifulSoup and Selenium to analyze 5+ competing analytics platforms, reducing manual research time by 60%.",

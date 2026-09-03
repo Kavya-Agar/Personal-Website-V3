@@ -218,8 +218,9 @@ export function FrontPage({
               className="news-body"
               style={{ fontSize: 15.5, lineHeight: 1.5, color: "var(--ink-soft)", marginBottom: 8 }}
             >
-              Business development and analytics at Aspen Technology; a 10TB Cassandra-to-S3
-              migration at JPMorgan Chase &amp; Co., where efficiency improved 90%.
+              Business development at Aspen Technology (an Emerson company), where a 400-account CRM tool grew into a
+              40,000+ account global market analysis presented to AspenTech&apos;s President; a
+              10TB Cassandra-to-S3 migration at JPMorgan Chase &amp; Co., improving throughput 90%.
             </p>
             <span className="news-more news-draw">Continued on B1 →</span>
           </button>
