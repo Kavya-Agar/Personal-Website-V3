@@ -152,6 +152,14 @@ export const projects: Project[] = [
     stackLine: "Python · PyTorch · HuggingFace · AWS · React · Docker",
   },
   {
+    name: "Quant-Options-Engine",
+    status: "Live",
+    statusColor: "var(--news-green)",
+    href: "https://github.com/Kavya-Agar/Quant-Options-Engine",
+    desc: "From-scratch options pricing engine implementing Black-Scholes Greeks, 50K-path Monte Carlo GBM simulation with antithetic variance reduction, and a Brent's method IV solver across live options chains via yfinance/FRED. FastAPI backend serving a React dashboard with real-time Greeks sliders.",
+    stackLine: "Python · FastAPI · React · NumPy · SciPy · Recharts",
+  },
+  {
     name: "Stock Sentiment Dashboard",
     status: "Live",
     statusColor: "var(--news-green)",
@@ -168,28 +176,20 @@ export const projects: Project[] = [
     stackLine: "Django · React · TensorFlow · SwiftUI · PostgreSQL · Docker",
   },
   {
-    name: "Quant-Options-Engine",
+    name: "CommitHunter",
     status: "Live",
     statusColor: "var(--news-green)",
-    href: "https://github.com/Kavya-Agar/Quant-Options-Engine",
-    desc: "From-scratch options pricing engine implementing Black-Scholes Greeks, 50K-path Monte Carlo GBM simulation with antithetic variance reduction, and a Brent's method IV solver across live options chains via yfinance/FRED. FastAPI backend serving a React dashboard with real-time Greeks sliders.",
-    stackLine: "Python · FastAPI · React · NumPy · SciPy · Recharts",
-  },
-  {
-    name: "Portfolio V3",
-    status: "Work in progress",
-    statusColor: "var(--news-amber)",
-    href: "https://github.com/Kavya-Agar/Personal-Website-V3",
-    desc: "The previous edition of this site — a finance terminal aesthetic with live market ticker, animated chart, command palette, and real-time index data.",
-    stackLine: "Next.js · TypeScript · Tailwind CSS",
-  },
-  {
-    name: "Root-Diffing-Agent",
-    status: "Work in progress",
-    statusColor: "var(--news-amber)",
     href: "https://github.com/Kavya-Agar/Root-Diffing-Agent",
     desc: "When an app breaks after a deploy, this correlates error-log spikes against the commit and config diff history instead of manually git-bisecting — ranking likely culprits by statistical correlation across a noisy signal, with reasoning, not just “last commit before the error.”",
     stackLine: "Python · Git · pandas · statistical correlation",
+  },
+  {
+    name: "Portfolio V3",
+    status: "Archived",
+    statusColor: "var(--ink-faint)",
+    href: "https://github.com/Kavya-Agar/Personal-Website-V3",
+    desc: "The previous edition of this site — a finance terminal aesthetic with live market ticker, animated chart, command palette, and real-time index data.",
+    stackLine: "Next.js · TypeScript · Tailwind CSS",
   },
 ];
 

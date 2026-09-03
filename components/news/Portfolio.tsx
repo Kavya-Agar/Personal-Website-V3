@@ -9,7 +9,7 @@ export function Portfolio() {
         kicker="Section C · Technology"
         kickerColor="var(--news-blue)"
         title="The Portfolio"
-        deck="Six projects shipped · three in production · every repository open for inspection."
+        deck="Six projects shipped · five in production · every repository open for inspection."
       />
 
       <div

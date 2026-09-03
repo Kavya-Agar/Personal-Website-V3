@@ -474,7 +474,7 @@ export const projectFigures: Record<string, () => React.JSX.Element> = {
   "FIN-ance": FinanceFigure,
   "Quant-Options-Engine": OptionsFigure,
   "Portfolio V3": PortfolioV3Figure,
-  "Root-Diffing-Agent": RootDiffingFigure,
+  CommitHunter: RootDiffingFigure,
 };
 
 export const projectFigureCaptions: Record<string, string> = {
@@ -488,6 +488,6 @@ export const projectFigureCaptions: Record<string, string> = {
     "Fig. 6 — Long call payoff at expiry: flat below the strike (K), then 1:1 above it, crossing breakeven (B/E).",
   "Portfolio V3":
     "Fig. 7 — Wireframe of the prior edition: live ticker strip, hero copy, and an animated index chart.",
-  "Root-Diffing-Agent":
+  CommitHunter:
     "Fig. 8 — Four deploys, one error spike: candidates re-ranked by correlation strength, not merge order — e91d3f leads at 0.91.",
 };
