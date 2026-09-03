@@ -83,7 +83,7 @@ export function Ledger() {
               B.S. Computer Science · Minors in Statistics and Business
             </p>
             <p className="news-mono" style={{ marginTop: 6, color: "var(--ink-faint)" }}>
-              Aug 2024 – May 2027
+              Aug 2024 – May 2028
             </p>
           </RailBox>
 

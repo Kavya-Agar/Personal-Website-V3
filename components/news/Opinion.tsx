@@ -2,7 +2,7 @@ import { DataRow, RailBox, RailHead, SectionHead } from "./ui";
 import { bio, coursework, currently, practice } from "./data";
 
 const BY_THE_NUMBERS: [string, string][] = [
-  ["Graduation", "May 2027"],
+  ["Graduation", "May 2028"],
   ["University", "Texas A&M"],
   ["Focus", "Product · Strategy"],
   ["Location", "Houston, TX"],
