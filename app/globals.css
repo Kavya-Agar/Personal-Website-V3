@@ -302,6 +302,75 @@ p {
 html[data-edition="evening"] .news { --paper: #efe9dc; }
 html[data-edition="sunday"] .news  { --paper: #fbf8f2; }
 
+/* ── Christmas skin ── site-wide: snow + top stripe everywhere, plus palette swaps for the
+   dark pages (/now, /uses, /blog, /teardowns, terminal) below and the newspaper further down. */
+html[data-season="christmas"] {
+  --green: #2fd16b;
+  --green-glow: rgba(47, 209, 107, 0.60);
+  --red: #ff4d5e;
+  --yellow: #ffd24a;
+}
+html[data-season="christmas"] body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  z-index: 200;
+  pointer-events: none;
+  background: repeating-linear-gradient(135deg, #c8202e 0 8px, #f5f1e8 8px 16px, #1d8a4f 16px 24px, #f5f1e8 24px 32px);
+}
+
+/* ── Christmas skin (newspaper) ───────────────────────────────────────────────────────── */
+/* <html data-season="christmas"> is set by the script in app/layout.tsx for all of
+   December (or via ?season=christmas). Re-tints the press inks; layout is untouched. */
+html[data-season="christmas"] .news {
+  --news-red: #b3202a;
+  --news-link: #1d5a3c;
+  --news-green: #1d6a45;
+  --news-amber: #b08531;
+  --news-maroon: #8a2330;
+  --paper-tint: #ece6dc;
+}
+html[data-season="christmas"][data-edition="evening"] .news { --paper: #f1e8dc; }
+
+/* Candy-cane stripe under the sticky bar */
+html[data-season="christmas"] .news-masthead-bar::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -3px;
+  height: 3px;
+  background: repeating-linear-gradient(135deg, #b3202a 0 8px, #f7f4ee 8px 16px, #1d6a45 16px 24px, #f7f4ee 24px 32px);
+  pointer-events: none;
+}
+
+.news-snow { display: none; }
+html[data-season="christmas"] .news-snow {
+  display: block;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.news-snow span {
+  position: absolute;
+  top: -10px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(110, 140, 170, 0.45), 0 0 4px rgba(150, 180, 210, 0.5);
+  opacity: 0.9;
+  animation-name: news-snowfall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes news-snowfall {
+  from { transform: translate3d(0, -10px, 0); }
+  to   { transform: translate3d(var(--drift, 0px), 105vh, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .news-snow { display: none !important; }
+}
+
 .news a { color: var(--news-link); text-decoration: none; }
 .news h1, .news h2, .news h3, .news h4 { margin: 0; font-weight: 400; letter-spacing: normal; }
 .news p { margin: 0; }
@@ -626,6 +695,7 @@ button:hover > .news-headline { color: var(--news-red); }
   .news-masthead-bar,
   .news-backdrop,
   .news-grain,
+  .news-snow,
   .news-print-hide,
   .z-\[190\] {
     display: none !important;

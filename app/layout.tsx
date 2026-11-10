@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import { Snowfall } from "@/components/news/Snowfall";
 
 export const metadata: Metadata = {
   title: "Kavya Agar — Software Engineer",
@@ -8,7 +9,9 @@ export const metadata: Metadata = {
 };
 
 // Restore the reader's saved edition (paper tint) before first paint, so it doesn't flash.
-const themeInitScript = `(function(){try{var e=localStorage.getItem('ka-edition');if(e==='evening'||e==='sunday'){document.documentElement.setAttribute('data-edition',e);}}catch(err){}})();`;
+// Also sets the seasonal skin: Christmas all of December. `?season=christmas` previews it any time of
+// year, `?season=off` turns it off (both remembered in localStorage['ka-season'] until the other is used).
+const themeInitScript = `(function(){var d=document.documentElement;try{var e=localStorage.getItem('ka-edition');if(e==='evening'||e==='sunday'){d.setAttribute('data-edition',e);}}catch(err){}try{var q=new URLSearchParams(location.search).get('season');if(q==='christmas'||q==='off'){localStorage.setItem('ka-season',q);}var o=localStorage.getItem('ka-season');var on=o==='christmas'||(o!=='off'&&new Date().getMonth()===11);if(on){d.setAttribute('data-season','christmas');}}catch(err){}})();`;
 
 export default function RootLayout({
   children,
@@ -27,6 +30,7 @@ export default function RootLayout({
         <Script id="theme-init" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-full">
+        <Snowfall />
         {children}
       </body>
     </html>
