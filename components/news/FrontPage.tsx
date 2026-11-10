@@ -241,10 +241,10 @@ export function FrontPage({
               }}
             >
               {indices.map((i) => (
-                <div key={i.label} style={{ display: "flex", justifyContent: "space-between", gap: 8 }}>
+                <div key={i.label} style={{ display: "grid", gridTemplateColumns: "1fr 10ch 1fr", columnGap: 8 }}>
                   <span>{i.label}</span>
-                  <span>{i.value}</span>
-                  <span style={{ color: i.color }}>{i.change}</span>
+                  <span style={{ textAlign: "right" }}>{i.value}</span>
+                  <span style={{ color: i.color, textAlign: "right" }}>{i.change}</span>
                 </div>
               ))}
             </div>

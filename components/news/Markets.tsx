@@ -58,16 +58,16 @@ export function Markets({
                 <div
                   key={i.label}
                   style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    gap: 8,
+                    display: "grid",
+                    gridTemplateColumns: "1fr 10ch 1fr",
+                    columnGap: 8,
                     paddingBottom: 6,
                     borderBottom: "1px dotted var(--rule-dotted)",
                   }}
                 >
                   <span>{i.label}</span>
-                  <span>{i.value}</span>
-                  <span style={{ color: i.color }}>{i.change}</span>
+                  <span style={{ textAlign: "right" }}>{i.value}</span>
+                  <span style={{ color: i.color, textAlign: "right" }}>{i.change}</span>
                 </div>
               ))}
             </div>
