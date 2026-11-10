@@ -371,6 +371,32 @@ html[data-season="christmas"] .news-snow {
   .news-snow { display: none !important; }
 }
 
+/* Christmas music toggle (components/news/ChristmasMusic.tsx). Dark pill so it reads on both the
+   paper pages and the dark-terminal pages. Above the snow drift (5), below the terminal (190). */
+.xmas-music { display: none; }
+html[data-season="christmas"] .xmas-music {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: fixed;
+  right: 16px;
+  bottom: 52px;
+  z-index: 30;
+  padding: 6px 12px;
+  border: 1px solid #b3202a;
+  border-radius: 999px;
+  background: rgba(18, 18, 18, 0.88);
+  color: #f7f4ee;
+  font: 600 12px/1 var(--f-label, "Barlow Condensed", sans-serif);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+html[data-season="christmas"] .xmas-music:hover { background: #b3202a; }
+html[data-season="christmas"] .xmas-music[aria-pressed="true"] { border-color: #1d6a45; }
+@media print { .xmas-music { display: none !important; } }
+
 .news a { color: var(--news-link); text-decoration: none; }
 .news h1, .news h2, .news h3, .news h4 { margin: 0; font-weight: 400; letter-spacing: normal; }
 .news p { margin: 0; }

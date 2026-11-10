@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { Snowfall } from "@/components/news/Snowfall";
+import { ChristmasMusic } from "@/components/news/ChristmasMusic";
 
 export const metadata: Metadata = {
   title: "Kavya Agar — Software Engineer",
@@ -31,6 +32,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full">
         <Snowfall />
+        <ChristmasMusic />
         {children}
       </body>
     </html>
